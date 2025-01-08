@@ -29,31 +29,7 @@ import { Link } from 'react-scroll';
 import './App.css'
 
 function App() {
-  const generatePDF = () => {
-    // Create a new instance of jsPDF
-    const doc = new jsPDF();
-
-    // Add text to the PDF
-    doc.text('Hello, this is your PDF content!', 10, 10);
-
-    // Add additional content (example: a rectangle)
-    doc.rect(10, 20, 100, 20); // x, y, width, height
-
-    // Save the PDF
-    doc.save('example.pdf'); // Name of the file to be downloaded
-  };
-
-
   const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time (e.g., fetching data or assets)
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // Adjust the time as needed
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <>
@@ -84,118 +60,94 @@ function App() {
         </header>
 
         {/* Content Section */}
-        <div className="flex items-center justify-center w-full h-screen bg-transparent rounded-xl gap-6">
-          <div className="flex flex-col text-center text-[#727D73] p-6 bg-transparent gap-6">
-            <img src="./src/assets/portfolio.png" alt="poms" className="w-80 h-auto mx-auto mb-4 rounded-full hover:scale-105 " />
-            <p className="leading-relaxed text-4xl md:text-6xl font-bold text-[#C2FFC7]">👋🏿 Hi, I'm Andrei!</p>
-            <p className="leading-relaxed text-gray-400 text-2xl font-mono font-semi">UI/UX Designer | Front-End Developer.</p>
-            <p className="leading-relaxed text-white text-2xl font-mono font-semi">Memento Vivere</p>
-
+        <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4">
+          <div className="flex flex-col text-center text-[#727D73] p-6 bg-transparent gap-6 max-w-lg mx-auto">
+            <img src="./src/assets/portfolio.png" alt="poms" className="w-40 h-auto mx-auto mb-4 rounded-full md:w-60 lg:w-80 hover:scale-105 transition-transform duration-300" />
+            <p className="leading-relaxed text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2FFC7]">👋🏿 Hi, I'm Andrei!</p>
+            <p className="leading-relaxed text-gray-400 text-xl md:text-2xl font-mono font-semi">UI/UX Designer | Front-End Developer.</p>
+            <p className="leading-relaxed text-white text-xl md:text-2xl font-mono font-semi">Memento Vivere</p>
           </div>
         </div>
 
         {/* About Section */}
-        <div className="flex items-center justify-center w-full h-screen bg-transparent rounded-xl" id="about">
+        <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="about">
           <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-5">
-            <p className="text-6xl font-bold text-[#C2FFC7] font-mono">🤷🏿‍♂️ About Me?</p>
-            <p className="leading-relaxed text-gray-400 text-2xl lg:3xl w-full max-w-4xl justify-normal">I'm currently a 4th year student, taking Bachelor
+            <p className="leading-relaxed text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2FFC7]">🤷🏿‍♂️ About Me?</p>
+            <p className="leading-relaxed text-gray-400 text-xl lg:2xl w-full max-w-4xl justify-normal">I'm currently a 4th year student, taking Bachelor
               of Science in Information Technology at <b className="text-white">Bulacan State University Bustos Campus</b>.
               I have a strong passion for web development and I'm eager to learn new technologies and grow as a developer.
             </p>
 
             <p className="text-3xl font-bold text-[#C2FFC7] text-center flex items-center justify-center gap-2">
-              <FaCode className="text-5xl text-[#C2FFC7]" /> Programming Languages
+              <FaCode className="text-3xl md:text-4xl text-[#C2FFC7]" /> Technologies
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
-              <FaHtml5 className="text-4xl text-blue-400" />
+              <FaHtml5 className="text-3xl md:text-4xl text-blue-400" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaCss3Alt className="text-4xl text-[#264de4]" />
+              <FaCss3Alt className="text-3xl md:text-4xl text-[#264de4]" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <IoLogoJavascript className="text-4xl text-[#F0DB4F]" />
+              <IoLogoJavascript className="text-3xl md:text-4xl text-[#F0DB4F]" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaReact className="text-4xl text-[#61DBFB]" />
+              <FaReact className="text-3xl md:text-4xl text-[#61DBFB]" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <RiTailwindCssFill className="text-4xl text-[#a5f3fc]" />
+              <RiTailwindCssFill className="text-3xl md:text-4xl text-[#a5f3fc]" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaBootstrap className="text-4xl text-[#563d7c]" />
+              <FaBootstrap className="text-3xl md:text-4xl text-[#563d7c]" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaPhp className="text-4xl text-[#AEB2D5]" />
+              <FaPhp className="text-3xl md:text-4xl text-[#AEB2D5]" />
             </div>
 
             <p className="text-3xl font-bold text-[#C2FFC7] text-center flex items-center justify-center gap-2">
-              <VscTools className="text-4xl text-[#C2FFC7]" /> Tools
+              <VscTools className="text-3xl md:text-4xl text-[#C2FFC7]" /> Tools
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
-              <PiFigmaLogoDuotone className="text-4xl text-[#0acf83]" />
+              <PiFigmaLogoDuotone className="text-3xl md:text-4xl text-[#0acf83]" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <VscVscode className="text-4xl text-[#0078d7]" />
+              <VscVscode className="text-3xl md:text-4xl text-[#0078d7]" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <SiAdobephotoshop className="text-4xl text-[#4FCCFE]" />
+              <SiAdobephotoshop className="text-3xl md:text-4xl text-[#4FCCFE]" />
               <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaGithub className="text-4xl text-[#6e5494]" />
+              <FaGithub className="text-3xl md:text-4xl text-[#6e5494]" />
             </div>
-          </div>
-        </div>
-
-        {/* Project Section */}
-        <div className="flex items-center justify-center w-full h-screen bg-transparent rounded-xl" id="projects">
-          <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-10">
-            <p className="text-6xl font-bold text-[#C2FFC7] font-mono">💻 Projects</p>
-
-            <div className="flex flex-col">
-              <p className="text-3xl font-bold text-white text-start">1. Nature Ninjas Website</p>
-              <p className="leading-relaxed text-gray-400 text-lg lg:xl text-left">Nature Ninja is a website that provides information about climate change,
-                environmental sustainability, and conservation initiatives.
-              </p>
-              <p className="leading-relaxed text-white text-lg lg:xl text-left font-mono"><b className="text-[#C2FFC7]">Role :</b> UI/UX Designer | Front End Developer</p>
-              <p className="leading-relaxed text-white text-lg lg:xl text-left font-mono"><b className="text-orange-400">Tech Stack :</b> Django | TailwindCSS</p>
-            </div>
-
-            <div className="flex flex-col">
-              <p className="text-2xl font-bold text-white text-start">2. Grab Rescue: Empowering Emergency Response with GPS-Driven Rescue Management</p>
-              <p className="leading-relaxed text-gray-400 text-lg lg:xl text-left">Capstone Project</p>
-              <p className="leading-relaxed text-white text-lg lg:xl text-left font-mono"><b className="text-[#C2FFC7]">Role :</b> Documentation | Front End Developer to some pages</p>
-              <p className="leading-relaxed text-white text-lg lg:xl text-left font-mono"><b className="text-orange-400">Tech Stack :</b> React.js | TailwindCSS | Node.js | Mapbox | Firebase | PostgreSQL</p>
-            </div>
-
-            <div className="flex flex-col">
-              <p className="text-2xl font-bold text-white text-start">3. POMSICLES</p>
-              <p className="leading-relaxed text-gray-400 text-lg lg:xl text-left">Portfolio</p>
-              <p className="leading-relaxed text-white text-lg lg:xl text-left font-mono"><b className="text-[#C2FFC7]">Role :</b>Full Stack</p>
-              <p className="leading-relaxed text-white text-lg lg:xl text-left font-mono"><b className="text-orange-500">Tech Stack :</b> React.js | TailwindCSS | Node.js</p>
-            </div>
-
-            <div className="flex flex-col">
-              <p className="text-2xl font-bold text-white text-start">4. Susihon ta Malaybalay</p>
-              <p className="leading-relaxed text-gray-400 text-lg lg:xl text-left">Freelancing Project</p>
-              <p className="leading-relaxed text-white text-lg lg:xl text-left font-mono"><b className="text-[#C2FFC7]">Role :</b>UI/UX Designer</p>
-              <p className="leading-relaxed text-white text-lg lg:xl text-left font-mono"><b className="text-blue-600">Tools :</b> Figma</p>
-            </div>
-
           </div>
         </div>
 
         {/* Contact Section */}
-        <div className="flex items-center justify-center w-full h-screen bg-transparent gap-6 p-6 rounded-xl md:flex-row flex-col" id="contacts">
+        <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
           <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-1/2 md:px-12">
-            <p className="text-4xl font-bold text-[#C2FFC7] font-mono">📧 Get in Touch with me.</p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xl md:gap-12">
-              <a href="https://github.com/dreiiiur" className="flex items-center text-white font-semibold hover:text-[#C2FFC7]">
-                <FaGithub className="text-4xl text-white mr-2" />
-                <span className="hidden sm:inline">Dreiiiur</span>
-              </a>
-              <a href="https://www.linkedin.com/in/andreipoma/" className="flex items-center text-white font-semibold hover:text-[#C2FFC7]">
-                <FaLinkedin className="text-4xl text-[#0a66c2] mr-2" />
-                <span className="hidden sm:inline">Andrei Poma</span>
-              </a>
-              <a href="https://www.facebook.com/dreiur/" className="flex items-center text-white font-semibold hover:text-[#C2FFC7]">
-                <FaFacebookMessenger className="text-4xl text-[#006AFF] mr-2" />
-                <span className="hidden sm:inline">Andrei Poma</span>
-              </a>
-              <a href="mailto:andreipoma1220@gmail.com" className="flex items-center text-white font-semibold hover:text-[#C2FFC7]">
-                <SiGmail className="text-4xl text-red-500 mr-2" />
-                <span className="hidden sm:inline">andreipoma1220@gmail.com</span>
-              </a>
+            <p className="text-3xl font-bold text-[#C2FFC7] text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12">
+              {[
+                {
+                  href: "https://github.com/dreiiiur",
+                  icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2" />,
+                  text: "Dreiiiur",
+                  textColor: "text-white"
+                },
+                {
+                  href: "https://www.linkedin.com/in/andrei-poma-605637344/",
+                  icon: <FaLinkedin className="text-3xl md:text-4xl text-[#0a66c2] mr-2" />,
+                  text: "Andrei Poma",
+                  textColor: "text-white"
+                },
+                {
+                  href: "https://www.facebook.com/dreiur/",
+                  icon: <FaFacebookMessenger className="text-3xl md:text-4xl text-[#006AFF] mr-2" />,
+                  text: "Andrei Poma",
+                  textColor: "text-white"
+                },
+                {
+                  href: "mailto:andreipoma1220@gmail.com",
+                  icon: <SiGmail className="text-3xl md:text-4xl text-red-500 mr-2" />,
+                  text: "andreipoma1220@gmail.com",
+                  textColor: "text-white"
+                },
+              ].map((link, index) => (
+                <a key={index} href={link.href} className={`flex items-center ${link.textColor} font-semibold hover:text-[#C2FFC7]`}>
+                  {link.icon}
+                  <span className="hidden sm:inline">{link.text}</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
