@@ -176,14 +176,26 @@ function App() {
         </div>
 
         {/* Contact Section */}
-        <div className="flex items-center justify-center w-full h-screen bg-transparent gap-6 p-6 rounded-xl" id="contacts">
-          <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-12">
+        <div className="flex items-center justify-center w-full h-screen bg-transparent gap-6 p-6 rounded-xl md:flex-row flex-col" id="contacts">
+          <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-1/2 md:px-12">
             <p className="text-4xl font-bold text-[#C2FFC7] font-mono">📧 Get in Touch with me.</p>
-            <div className="flex items-center justify-center gap-24 text-xl">
-              <a href="https://github.com/dreiiiur" className="flex  hover:text-[#C2FFC7] items-center text-white font-semibold"><FaGithub className="text-4xl text-white mr-2" />Dreiiiur</a>
-              <a href="https://www.linkedin.com/in/andreipoma/" className="flex  hover:text-[#C2FFC7] items-center text-white font-semibold"><FaLinkedin className="text-4xl text-[#0a66c2] mr-2" />Andrei Poma</a>
-              <a href="https://www.facebook.com/dreiur/" className="flex  hover:text-[#C2FFC7] items-center text-white font-semibold"><FaFacebookMessenger className="text-4xl text-[#006AFF] mr-2" />Andrei Poma</a>
-              <a href="" className="flex  hover:text-[#C2FFC7] items-center text-white font-semibold"><SiGmail className="text-4xl text-red-500 mr-2" />andreipoma1220@gmail.com</a>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xl md:gap-12">
+              <a href="https://github.com/dreiiiur" className="flex items-center text-white font-semibold hover:text-[#C2FFC7]">
+                <FaGithub className="text-4xl text-white mr-2" />
+                <span className="hidden sm:inline">Dreiiiur</span>
+              </a>
+              <a href="https://www.linkedin.com/in/andreipoma/" className="flex items-center text-white font-semibold hover:text-[#C2FFC7]">
+                <FaLinkedin className="text-4xl text-[#0a66c2] mr-2" />
+                <span className="hidden sm:inline">Andrei Poma</span>
+              </a>
+              <a href="https://www.facebook.com/dreiur/" className="flex items-center text-white font-semibold hover:text-[#C2FFC7]">
+                <FaFacebookMessenger className="text-4xl text-[#006AFF] mr-2" />
+                <span className="hidden sm:inline">Andrei Poma</span>
+              </a>
+              <a href="mailto:andreipoma1220@gmail.com" className="flex items-center text-white font-semibold hover:text-[#C2FFC7]">
+                <SiGmail className="text-4xl text-red-500 mr-2" />
+                <span className="hidden sm:inline">andreipoma1220@gmail.com</span>
+              </a>
             </div>
           </div>
         </div>
