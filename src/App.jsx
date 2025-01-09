@@ -189,9 +189,10 @@ function App() {
               <span>
                 <Typewriter
                   words={[
+                    "Kamusta? Ako si Andrei!.",
                     "Hello, I'm Andrei!",
-                    "Annyeonghaseyo, I'm Andrei!",
-                    "Konnichiiwa, I'm Andrei!",
+                    "안녕하세요, 저는 안드레이에요.",
+                    "こんにちは、私はアンドレイです。",
                   ]}
                   loop={Infinity}
                   typeSpeed={100} // Slower typing speed
