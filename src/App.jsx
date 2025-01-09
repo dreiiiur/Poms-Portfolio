@@ -169,7 +169,7 @@ function App() {
     >
       <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-8 max-w-lg mx-auto">
         <motion.img
-          src="./src/assets/portfolio.png"
+          src="./portfolio.png"
           alt="poms"
           className="w-40 h-auto mx-auto mb-4 rounded-full md:w-60 lg:w-80 hover:scale-105 transition-transform duration-300"
           whileHover={{ scale: 1.1 }} // Slight zoom on hover
@@ -217,8 +217,8 @@ function App() {
   animate={{ opacity: 1, y: 0 }}
   exit={{ opacity: 0, y: -150 }} // Exit animation for smooth upwards motion
   transition={{
-    delay: .5, // Larger delay to stagger after the first animation
-    duration: 3, // Even longer duration for smooth entry
+    delay: 1, // Larger delay to stagger after the first animation
+    duration: 1, // Even longer duration for smooth entry
     ease: [0.3, 0.7, 0.3, 1], // Softer cubic-bezier easing for natural feel
   }}
 >
