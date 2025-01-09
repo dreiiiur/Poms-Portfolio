@@ -22,7 +22,6 @@ import { FaPhp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 import { motion } from "framer-motion";
-import Typical from "react-typical";
 import { Typewriter } from "react-simple-typewriter";
 
 import jsPDF from 'jspdf';
