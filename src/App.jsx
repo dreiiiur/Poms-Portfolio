@@ -224,22 +224,22 @@ function App() {
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2" />,
+                  icon: <FaGithub className="text-3xl md:text-4xl font-light text-[#c2ffc7] mr-2" />,
                   textColor: "text-white",
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-3xl md:text-4xl text-[#0a66c2] mr-2" />,
+                  icon: <FaLinkedin className="text-3xl md:text-4xl font-light text-[#c2ffc7] mr-2" />,
                   textColor: "text-white",
                 },
                 {
                   href: "https://www.facebook.com/dreiur/",
-                  icon: <FaFacebookMessenger className="text-3xl md:text-4xl text-[#006AFF] mr-2" />,
+                  icon: <FaFacebookMessenger className="text-3xl md:text-4xl font-light text-[#c2ffc7] mr-2" />,
                   textColor: "text-white",
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-3xl md:text-4xl text-red-500 mr-2" />,
+                  icon: <SiGmail className="text-3xl md:text-4xl font-light text-[#c2ffc7] mr-2" />,
                   textColor: "text-white",
                 },
               ].map((link, index) => (
@@ -319,25 +319,25 @@ function App() {
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2" />,
+                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-[#c2ffc7] mr-2" />,
                   text: "Dreiiiur",
                   textColor: "text-white"
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-3xl md:text-4xl text-[#0a66c2] mr-2" />,
+                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-[#c2ffc7] mr-2" />,
                   text: "Andrei Poma",
                   textColor: "text-white"
                 },
                 {
                   href: "https://www.facebook.com/dreiur/",
-                  icon: <FaFacebookMessenger className="text-3xl md:text-4xl text-[#006AFF] mr-2" />,
+                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-[#c2ffc7] mr-2" />,
                   text: "Andrei Poma",
                   textColor: "text-white"
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-3xl md:text-4xl text-red-500 mr-2" />,
+                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-[#c2ffc7] mr-2" />,
                   text: "andreipoma1220@gmail.com",
                   textColor: "text-white"
                 },
