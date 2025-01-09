@@ -21,6 +21,10 @@ import { FaBootstrap } from "react-icons/fa";
 import { FaPhp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
+import { motion } from "framer-motion";
+import Typical from "react-typical";
+import { Typewriter } from "react-simple-typewriter";
+
 import jsPDF from 'jspdf';
 
 import { Link } from 'react-scroll';
@@ -157,31 +161,103 @@ function App() {
         </header>
 
         {/* Content Section */}
-        <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4">
-          <div className="flex flex-col text-center text-[#727D73] p-6 bg-transparent gap-6 max-w-lg mx-auto">
-            <img src="./src/assets/portfolio.png" alt="poms" className="w-40 h-auto mx-auto mb-4 rounded-full md:w-60 lg:w-80 hover:scale-105 transition-transform duration-300" />
-            <p className="leading-relaxed text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2FFC7] animate-text">
-              <span className="animate-char">H</span>
-              <span className="animate-char">i</span>
-              <span className="animate-char">,</span>
-              <span className="animate-char"> </span>
-              <span className="animate-char">I</span>
-              <span className="animate-char">'</span>
-              <span className="animate-char">m</span>
-              <span className="animate-char"> </span>
-              <span className="animate-char">A</span>
-              <span className="animate-char">n</span>
-              <span className="animate-char">d</span>
-              <span className="animate-char">r</span>
-              <span className="animate-char">e</span>
-              <span className="animate-char">i</span>
-              <span className="animate-char">!</span>
-            </p>
-            <p className="leading-relaxed text-gray-400 w-full max-w-4xl justify-normal text-xl md:text-2xl font-mono font-semi">Front-End Developer.</p>
-            <p className="leading-relaxed text-white text-xl md:text-2xl font-mono font-semi">UI/UX Designer.</p>
-          </div>
-        </div>
+        <motion.div
+      className="flex flex-row items-center w-full min-h-screen bg-transparent rounded-xl"
+      initial={{ opacity: 0, y: 50 }} // Animation starts hidden and moved down
+      animate={{ opacity: 1, y: 0 }} // Ends visible and in the correct position
+      transition={{ duration: 0.8, ease: "easeOut" }} // Timing for smooth animation
+    >
+      <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-8 max-w-lg mx-auto">
+        <motion.img
+          src="./src/assets/portfolio.png"
+          alt="poms"
+          className="w-40 h-auto mx-auto mb-4 rounded-full md:w-60 lg:w-80 hover:scale-105 transition-transform duration-300"
+          whileHover={{ scale: 1.1 }} // Slight zoom on hover
+          transition={{ type: "spring", stiffness: 300 }}
+        />
 
+<motion.div
+  className="leading-relaxed text-gray-400 w-full max-w-3xl text-2xl md:text-3xl font-mono font-semibold"
+  initial={{ opacity: 0, y: 150 }} // Start farther down for slower feel
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: -150 }} // Smooth exit upwards
+  transition={{
+    delay: 0, // Increased delay for staggering
+    duration: 1, // Extended duration for ultra-smooth motion
+    ease: [0.2, 0.8, 0.2, 1], // Smoother cubic-bezier easing
+  }}
+>
+  <span>
+    <Typewriter
+      words={[
+        "Hello, I'm Andrei!",
+        "Annyeonghaseyo, I'm Andrei!",
+        "Konnichiiwa, I'm Andrei!",
+      ]}
+      loop={Infinity}
+      typeSpeed={100} // Slower typing speed
+      deleteSpeed={60} // Slower deleting speed
+      delaySpeed={2000} // Delay between words
+    />
+  </span>
+</motion.div>
+
+        <motion.p
+          className="leading-relaxed text-2xl md:text-4xl lg:text-5xl font-bold text-[#C2FFC7] ease-linear"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: .5, duration: 4 }}
+        >
+          Front-End Developer & UI/UX Designer
+        </motion.p>
+
+<motion.div
+  className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12"
+  initial={{ opacity: 0, y: 150 }} // Start farther away for slow entry
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: -150 }} // Exit animation for smooth upwards motion
+  transition={{
+    delay: .5, // Larger delay to stagger after the first animation
+    duration: 3, // Even longer duration for smooth entry
+    ease: [0.3, 0.7, 0.3, 1], // Softer cubic-bezier easing for natural feel
+  }}
+>
+          {[
+            {
+              href: "https://github.com/dreiiiur",
+              icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2" />,
+              textColor: "text-white",
+            },
+            {
+              href: "https://www.linkedin.com/in/andreipoma/",
+              icon: <FaLinkedin className="text-3xl md:text-4xl text-[#0a66c2] mr-2" />,
+              textColor: "text-white",
+            },
+            {
+              href: "https://www.facebook.com/dreiur/",
+              icon: <FaFacebookMessenger className="text-3xl md:text-4xl text-[#006AFF] mr-2" />,
+              textColor: "text-white",
+            },
+            {
+              href: "mailto:andreipoma1220@gmail.com",
+              icon: <SiGmail className="text-3xl md:text-4xl text-red-500 mr-2" />,
+              textColor: "text-white",
+            },
+          ].map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className={`flex items-center ${link.textColor} font-semibold hover:text-[#C2FFC7]`}
+            >
+              {link.icon}
+              <span className="hidden sm:inline">{link.text}</span>
+            </a>
+          ))}
+        </motion.div>
+      </div>
+    </motion.div>
+
+    
         {/* About Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="about">
           <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-5">
