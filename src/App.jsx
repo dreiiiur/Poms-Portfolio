@@ -161,148 +161,159 @@ function App() {
 
         {/* Content Section */}
         <motion.div
-      className="flex flex-row items-center w-full min-h-screen bg-transparent rounded-xl"
-      initial={{ opacity: 0, y: 50 }} // Animation starts hidden and moved down
-      animate={{ opacity: 1, y: 0 }} // Ends visible and in the correct position
-      transition={{ duration: 0.8, ease: "easeOut" }} // Timing for smooth animation
-    >
-      <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-8 max-w-lg mx-auto">
-        <motion.img
-          src="./portfolio.png"
-          alt="poms"
-          className="w-40 h-auto mx-auto mb-4 rounded-full md:w-60 lg:w-80 hover:scale-105 transition-transform duration-300"
-          whileHover={{ scale: 1.1 }} // Slight zoom on hover
-          transition={{ type: "spring", stiffness: 300 }}
-        />
-
-<motion.div
-  className="leading-relaxed text-gray-400 w-full max-w-3xl text-2xl md:text-3xl font-mono font-semibold"
-  initial={{ opacity: 0, y: 150 }} // Start farther down for slower feel
-  animate={{ opacity: 1, y: 0 }}
-  exit={{ opacity: 0, y: -150 }} // Smooth exit upwards
-  transition={{
-    delay: 0, // Increased delay for staggering
-    duration: 1, // Extended duration for ultra-smooth motion
-    ease: [0.2, 0.8, 0.2, 1], // Smoother cubic-bezier easing
-  }}
->
-  <span>
-    <Typewriter
-      words={[
-        "Hello, I'm Andrei!",
-        "Annyeonghaseyo, I'm Andrei!",
-        "Konnichiiwa, I'm Andrei!",
-      ]}
-      loop={Infinity}
-      typeSpeed={100} // Slower typing speed
-      deleteSpeed={60} // Slower deleting speed
-      delaySpeed={2000} // Delay between words
-    />
-  </span>
-</motion.div>
-
-        <motion.p
-          className="leading-relaxed text-2xl md:text-4xl lg:text-5xl font-bold text-[#C2FFC7] ease-linear"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: .5, duration: 4 }}
+          className="flex flex-row items-center w-full min-h-screen bg-transparent rounded-xl"
+          initial={{ opacity: 0, y: 50 }} // Animation starts hidden and moved down
+          animate={{ opacity: 1, y: 0 }} // Ends visible and in the correct position
+          transition={{ duration: 0.8, ease: "easeOut" }} // Timing for smooth animation
         >
-          Front-End Developer & UI/UX Designer
-        </motion.p>
+          <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-8 max-w-3xl mx-auto">
+            <motion.img
+              src="./portfolio.png"
+              alt="poms"
+              className="w-60 h-auto mx-auto mb-4 rounded-full md:w-80 lg:w-96 hover:scale-105 transition-transform duration-300 border-2 border-[#C2FFC7]"
+              whileHover={{ scale: 1.1 }} // Slight zoom on hover
+              transition={{ type: "spring", stiffness: 300 }}
+            />
 
-<motion.div
-  className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12"
-  initial={{ opacity: 0, y: 150 }} // Start farther away for slow entry
-  animate={{ opacity: 1, y: 0 }}
-  exit={{ opacity: 0, y: -150 }} // Exit animation for smooth upwards motion
-  transition={{
-    delay: 1, // Larger delay to stagger after the first animation
-    duration: 1, // Even longer duration for smooth entry
-    ease: [0.3, 0.7, 0.3, 1], // Softer cubic-bezier easing for natural feel
-  }}
->
-          {[
-            {
-              href: "https://github.com/dreiiiur",
-              icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2" />,
-              textColor: "text-white",
-            },
-            {
-              href: "https://www.linkedin.com/in/andreipoma/",
-              icon: <FaLinkedin className="text-3xl md:text-4xl text-[#0a66c2] mr-2" />,
-              textColor: "text-white",
-            },
-            {
-              href: "https://www.facebook.com/dreiur/",
-              icon: <FaFacebookMessenger className="text-3xl md:text-4xl text-[#006AFF] mr-2" />,
-              textColor: "text-white",
-            },
-            {
-              href: "mailto:andreipoma1220@gmail.com",
-              icon: <SiGmail className="text-3xl md:text-4xl text-red-500 mr-2" />,
-              textColor: "text-white",
-            },
-          ].map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              className={`flex items-center ${link.textColor} font-semibold hover:text-[#C2FFC7]`}
+            <motion.div
+              className="leading-relaxed text-gray-400 w-full max-w-3xl text-2xl md:text-3xl font-mono font-semibold"
+              initial={{ opacity: 0, y: 150 }} // Start farther down for slower feel
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -150 }} // Smooth exit upwards
+              transition={{
+                delay: 0, // Increased delay for staggering
+                duration: 1, // Extended duration for ultra-smooth motion
+                ease: [0.2, 0.8, 0.2, 1], // Smoother cubic-bezier easing
+              }}
             >
-              {link.icon}
-              <span className="hidden sm:inline">{link.text}</span>
-            </a>
-          ))}
+              <span>
+                <Typewriter
+                  words={[
+                    "Hello, I'm Andrei!",
+                    "Annyeonghaseyo, I'm Andrei!",
+                    "Konnichiiwa, I'm Andrei!",
+                  ]}
+                  loop={Infinity}
+                  typeSpeed={100} // Slower typing speed
+                  deleteSpeed={60} // Slower deleting speed
+                  delaySpeed={2000} // Delay between words
+                />
+              </span>
+            </motion.div>
+
+            <motion.p
+              className="leading-relaxed text-2xl md:text-4xl lg:text-4xl  font-bold text-[#C2FFC7] ease-linear"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: .5, duration: 4 }}
+            >
+              Front-End Developer & UI/UX Designer
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12"
+              initial={{ opacity: 0, y: 150 }} // Start farther away for slow entry
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -150 }} // Exit animation for smooth upwards motion
+              transition={{
+                delay: 1, // Larger delay to stagger after the first animation
+                duration: 1, // Even longer duration for smooth entry
+                ease: [0.3, 0.7, 0.3, 1], // Softer cubic-bezier easing for natural feel
+              }}
+            >
+              {[
+                {
+                  href: "https://github.com/dreiiiur",
+                  icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2" />,
+                  textColor: "text-white",
+                },
+                {
+                  href: "https://www.linkedin.com/in/andreipoma/",
+                  icon: <FaLinkedin className="text-3xl md:text-4xl text-[#0a66c2] mr-2" />,
+                  textColor: "text-white",
+                },
+                {
+                  href: "https://www.facebook.com/dreiur/",
+                  icon: <FaFacebookMessenger className="text-3xl md:text-4xl text-[#006AFF] mr-2" />,
+                  textColor: "text-white",
+                },
+                {
+                  href: "mailto:andreipoma1220@gmail.com",
+                  icon: <SiGmail className="text-3xl md:text-4xl text-red-500 mr-2" />,
+                  textColor: "text-white",
+                },
+              ].map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  className={`flex items-center ${link.textColor} font-semibold hover:text-[#C2FFC7]`}
+                >
+                  {link.icon}
+                  <span className="hidden sm:inline">{link.text}</span>
+                </a>
+              ))}
+            </motion.div>
+          </div>
         </motion.div>
-      </div>
-    </motion.div>
 
-    
+
         {/* About Section */}
-        <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="about">
-          <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-5">
-            <p className="leading-relaxed text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2FFC7]">🤷🏿‍♂️ About Me?</p>
-            <p className="leading-relaxed text-gray-400 text-xl lg:2xl w-full max-w-4xl justify-normal">I'm currently a 4th year student, taking Bachelor
-              of Science in Information Technology at <b className="text-white">Bulacan State University Bustos Campus</b>.
-              I have a strong passion for web development and I'm eager to learn new technologies and grow as a developer.
+        <div
+          className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4"
+          id="about"
+        >
+          {/* Left Section - Profile Picture */}
+          <div className="flex justify-center items-center">
+            <img
+              src="./meme.jpg"
+              alt="Profile"
+              className="w-75 h-70 md:w-screen md:h-1/2 object-cover shadow rounded-xl border-2 border-[#C2FFC7]"
+            />
+          </div>
+
+          {/* Right Section - Content */}
+          <div className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#C2FFC7] font-mono">
+              About Me?
+            </p>
+            <p className="leading-relaxed text-gray-400 text-lg md:text-xl lg:text-2xl">
+              I'm currently a 4th year student, taking Bachelor of Science in Information Technology at{" "}
+              <b className="text-white">Bulacan State University Bustos Campus</b>. I have a strong passion
+              for web development and I'm eager to learn new technologies and grow as a developer.
             </p>
 
-            <p className="text-3xl font-bold text-[#C2FFC7] text-center flex items-center justify-center gap-2">
-              <FaCode className="text-3xl md:text-4xl text-[#C2FFC7]" /> Technologies
-            </p>
-            <div className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
-              <FaHtml5 className="text-3xl md:text-4xl text-blue-400" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaCss3Alt className="text-3xl md:text-4xl text-[#264de4]" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <IoLogoJavascript className="text-3xl md:text-4xl text-[#F0DB4F]" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaReact className="text-3xl md:text-4xl text-[#61DBFB]" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <RiTailwindCssFill className="text-3xl md:text-4xl text-[#a5f3fc]" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaBootstrap className="text-3xl md:text-4xl text-[#563d7c]" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaPhp className="text-3xl md:text-4xl text-[#AEB2D5]" />
+            <div>
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#C2FFC7] font-mono flex items-center gap-2">
+                <FaCode className="text-2xl md:text-3xl lg:text-4xl" /> Technologies
+              </p>
+              <div className="flex flex-wrap items-center gap-4 mt-4">
+                <FaHtml5 className="text-4xl text-blue-400" />
+                <FaCss3Alt className="text-4xl text-[#264de4]" />
+                <IoLogoJavascript className="text-4xl text-[#F0DB4F]" />
+                <FaReact className="text-4xl text-[#61DBFB]" />
+                <RiTailwindCssFill className="text-4xl text-[#a5f3fc]" />
+                <FaBootstrap className="text-4xl text-[#563d7c]" />
+                <FaPhp className="text-4xl text-[#AEB2D5]" />
+              </div>
             </div>
 
-            <p className="text-3xl font-bold text-[#C2FFC7] text-center flex items-center justify-center gap-2">
-              <VscTools className="text-3xl md:text-4xl text-[#C2FFC7]" /> Tools
-            </p>
-            <div className="flex items-center justify-center gap-4 flex-wrap md:flex-nowrap">
-              <PiFigmaLogoDuotone className="text-3xl md:text-4xl text-[#0acf83]" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <VscVscode className="text-3xl md:text-4xl text-[#0078d7]" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <SiAdobephotoshop className="text-3xl md:text-4xl text-[#4FCCFE]" />
-              <p className="leading-relaxed text-white text-xl lg:2xl font-mono">|</p>
-              <FaGithub className="text-3xl md:text-4xl text-[#6e5494]" />
+            <div>
+              <p className="text-2xl md:text-3xl font-bold text-[#C2FFC7] flex items-center gap-2">
+                <VscTools className="text-3xl md:text-4xl text-[#C2FFC7]" /> Tools
+              </p>
+              <div className="flex flex-wrap items-center gap-4 mt-4">
+                <PiFigmaLogoDuotone className="text-4xl text-[#0acf83]" />
+                <VscVscode className="text-4xl text-[#0078d7]" />
+                <SiAdobephotoshop className="text-4xl text-[#4FCCFE]" />
+                <FaGithub className="text-4xl text-[#6e5494]" />
+              </div>
             </div>
           </div>
         </div>
 
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
-          <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-1/2 md:px-12">
+          <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
             <p className="text-3xl font-bold text-[#C2FFC7] text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
             <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12">
               {[
