@@ -30,42 +30,155 @@ import './App.css'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [showSplash, setShowSplash] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
       <div className="min-h-screen flex flex-col bg-[#FFFDF0 max-w-7xl mx-auto" id="home">
-        <header className="gap-4 sticky top-0 bg-opacity-90 backdrop-blur-md z-50">
+        <header className="gap-4 sticky top-0 bg-[#1A1A1D] bg-opacity-70 backdrop-blur-md z-50">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
-            <div className="text-2xl font-black text-[#C2FFC7] tracking-wide"><Link to ="home" smooth={true} duration={500} className="hover:text-[#c2ffc7] cursor-pointer">🥦 POMSICLES</Link></div>
-            <button className="lg:hidden text-white hover:text-[#C2FFC7]" aria-label="Toggle menu">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="text-2xl font-black text-[#C2FFC7] tracking-wide">
+              <Link to="home" smooth={true} duration={500} className="hover:text-[#c2ffc7] cursor-pointer">
+                🥦 POMSICLES
+              </Link>
+            </div>
+            {/* Toggle Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="lg:hidden text-white hover:text-[#C2FFC7]"
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
             </button>
+            {/* Desktop Navigation */}
             <ul className="hidden lg:flex space-x-6 lg:space-x-8 text-white gap-3 text-sm font-bold items-center">
-              <li><Link to="about" smooth={true} duration={500} className="hover:text-[#c2ffc7] cursor-pointer">
-                ABOUT
-              </Link></li>
-              <li><Link to="projects" smooth={true} duration={500} className="hover:text-[#c2ffc7] cursor-pointer">
-                PROJECTS
-              </Link></li>
-              <li><Link to="contacts" smooth={true} duration={500} className="hover:text-[#c2ffc7] cursor-pointer">
-                CONTACTS
-              </Link></li>
-              <li><a href="./src/assets/Poma-Andrei-John.V.CV.pdf" className="hover:text-[#c2ffc7]" download>
-                <button className="bg-white text-[#1A1A1D] rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-[#c2ffc7] hover:text-[#1A1A1D]">DOWNLOAD CV</button>
-              </a></li>
+              <li>
+                <Link to="about" smooth={true} duration={500} className="hover:text-[#c2ffc7] cursor-pointer">
+                  ABOUT
+                </Link>
+              </li>
+              <li>
+                <Link to="projects" smooth={true} duration={500} className="hover:text-[#c2ffc7] cursor-pointer">
+                  PROJECTS
+                </Link>
+              </li>
+              <li>
+                <Link to="contacts" smooth={true} duration={500} className="hover:text-[#c2ffc7] cursor-pointer">
+                  CONTACTS
+                </Link>
+              </li>
+              <li>
+                <a href="./src/assets/Poma-Andrei-John.V.CV.pdf" className="hover:text-[#c2ffc7]" download>
+                  <button className="bg-white text-[#1A1A1D] rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-[#c2ffc7] hover:text-[#1A1A1D]">
+                    DOWNLOAD CV
+                  </button>
+                </a>
+              </li>
             </ul>
           </nav>
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="fixed inset-0 bg-[#1A1A1D] bg-opacity-90 flex flex-col items-center justify-center z-50">
+              <button
+                onClick={toggleMenu}
+                className="absolute top-4 right-4 text-white hover:text-[#C2FFC7]"
+                aria-label="Close menu"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+              <ul className="flex flex-col text-white text-xm font-bold">
+                <li>
+                  <Link
+                    to="about"
+                    smooth={true}
+                    duration={500}
+                    className="hover:text-[#c2ffc7] cursor-pointer"
+                    onClick={toggleMenu}
+                  >
+                    ABOUT
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="projects"
+                    smooth={true}
+                    duration={500}
+                    className="hover:text-[#c2ffc7] cursor-pointer"
+                    onClick={toggleMenu}
+                  >
+                    PROJECTS
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="contacts"
+                    smooth={true}
+                    duration={500}
+                    className="hover:text-[#c2ffc7] cursor-pointer"
+                    onClick={toggleMenu}
+                  >
+                    CONTACTS
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href="./src/assets/Poma-Andrei-John.V.CV.pdf"
+                    className="hover:text-[#c2ffc7]"
+                    download
+                    onClick={toggleMenu}
+                  >
+                    DOWNLOAD CV
+                  </a>
+                </li>
+              </ul>
+            </div>
+          )}
         </header>
 
         {/* Content Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4">
           <div className="flex flex-col text-center text-[#727D73] p-6 bg-transparent gap-6 max-w-lg mx-auto">
             <img src="./src/assets/portfolio.png" alt="poms" className="w-40 h-auto mx-auto mb-4 rounded-full md:w-60 lg:w-80 hover:scale-105 transition-transform duration-300" />
-            <p className="leading-relaxed text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2FFC7]">👋🏿 Hi, I'm Andrei!</p>
-            <p className="leading-relaxed text-gray-400 text-xl md:text-2xl font-mono font-semi">UI/UX Designer | Front-End Developer.</p>
-            <p className="leading-relaxed text-white text-xl md:text-2xl font-mono font-semi">Memento Vivere</p>
+            <p className="leading-relaxed text-3xl md:text-4xl lg:text-5xl font-bold text-[#C2FFC7] animate-text">
+              <span className="animate-char">H</span>
+              <span className="animate-char">i</span>
+              <span className="animate-char">,</span>
+              <span className="animate-char"> </span>
+              <span className="animate-char">I</span>
+              <span className="animate-char">'</span>
+              <span className="animate-char">m</span>
+              <span className="animate-char"> </span>
+              <span className="animate-char">A</span>
+              <span className="animate-char">n</span>
+              <span className="animate-char">d</span>
+              <span className="animate-char">r</span>
+              <span className="animate-char">e</span>
+              <span className="animate-char">i</span>
+              <span className="animate-char">!</span>
+            </p>
+            <p className="leading-relaxed text-gray-400 w-full max-w-4xl justify-normal text-xl md:text-2xl font-mono font-semi">Front-End Developer.</p>
+            <p className="leading-relaxed text-white text-xl md:text-2xl font-mono font-semi">UI/UX Designer.</p>
           </div>
         </div>
 
@@ -125,7 +238,7 @@ function App() {
                   textColor: "text-white"
                 },
                 {
-                  href: "https://www.linkedin.com/in/andrei-poma-605637344/",
+                  href: "https://www.linkedin.com/in/andreipoma/",
                   icon: <FaLinkedin className="text-3xl md:text-4xl text-[#0a66c2] mr-2" />,
                   text: "Andrei Poma",
                   textColor: "text-white"
