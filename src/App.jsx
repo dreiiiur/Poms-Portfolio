@@ -84,7 +84,7 @@ function App() {
                 </Link>
               </li>
               <li>
-                <a href="./src/assets/Poma-Andrei-John.V.CV.pdf" className="hover:text-[#c2ffc7]" download>
+                <a href="./Poma-Andrei-John.V.CV.pdf" className="hover:text-[#c2ffc7]" download>
                   <button className="bg-white text-[#1A1A1D] rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-[#c2ffc7] hover:text-[#1A1A1D]">
                     DOWNLOAD CV
                   </button>
