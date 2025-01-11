@@ -376,16 +376,16 @@ function App() {
 
           {/* Projects Container */}
           <motion.div
-            className="flex flex-wrap items-center justify-center gap-6 w-full"
+            className="flex flex-wrap items-center justify-center gap-6 w-full "
             variants={stagger}
           >
             {/* Project Card 1 */}
             <motion.div
-              className="flex flex-col items-center w-full md:w-96 bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
+              className="flex flex-col items-center w-full md:w-96 bg-green-50 rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
               variants={fadeIn}
             >
               <div
-                className="flex items-center justify-center w-full h-64 bg-center bg-cover"
+                className="flex items-center justify-center w-full h-64 bg-center bg-cover hover:scale-105 transition duration-300 ease-in-out"
                 style={{ backgroundImage: `url("./natureNinjas1.jpg")` }}
               ></div>
               <div className="flex flex-col items-start text-left w-full p-6">
@@ -413,11 +413,11 @@ function App() {
 
             {/* Project Card 2 */}
             <motion.div
-              className="flex flex-col items-center w-full md:w-96 bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
+              className="flex flex-col items-center w-full md:w-96 bg-green-50 rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
               variants={fadeIn}
             >
               <div
-                className="flex items-center justify-center w-full h-64 bg-center bg-cover"
+                className="flex items-center justify-center w-full h-64 bg-center bg-cover hover:scale-105 transition duration-300 ease-in-out"
                 style={{ backgroundImage: `url("./susihontamalaybalayhero.png")` }}
               ></div>
               <div className="flex flex-col items-start text-left w-full p-6">
