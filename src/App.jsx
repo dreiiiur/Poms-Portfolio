@@ -381,7 +381,7 @@ function App() {
           >
             {/* Project Card 1 */}
             <motion.div
-              className="flex flex-col items-center w-full md:w-96 bg-green-50 rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
+              className="flex flex-col items-center w-full md:w-96 bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
               variants={fadeIn}
             >
               <div
@@ -413,7 +413,7 @@ function App() {
 
             {/* Project Card 2 */}
             <motion.div
-              className="flex flex-col items-center w-full md:w-96 bg-green-50 rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
+              className="flex flex-col items-center w-full md:w-96 bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
               variants={fadeIn}
             >
               <div
