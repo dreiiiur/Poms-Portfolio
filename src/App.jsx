@@ -171,11 +171,11 @@ function App() {
               <li>
                 <a
                   href="./src/assets/Poma-Andrei-John.V.CV.pdf"
-                  className="hover:text-[#AAB99A]"
+                  className="bg-[#F0F0D7] text-[#727D73] rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-[#AAB99A] hover:text-[#F0F0D7] cursor-pointer"
                   download
                   onClick={toggleMenu}
                 >
-                  DOWNLOAD CV
+                  Download CV
                 </a>
               </li>
             </ul>
@@ -487,11 +487,11 @@ function App() {
           </div>
         </div>
 
-        <footer className="w-full bg-[#D0DDD0] p-6 rounded-t-xl">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <footer className="w-full bg-transparent p-6 rounded-t-xl">
+          <div className="container mx-auto flex flex-col md:flex-row justify-between gap-6">
             {/* Branding */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <p className="text-gray-600 font-bold text-2xl">Pomsicles</p>
+              <p className="text-[#AAB99A] font-bold text-2xl">Pomsicles</p>
               <p className="text-[#727D73] font-medium">© 2025 Pomsicles. All rights reserved.</p>
             </div>
 
@@ -508,7 +508,6 @@ function App() {
             </div>
           </div>
         </footer>
-
 
       </div>
     </>
