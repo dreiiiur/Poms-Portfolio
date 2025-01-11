@@ -356,97 +356,126 @@ function App() {
           </motion.div>
         </motion.div>
 
-        {/* Projects Section */}
+        {<motion.div
+  className="flex flex-col items-center justify-center w-full min-h-screen bg-transparent gap-8 px-6 py-12"
+  id="projects"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.5 }}
+  variants={stagger}
+>
+  {/* Section Title */}
+  <motion.p
+    className="text-3xl md:text-4xl font-extrabold text-[#AAB99A] text-center mb-8 font-mono"
+    variants={fadeIn}
+  >
+    PROJECTS
+  </motion.p>
 
-        <motion.div
-          className="flex flex-col items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4"
-          id="projects"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }} // Repeats animation on scroll
-          variants={stagger}
-        >
-          {/* Section Title */}
-          <motion.p
-            className="text-2xl md:text-3xl font-extrabold text-[#AAB99A] text-center mb-6 font-mono"
-            variants={fadeIn}
-          >
-            PROJECTS
-          </motion.p>
-
-          {/* Projects Container */}
-          <motion.div
-            className="flex flex-wrap items-center justify-center gap-6 w-full "
-            variants={stagger}
-          >
-            {/* Project Card 1 */}
-            <motion.div
-              className="flex flex-col items-center w-full md:w-96 bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
-              variants={fadeIn}
+  {/* Projects Container */}
+  <motion.div
+    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
+    variants={stagger}
+  >
+    {/* Project Card 1 */}
+    <motion.div
+      className="flex flex-col items-center w-full  bg-white rounded-lg overflow-hidden shadow-lg transition transform hover:scale-105"
+      variants={fadeIn}
+    >
+      <div
+        className="w-full h-64 bg-center bg-cover hover:scale-105 transition duration-500"
+        style={{ backgroundImage: `url("./natureNinjas1.jpg")` }}
+      ></div>
+      <div className="flex flex-col items-start text-left w-full p-6">
+        <p className="text-2xl font-bold text-[#AAB99A]">Nature Ninjas</p>
+        <p className="text-lg text-[#727D73]">Front-End Developer</p>
+        <ul className="flex flex-col items-start gap-2 mt-4">
+          <li className="flex items-start gap-2">
+            <FaCode className="text-2xl text-gray-600" />
+            <span className="text-lg text-gray-600 hover:text-blue-500">
+              Django, Tailwind
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <FaGithub className="text-2xl text-gray-600" />
+            <a
+              href="https://github.com/ClydeMondero/nature-ninjas.git"
+              className="text-lg text-gray-600 hover:text-violet-500"
             >
-              <div
-                className="flex items-center justify-center w-full h-64 bg-center bg-cover hover:scale-105 transition duration-300 ease-in-out"
-                style={{ backgroundImage: `url("./natureNinjas1.jpg")` }}
-              ></div>
-              <div className="flex flex-col items-start text-left w-full p-6">
-                <p className="text-2xl font-bold text-[#AAB99A]">Nature Ninjas</p>
-                <p className="text-lg text-[#727D73]">Front-End Developer</p>
-                <ul className="flex flex-col items-start gap-2 mt-4">
-                  <li className="flex items-start gap-2">
-                    <FaCode className="text-2xl text-gray-600" />
-                    <span className="text-lg text-gray-600 hover:text-blue-500">
-                      Django, Tailwind
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <FaGithub className="text-2xl text-gray-600" />
-                    <a
-                      href="https://github.com/ClydeMondero/nature-ninjas.git"
-                      className="text-lg text-gray-600 hover:text-violet-500"
-                    >
-                      Github
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
+              Github
+            </a>
+          </li>
+        </ul>
+      </div>
+    </motion.div>
 
-            {/* Project Card 2 */}
-            <motion.div
-              className="flex flex-col items-center w-full md:w-96 bg-white rounded-lg overflow-hidden shadow-lg transition duration-300 ease-in-out hover:scale-105"
-              variants={fadeIn}
+    {/* Project Card 2 */}
+    <motion.div
+      className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg transition transform hover:scale-105"
+      variants={fadeIn}
+    >
+      <div
+        className="w-full h-64 bg-center bg-cover hover:scale-105 transition duration-500"
+        style={{ backgroundImage: `url("./susihontamalaybalayhero.png")` }}
+      ></div>
+      <div className="flex flex-col items-start text-left w-full p-6">
+        <p className="text-2xl font-bold text-[#B43F3F]">Susihon Ta Malaybalay</p>
+        <p className="text-lg text-[#727D73]">UI/UX Designer</p>
+        <ul className="flex flex-col items-start gap-2 mt-4">
+          <li className="flex items-start gap-2">
+            <FaFigma className="text-2xl text-gray-600" />
+            <span className="text-lg text-gray-600 hover:text-blue-500">
+              Figma
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <FaFigma className="text-2xl text-gray-600" />
+            <a
+              href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
+              className="text-lg text-gray-600 hover:text-violet-500"
             >
-              <div
-                className="flex items-center justify-center w-full h-64 bg-center bg-cover hover:scale-105 transition duration-300 ease-in-out"
-                style={{ backgroundImage: `url("./susihontamalaybalayhero.png")` }}
-              ></div>
-              <div className="flex flex-col items-start text-left w-full p-6">
-                <p className="text-2xl font-bold text-[#B43F3F]">Susihon Ta Malaybalay</p>
-                <p className="text-lg text-[#727D73]">UI/UX Designer</p>
-                <ul className="flex flex-col items-start gap-2 mt-4">
-                  <li className="flex items-start gap-2">
-                    <FaFigma className="text-2xl text-gray-600" />
-                    <span className="text-lg text-gray-600 hover:text-blue-500">
-                      Figma
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <FaFigma className="text-2xl text-gray-600" />
-                    <a
-                      href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
-                      className="text-lg text-gray-600 hover:text-violet-500"
-                    >
-                      Project Link
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+              Project Link
+            </a>
+          </li>
+        </ul>
+      </div>
+    </motion.div>
 
-
-
+    {/* Project Card 3 */}
+    <motion.div
+      className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg transition transform hover:scale-105"
+      variants={fadeIn}
+    >
+      <div
+        className="w-full h-64 bg-center bg-cover hover:scale-105 transition duration-500"
+        style={{ backgroundImage: `url("./Matcha-Madness.png")` }}
+      ></div>
+      <div className="flex flex-col items-start text-left w-full p-6">
+        <p className="text-2xl font-bold text-[#76885B]">Task-Matcha</p>
+        <p className="text-lg text-[#727D73]">Task List</p>
+        <ul className="flex flex-col items-start gap-2 mt-4">
+          <li className="flex items-start gap-2">
+            <FaCode className="text-2xl text-gray-600" />
+            <span className="text-lg text-gray-600 hover:text-[#76885B]">
+              React.js, TailwindCSS
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <FaGithub className="text-2xl text-gray-600" />
+            <a
+              href="https://github.com/dreiiiur/Task-Matcha"
+              className="text-lg text-gray-600 hover:text-violet-500"
+            >
+              Github
+            </a>
+          </li>
+        </ul>
+      </div>
+        
+    </motion.div>
+  </motion.div>
+</motion.div>
+}
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
           <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
