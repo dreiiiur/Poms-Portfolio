@@ -3,7 +3,7 @@ import SplashScreen from './components/SplashScreen';
 import React, { useState, useEffect } from 'react';
 
 import { IoMdDownload } from "react-icons/io";
-import { FaGithub } from "react-icons/fa";
+import { FaFigma, FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
@@ -92,72 +92,81 @@ function App() {
               </li>
             </ul>
           </nav>
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="fixed inset-0 bg-[#1A1A1D] bg-opacity-90 flex flex-col items-center justify-center z-50">
-              <button
-                onClick={toggleMenu}
-                className="absolute top-4 right-4 text-white hover:text-[#C2FFC7]"
-                aria-label="Close menu"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </button>
-              <ul className="flex flex-col text-white text-xm font-bold">
-                <li>
-                  <Link
-                    to="about"
-                    smooth={true}
-                    duration={500}
-                    className="hover:text-[#c2ffc7] cursor-pointer"
-                    onClick={toggleMenu}
-                  >
-                    ABOUT
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="projects"
-                    smooth={true}
-                    duration={500}
-                    className="hover:text-[#c2ffc7] cursor-pointer"
-                    onClick={toggleMenu}
-                  >
-                    PROJECTS
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="contacts"
-                    smooth={true}
-                    duration={500}
-                    className="hover:text-[#c2ffc7] cursor-pointer"
-                    onClick={toggleMenu}
-                  >
-                    CONTACTS
-                  </Link>
-                </li>
-                <li>
-                  <a
-                    href="./src/assets/Poma-Andrei-John.V.CV.pdf"
-                    className="hover:text-[#c2ffc7]"
-                    download
-                    onClick={toggleMenu}
-                  >
-                    DOWNLOAD CV
-                  </a>
-                </li>
-              </ul>
-            </div>
-          )}
         </header>
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="fixed inset-0 bg-[#1A1A1D] bg-opacity-90 flex flex-col items-center justify-center z-50">
+            {/* Close Button */}
+            <button
+              onClick={toggleMenu}
+              className="absolute top-4 right-4 text-white hover:text-[#C2FFC7]"
+              aria-label="Close menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+
+            {/* Menu Items */}
+            <ul className="flex flex-col items-center gap-6 text-white text-xl font-bold">
+              <li>
+                <Link
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-[#C2FFC7] cursor-pointer"
+                  onClick={toggleMenu}
+                >
+                  ABOUT
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="projects"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-[#C2FFC7] cursor-pointer"
+                  onClick={toggleMenu}
+                >
+                  PROJECTS
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="contacts"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-[#C2FFC7] cursor-pointer"
+                  onClick={toggleMenu}
+                >
+                  CONTACTS
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="./src/assets/Poma-Andrei-John.V.CV.pdf"
+                  className="hover:text-[#C2FFC7]"
+                  download
+                  onClick={toggleMenu}
+                >
+                  DOWNLOAD CV
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
+
 
         {/* Content Section */}
         <motion.div
@@ -234,8 +243,8 @@ function App() {
                   textColor: "text-white",
                 },
                 {
-                  href: "https://www.facebook.com/dreiur/",
-                  icon: <FaFacebookMessenger className="text-3xl md:text-4xl font-light text-[#c2ffc7] mr-2" />,
+                  href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
+                  icon: <FaFigma className="text-3xl md:text-4xl font-light text-[#c2ffc7] mr-2" />,
                   textColor: "text-white",
                 },
                 {
@@ -312,6 +321,81 @@ function App() {
           </div>
         </div>
 
+        {/* Projects Section */}
+
+        <div
+          className="flex flex-col items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4"
+          id="projects"
+        >
+          {/* Section Title */}
+          <p className="text-2xl md:text-3xl font-bold text-[#C2FFC7] text-center mb-6">
+            Projects
+          </p>
+
+          {/* Projects Container */}
+          <div className="flex flex-wrap items-center justify-center gap-6 w-full">
+            {/* Project Card 1 */}
+            <div className="flex flex-col items-center w-full md:w-96 bg-white rounded-lg overflow-hidden shadow-lg">
+              <div
+                className="flex items-center justify-center w-full h-64 bg-center bg-cover"
+                style={{ backgroundImage: `url("./natureNinjas1.jpg")` }}
+              ></div>
+              <div className="flex flex-col items-start text-left w-full p-6">
+                <p className="text-2xl font-bold text-black">Nature Ninjas</p>
+                <p className="text-lg text-gray-600">Front-End Developer</p>
+                <ul className="flex flex-col items-start gap-2 mt-4">
+                  <li className="flex items-start gap-2">
+                    <FaCode className="text-2xl text-gray-600" />
+                    <span className="text-lg text-gray-600 hover:text-blue-500">
+                      Django, Tailwind
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <FaGithub className="text-2xl text-gray-600" />
+                    <a
+                      href="https://github.com/ClydeMondero/nature-ninjas.git"
+                      className="text-lg text-gray-600 hover:text-violet-500"
+                    >
+                      Github
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Project Card 2 */}
+            <div className="flex flex-col items-center w-full md:w-96 bg-white rounded-lg overflow-hidden shadow-lg">
+              <div
+                className="flex items-center justify-center w-full h-64 bg-center bg-cover"
+                style={{ backgroundImage: `url("./susihontamalaybalayhero.png")` }}
+              ></div>
+              <div className="flex flex-col items-start text-left w-full p-6">
+                <p className="text-2xl font-bold text-black">Susihon Ta Malaybalay</p>
+                <p className="text-lg text-gray-600">UI/UX Designer</p>
+                <ul className="flex flex-col items-start gap-2 mt-4">
+                  <li className="flex items-start gap-2">
+                    <FaFigma className="text-2xl text-gray-600" />
+                    <span className="text-lg text-gray-600 hover:text-blue-500">
+                      Figma
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <FaFigma className="text-2xl text-gray-600" />
+                    <a
+                      href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
+                      className="text-lg text-gray-600 hover:text-violet-500"
+                    >
+                      Project Link
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
           <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
@@ -363,6 +447,7 @@ function App() {
       </div>
     </>
   )
+
 
 }
 
