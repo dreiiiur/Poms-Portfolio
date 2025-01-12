@@ -356,34 +356,27 @@ function App() {
           </motion.div>
         </motion.div>
 
-        {<motion.div
+        <div
   className="flex flex-col items-center justify-center w-full min-h-screen bg-transparent gap-8 px-6 py-12"
   id="projects"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.5 }}
-  variants={stagger}
 >
   {/* Section Title */}
-  <motion.p
+  <p
     className="text-3xl md:text-4xl font-extrabold text-[#AAB99A] text-center mb-8 font-mono"
-    variants={fadeIn}
   >
     PROJECTS
-  </motion.p>
+  </p>
 
   {/* Projects Container */}
-  <motion.div
+  <div
     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
-    variants={stagger}
   >
     {/* Project Card 1 */}
-    <motion.div
-      className="flex flex-col items-center w-full  bg-white rounded-lg overflow-hidden shadow-lg transition transform hover:scale-105"
-      variants={fadeIn}
+    <div
+      className="flex flex-col items-center w-full  bg-white rounded-lg overflow-hidden shadow-lg"
     >
       <div
-        className="w-full h-64 bg-center bg-cover hover:scale-105 transition duration-500"
+        className="w-full h-64 bg-center bg-cover"
         style={{ backgroundImage: `url("./natureNinjas1.jpg")` }}
       ></div>
       <div className="flex flex-col items-start text-left w-full p-6">
@@ -407,15 +400,14 @@ function App() {
           </li>
         </ul>
       </div>
-    </motion.div>
+    </div>
 
     {/* Project Card 2 */}
-    <motion.div
-      className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg transition transform hover:scale-105"
-      variants={fadeIn}
+    <div
+      className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg"
     >
       <div
-        className="w-full h-64 bg-center bg-cover hover:scale-105 transition duration-500"
+        className="w-full h-64 bg-center bg-cover"
         style={{ backgroundImage: `url("./susihontamalaybalayhero.png")` }}
       ></div>
       <div className="flex flex-col items-start text-left w-full p-6">
@@ -439,15 +431,14 @@ function App() {
           </li>
         </ul>
       </div>
-    </motion.div>
+    </div>
 
     {/* Project Card 3 */}
-    <motion.div
-      className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg transition transform hover:scale-105"
-      variants={fadeIn}
+    <div
+      className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg"
     >
       <div
-        className="w-full h-64 bg-center bg-cover hover:scale-105 transition duration-500"
+        className="w-full h-64 bg-center bg-cover"
         style={{ backgroundImage: `url("./Matcha-Madness.png")` }}
       ></div>
       <div className="flex flex-col items-start text-left w-full p-6">
@@ -471,11 +462,9 @@ function App() {
           </li>
         </ul>
       </div>
-        
-    </motion.div>
-  </motion.div>
-</motion.div>
-}
+    </div>
+  </div>
+</div>
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
           <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
