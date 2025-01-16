@@ -32,15 +32,13 @@ import { Link } from 'react-scroll';
 import './App.css'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [showSplash, setShowSplash] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const fadeIn =  {
+  const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
   };
@@ -192,9 +190,17 @@ function App() {
         >
           <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-8 max-w-3xl mx-auto">
             <motion.img
-              src="./portfolio.png"
+              src="./layk.jpg"
               alt="poms"
-              className="w-60 h-auto mx-auto mb-4 rounded-full md:w-80 lg:w-96 hover:scale-105 transition-transform duration-300 border-2 border-[#727D73] bg-[#F0F0D7]"
+              className="w-96 h-auto mx-auto mb-4 rounded-full md:w-120 lg:w-144 hover:scale-105 transition-transform duration-300 border-2 border-[#727D73] bg-[#F0F0D7]"
+              style={{
+                borderImage:
+                  "linear-gradient(to right, #AAB99A, #727D73) 1 100%",
+                borderImageSlice: "1",
+                borderImageWidth: "2px",
+                borderImageOutset: "2px",
+                borderImageRepeat: "stretch",
+              }}
               whileHover={{ scale: 1.1 }} // Slight zoom on hover
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -213,7 +219,7 @@ function App() {
               <span>
                 <Typewriter
                   words={[
-                    "Kamusta? Ako si Andrei!.",
+                    "Kamusta? Ako si Andrei!",
                     "Hello, I'm Andrei!",
                     "안녕하세요, 저는 안드레이에요.",
                     "こんにちは、私はアンドレイです。",
@@ -301,7 +307,7 @@ function App() {
             variants={fadeIn}
           >
             <img
-              src="./meme.jpg"
+              src="./pis.jpg"
               alt="Profile"
               className="w-75 h-70 md:w-screen md:h-1/2 object-cover shadow rounded-xl border-2 border-[#AAB99A]"
             />
@@ -357,114 +363,114 @@ function App() {
         </motion.div>
 
         <div
-  className="flex flex-col items-center justify-center w-full min-h-screen bg-transparent gap-8 px-6 py-12"
-  id="projects"
->
-  {/* Section Title */}
-  <p
-    className="text-3xl md:text-4xl font-extrabold text-[#AAB99A] text-center mb-8 font-mono"
-  >
-    PROJECTS
-  </p>
+          className="flex flex-col items-center justify-center w-full min-h-screen bg-transparent gap-8 px-6 py-12"
+          id="projects"
+        >
+          {/* Section Title */}
+          <p
+            className="text-3xl md:text-4xl font-extrabold text-[#AAB99A] text-center mb-8 font-mono"
+          >
+            PROJECTS
+          </p>
 
-  {/* Projects Container */}
-  <div
-    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
-  >
-    {/* Project Card 1 */}
-    <div
-      className="flex flex-col items-center w-full  bg-white rounded-lg overflow-hidden shadow-lg"
-    >
-      <div
-        className="w-full h-64 bg-center bg-cover"
-        style={{ backgroundImage: `url("./natureNinjas1.jpg")` }}
-      ></div>
-      <div className="flex flex-col items-start text-left w-full p-6">
-        <p className="text-2xl font-bold text-[#AAB99A]">Nature Ninjas</p>
-        <p className="text-lg text-[#727D73]">Front-End Developer</p>
-        <ul className="flex flex-col items-start gap-2 mt-4">
-          <li className="flex items-start gap-2">
-            <FaCode className="text-2xl text-gray-600" />
-            <span className="text-lg text-gray-600 hover:text-blue-500">
-              Django, Tailwind
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <FaGithub className="text-2xl text-gray-600" />
-            <a
-              href="https://github.com/ClydeMondero/nature-ninjas.git"
-              className="text-lg text-gray-600 hover:text-violet-500"
+          {/* Projects Container */}
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
+          >
+            {/* Project Card 1 */}
+            <div
+              className="flex flex-col items-center w-full  bg-white rounded-lg overflow-hidden shadow-lg"
             >
-              Github
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+              <div
+                className="w-full h-64 bg-center bg-cover"
+                style={{ backgroundImage: `url("./natureNinjas1.jpg")` }}
+              ></div>
+              <div className="flex flex-col items-start text-left w-full p-6">
+                <p className="text-2xl font-bold text-[#AAB99A]">Nature Ninjas</p>
+                <p className="text-lg text-[#727D73]">Front-End Developer</p>
+                <ul className="flex flex-col items-start gap-2 mt-4">
+                  <li className="flex items-start gap-2">
+                    <FaCode className="text-2xl text-gray-600" />
+                    <span className="text-lg text-gray-600 hover:text-blue-500">
+                      Django, Tailwind
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <FaGithub className="text-2xl text-gray-600" />
+                    <a
+                      href="https://github.com/ClydeMondero/nature-ninjas.git"
+                      className="text-lg text-gray-600 hover:text-violet-500"
+                    >
+                      Github
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-    {/* Project Card 2 */}
-    <div
-      className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg"
-    >
-      <div
-        className="w-full h-64 bg-center bg-cover"
-        style={{ backgroundImage: `url("./susihontamalaybalayhero.png")` }}
-      ></div>
-      <div className="flex flex-col items-start text-left w-full p-6">
-        <p className="text-2xl font-bold text-[#B43F3F]">Susihon Ta Malaybalay</p>
-        <p className="text-lg text-[#727D73]">UI/UX Designer</p>
-        <ul className="flex flex-col items-start gap-2 mt-4">
-          <li className="flex items-start gap-2">
-            <FaFigma className="text-2xl text-gray-600" />
-            <span className="text-lg text-gray-600 hover:text-blue-500">
-              Figma
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <FaFigma className="text-2xl text-gray-600" />
-            <a
-              href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
-              className="text-lg text-gray-600 hover:text-violet-500"
+            {/* Project Card 2 */}
+            <div
+              className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg"
             >
-              Project Link
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+              <div
+                className="w-full h-64 bg-center bg-cover"
+                style={{ backgroundImage: `url("./susihontamalaybalayhero.png")` }}
+              ></div>
+              <div className="flex flex-col items-start text-left w-full p-6">
+                <p className="text-2xl font-bold text-[#B43F3F]">Susihon Ta Malaybalay</p>
+                <p className="text-lg text-[#727D73]">UI/UX Designer</p>
+                <ul className="flex flex-col items-start gap-2 mt-4">
+                  <li className="flex items-start gap-2">
+                    <FaFigma className="text-2xl text-gray-600" />
+                    <span className="text-lg text-gray-600 hover:text-blue-500">
+                      Figma
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <FaFigma className="text-2xl text-gray-600" />
+                    <a
+                      href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
+                      className="text-lg text-gray-600 hover:text-violet-500"
+                    >
+                      Project Link
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
 
-    {/* Project Card 3 */}
-    <div
-      className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg"
-    >
-      <div
-        className="w-full h-64 bg-center bg-cover"
-        style={{ backgroundImage: `url("./Matcha-Madness.png")` }}
-      ></div>
-      <div className="flex flex-col items-start text-left w-full p-6">
-        <p className="text-2xl font-bold text-[#76885B]">Task-Matcha</p>
-        <p className="text-lg text-[#727D73]">Task List</p>
-        <ul className="flex flex-col items-start gap-2 mt-4">
-          <li className="flex items-start gap-2">
-            <FaCode className="text-2xl text-gray-600" />
-            <span className="text-lg text-gray-600 hover:text-[#76885B]">
-              React.js, TailwindCSS
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <FaGithub className="text-2xl text-gray-600" />
-            <a
-              href="https://github.com/dreiiiur/Task-Matcha"
-              className="text-lg text-gray-600 hover:text-violet-500"
+            {/* Project Card 3 */}
+            <div
+              className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg"
             >
-              Github
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+              <div
+                className="w-full h-64 bg-center bg-cover"
+                style={{ backgroundImage: `url("./Matcha-Madness.png")` }}
+              ></div>
+              <div className="flex flex-col items-start text-left w-full p-6">
+                <p className="text-2xl font-bold text-[#76885B]">Task-Matcha</p>
+                <p className="text-lg text-[#727D73]">Task List</p>
+                <ul className="flex flex-col items-start gap-2 mt-4">
+                  <li className="flex items-start gap-2">
+                    <FaCode className="text-2xl text-gray-600" />
+                    <span className="text-lg text-gray-600 hover:text-[#76885B]">
+                      React.js, TailwindCSS
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <FaGithub className="text-2xl text-gray-600" />
+                    <a
+                      href="https://github.com/dreiiiur/Task-Matcha"
+                      className="text-lg text-gray-600 hover:text-violet-500"
+                    >
+                      Github
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
           <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
