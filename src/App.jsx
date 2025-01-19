@@ -190,7 +190,7 @@ function App() {
         >
           <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-8 max-w-3xl mx-auto">
             <motion.img
-              src="./layk.jpg"
+              src="./portfolio.png"
               alt="poms"
               className="w-96 h-auto mx-auto mb-4 rounded-full md:w-120 lg:w-144 hover:scale-105 transition-transform duration-300 border-2 border-[#727D73] bg-[#F0F0D7]"
               style={{
