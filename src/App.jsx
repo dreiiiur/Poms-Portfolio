@@ -114,7 +114,7 @@ function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center z-50">
+          <div className="fixed  inset-0 bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center z-50">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
