@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col bg-[#FFFDF0 max-w-screen mx-auto" id="home">
+      <div className="min-h-screen max-w-screen flex flex-col bg-[#FFFDF0 max-w-screen mx-auto" id="home">
         <header className="gap-4 sticky top-0 bg-transparent bg-opacity-70 backdrop-blur-md z-50">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-2xl font-black text-[#727D73] tracking-wide">
@@ -114,7 +114,7 @@ function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-[#686D76] bg-opacity-90 flex flex-col items-center justify-center z-50">
+          <div className="fixed inset-0 bg-[#727D73] bg-opacity-90 flex flex-col items-center justify-center z-50">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
@@ -192,7 +192,7 @@ function App() {
 
         {/* Hero Section */}
         <motion.div
-          className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative max-w-screen min-h-screen flex items-center justify-center overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -201,7 +201,7 @@ function App() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url('./haha.jpg')",
+              backgroundImage: "url('./bggarden.jpg')",
               backgroundAttachment: "fixed",
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -217,19 +217,25 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
+            {/* Profile Image */}
+            <motion.img
+              src="./portfolio.png"
+              alt="Profile"
+              className="w-[250px] h-[250px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] rounded-full mb-6 hover:scale-105 transition-transform duration-300"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
 
-
-
-            {/* Title */}
             {/* Introductory Text */}
             <motion.div
-              className="text-white text-4xl md:text-5xl font-mono font-semibold"
+              className="text-white text-3xl md:text-4xl font-mono font-semibold"
               initial={{ opacity: 0, y: 150 }}
               animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -150 }}
               transition={{
                 delay: 0.5,
-                duration: .5,
-                ease: [0.2, 1, 0.2, 1],
+                duration: 1,
+                ease: [0.2, 0.8, 0.2, 1],
               }}
             >
               <Typewriter
@@ -245,18 +251,20 @@ function App() {
                 delaySpeed={2000}
               />
             </motion.div>
+
+            {/* Title */}
             <motion.p
-              className="text-[#E7F0DC] text-4xl md:text-5xl lg:text-6xl font-bold font-mono"
+              className="text-[#F2EED7] text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1.5 }}
             >
-              FRONT END DEVELOPER & UI/UX DESIGNER
+              Front-End Developer & UI/UX Designer
             </motion.p>
 
             {/* Social Links */}
             <motion.div
-              className="flex flex-wrap items-center justify-center gap-6 text-2xl md:text-3xl"
+              className="flex flex-wrap items-center justify-center gap-6 text-lg md:text-xl"
               initial={{ opacity: 0, y: 150 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -268,7 +276,7 @@ function App() {
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2 hover:text-[#CDC1FF]" />,
+                  icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2 hover:text-[#C5BAFF]" />,
                   target: "_blank",
                 },
                 {
@@ -278,12 +286,12 @@ function App() {
                 },
                 {
                   href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
-                  icon: <FaFigma className="text-3xl md:text-4xl text-white mr-2 hover:text-yellow-500" />,
+                  icon: <FaFigma className="text-3xl md:text-4xl text-white mr-2 hover:text-[#FFF6B3]" />,
                   target: "_blank",
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-3xl md:text-4xl text-white mr-2 hover:text-[#D2665A]" />,
+                  icon: <SiGmail className="text-3xl md:text-4xl text-white mr-2 hover:text-[#FF8383]" />,
                   target: "_blank",
                 },
               ].map((link, index) => (
@@ -299,6 +307,7 @@ function App() {
             </motion.div>
           </motion.div>
         </motion.div>
+
 
 
         {/* About Section */}
@@ -550,4 +559,5 @@ function App() {
 }
 
 export default App
+
 
