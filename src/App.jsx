@@ -70,7 +70,7 @@ function App() {
             {/* Toggle Menu Button */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden text-[#AAB99A] hover:text-[#727D73] cursor-pointer"
+              className="lg:hidden text-black hover:text-gray-600 cursor-pointer"
               aria-label="Toggle menu"
             >
               <svg
