@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen max-w-screen flex flex-col bg-[#FFFDF0] max-w-screen mx-auto" id="home">
+      <div className="min-h-screen max-w-screen flex flex-col bg-white max-w-screen mx-auto" id="home">
         <header className="gap-4 sticky top-0 bg-transparent bg-opacity-70 backdrop-blur-md z-50">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-2xl font-black text-black tracking-wide">
