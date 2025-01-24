@@ -353,7 +353,7 @@ function App() {
 
             <div>
               <p className="text-2xl md:text-3xl font-bold text-black flex items-center gap-2">
-                <VscTools className="text-3xl md:text-4xl text-[#AAB99A]" /> Tools
+                <VscTools className="text-3xl md:text-4xl text-black" /> Tools
               </p>
               <motion.div
                 className="flex flex-wrap items-center gap-4 mt-4"
