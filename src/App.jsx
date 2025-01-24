@@ -24,6 +24,12 @@ import { SiGmail } from "react-icons/si";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
+import { FaUser } from "react-icons/fa";
+import { GrProjects } from "react-icons/gr";
+import { FaMailBulk } from "react-icons/fa";
+
+
+
 import jsPDF from 'jspdf';
 
 import { Link } from 'react-scroll';
@@ -53,7 +59,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col bg-[#FFFDF0 max-w-7xl mx-auto" id="home">
+      <div className="min-h-screen flex flex-col bg-[#FFFDF0 max-w-screen mx-auto" id="home">
         <header className="gap-4 sticky top-0 bg-transparent bg-opacity-70 backdrop-blur-md z-50">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-2xl font-black text-[#727D73] tracking-wide">
@@ -96,7 +102,7 @@ function App() {
               </li>
               <li>
                 <a href="./Poma-Andrei-John.V.CV.pdf" target="_blank" className="hover:text-[#c2ffc7]" download>
-                  <button className="bg-[#AAB99A] text-[#F0F0D7] rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-[#727D73] hover:text-[#D0DDD0]">
+                  <button className="bg-[#AAB99A] text-[#F0F0D7] rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-[#727D73] hover:text-white">
                     DOWNLOAD CV
                   </button>
                 </a>
@@ -108,7 +114,7 @@ function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-[#727D73] bg-opacity-90 flex flex-col items-center justify-center z-50">
+          <div className="fixed inset-0 bg-[#686D76] bg-opacity-90 flex flex-col items-center justify-center z-50">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
@@ -133,7 +139,8 @@ function App() {
 
             {/* Menu Items */}
             <ul className="flex flex-col items-center gap-6 text-white text-xl font-bold">
-              <li>
+              <li className="flex items-center gap-2 text-white text-xl font-bold">
+                <FaUser className="text-white" />
                 <Link
                   to="about"
                   smooth={true}
@@ -141,10 +148,11 @@ function App() {
                   className="hover:text-[#AAB99A] cursor-pointer"
                   onClick={toggleMenu}
                 >
-                  ABOUT
+                  About
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center gap-2 text-white text-xl font-bold">
+                <GrProjects className="text-white" />
                 <Link
                   to="projects"
                   smooth={true}
@@ -152,10 +160,11 @@ function App() {
                   className="hover:text-[#AAB99A] cursor-pointer"
                   onClick={toggleMenu}
                 >
-                  PROJECTS
+                  Projects
                 </Link>
               </li>
-              <li>
+              <li className="flex items-center gap-2 text-white text-xl font-bold">
+                <FaMailBulk className="text-white" />
                 <Link
                   to="contacts"
                   smooth={true}
@@ -163,7 +172,7 @@ function App() {
                   className="hover:text-[#AAB99A] cursor-pointer"
                   onClick={toggleMenu}
                 >
-                  CONTACTS
+                  Contacts
                 </Link>
               </li>
               <li>
@@ -181,114 +190,114 @@ function App() {
         )}
 
 
-        {/* Content Section */}
+        {/* Hero Section */}
         <motion.div
-          className="flex flex-row items-center w-full min-h-screen bg-transparent rounded-xl"
-          initial={{ opacity: 0, y: 50 }} // Animation starts hidden and moved down
-          animate={{ opacity: 1, y: 0 }} // Ends visible and in the correct position
-          transition={{ duration: 0.8, ease: "easeOut" }} // Timing for smooth animation
+          className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="flex flex-col text-center text-[#727D73] bg-transparent gap-8 max-w-3xl mx-auto">
-            <motion.img
-              src="./portfolio.png"
-              alt="poms"
-              className="w-96 h-auto mx-auto mb-4 rounded-full md:w-120 lg:w-144 hover:scale-105 transition-transform duration-300 border-2 border-[#727D73] bg-[#F0F0D7]"
-              style={{
-                borderImage:
-                  "linear-gradient(to right, #AAB99A, #727D73) 1 100%",
-                borderImageSlice: "1",
-                borderImageWidth: "2px",
-                borderImageOutset: "2px",
-                borderImageRepeat: "stretch",
-              }}
-              whileHover={{ scale: 1.1 }} // Slight zoom on hover
-              transition={{ type: "spring", stiffness: 300 }}
-            />
+          {/* Parallax Background */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('./haha.jpg')",
+              backgroundAttachment: "fixed",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
 
+          {/* Content Section */}
+          <motion.div
+            className="relative z-10 flex flex-col items-center text-center text-white gap-8 max-w-4xl px-4"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+
+
+
+            {/* Title */}
+            {/* Introductory Text */}
             <motion.div
-              className="leading-relaxed text-[#727D73] w-full max-w-3xl text-2xl md:text-3xl font-mono font-semibold"
-              initial={{ opacity: 0, y: 150 }} // Start farther down for slower feel
+              className="text-white text-4xl md:text-5xl font-mono font-semibold"
+              initial={{ opacity: 0, y: 150 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -150 }} // Smooth exit upwards
               transition={{
-                delay: 0, // Increased delay for staggering
-                duration: 1, // Extended duration for ultra-smooth motion
-                ease: [0.2, 0.8, 0.2, 1], // Smoother cubic-bezier easing
+                delay: 0.5,
+                duration: .5,
+                ease: [0.2, 1, 0.2, 1],
               }}
             >
-              <span>
-                <Typewriter
-                  words={[
-                    "Kamusta? Ako si Andrei!",
-                    "Hello, I'm Andrei!",
-                    "안녕하세요, 저는 안드레이에요.",
-                    "こんにちは、私はアンドレイです。",
-                  ]}
-                  loop={Infinity}
-                  typeSpeed={100} // Slower typing speed
-                  deleteSpeed={60} // Slower deleting speed
-                  delaySpeed={2000} // Delay between words
-                />
-              </span>
+              <Typewriter
+                words={[
+                  "Kamusta? Ako si Andrei!",
+                  "Hello, I'm Andrei!",
+                  "안녕하세요, 저는 안드레이에요.",
+                  "こんにちは、私はアンドレイです。",
+                ]}
+                loop={Infinity}
+                typeSpeed={100}
+                deleteSpeed={60}
+                delaySpeed={2000}
+              />
             </motion.div>
-
             <motion.p
-              className="leading-relaxed text-2xl md:text-4xl lg:text-4xl  font-bold text-[#AAB99A] ease-linear"
+              className="text-[#E7F0DC] text-4xl md:text-5xl lg:text-6xl font-bold font-mono"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: .5, duration: 4 }}
+              transition={{ delay: 1, duration: 1.5 }}
             >
-              Front-End Developer & UI/UX Designer
+              FRONT END DEVELOPER & UI/UX DESIGNER
             </motion.p>
 
+            {/* Social Links */}
             <motion.div
-              className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12"
-              initial={{ opacity: 0, y: 150 }} // Start farther away for slow entry
+              className="flex flex-wrap items-center justify-center gap-6 text-2xl md:text-3xl"
+              initial={{ opacity: 0, y: 150 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -150 }} // Exit animation for smooth upwards motion
               transition={{
-                delay: 1, // Larger delay to stagger after the first animation
-                duration: 1, // Even longer duration for smooth entry
-                ease: [0.3, 0.7, 0.3, 1], // Softer cubic-bezier easing for natural feel
+                delay: 1.5,
+                duration: 1,
+                ease: [0.3, 0.7, 0.3, 1],
               }}
             >
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-3xl md:text-4xl font-light text-[#727D73] mr-2" />,
-                  textColor: "text-white",
+                  icon: <FaGithub className="text-3xl md:text-4xl text-white mr-2 hover:text-[#CDC1FF]" />,
                   target: "_blank",
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-3xl md:text-4xl font-light text-[#727D73] mr-2" />,
-                  textColor: "text-white",
+                  icon: <FaLinkedin className="text-3xl md:text-4xl text-white mr-2 hover:text-[#9ACBD0]" />,
                   target: "_blank",
                 },
                 {
                   href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
-                  icon: <FaFigma className="text-3xl md:text-4xl font-light text-[#727D73] mr-2" />,
-                  textColor: "text-white",
+                  icon: <FaFigma className="text-3xl md:text-4xl text-white mr-2 hover:text-yellow-500" />,
                   target: "_blank",
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-3xl md:text-4xl font-light text-[#727D73] mr-2" />,
-                  textColor: "text-white",
+                  icon: <SiGmail className="text-3xl md:text-4xl text-white mr-2 hover:text-[#D2665A]" />,
                   target: "_blank",
                 },
               ].map((link, index) => (
                 <a
                   key={index}
                   href={link.href}
-                  className={`flex items-center ${link.textColor} font-semibold hover:text-[#C2FFC7]`}
+                  className="flex items-center hover:text-[#FFF] transition-colors duration-300"
+                  target={link.target}
                 >
                   {link.icon}
-                  <span className="hidden sm:inline">{link.text}</span>
                 </a>
               ))}
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
 
 
@@ -303,19 +312,19 @@ function App() {
         >
           {/* Left Section - Profile Picture */}
           <motion.div
-            className="flex justify-center items-center"
+            className="flex justify-center items-center md:w-1/2"
             variants={fadeIn}
           >
             <img
               src="./pis.jpg"
               alt="Profile"
-              className="w-75 h-70 md:w-screen md:h-1/2 object-cover shadow rounded-xl border-2 border-[#AAB99A]"
+              className="w-75 h-70 md:w-screen md:h-1/2 object-cover shadow rounded-xl"
             />
           </motion.div>
 
           {/* Right Section - Content */}
           <motion.div
-            className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl"
+            className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl md:w-1/2"
             variants={fadeIn}
           >
             <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#AAB99A] font-mono">
@@ -387,7 +396,7 @@ function App() {
               ></div>
               <div className="flex flex-col items-start text-left w-full p-6">
                 <p className="text-2xl font-bold text-[#AAB99A]">Nature Ninjas</p>
-                <p className="text-lg text-[#727D73]">Front-End Developer</p>
+                <p className="text-lg text-[#727D73]">Climate Awareness Website for Kids</p>
                 <ul className="flex flex-col items-start gap-2 mt-4">
                   <li className="flex items-start gap-2">
                     <FaCode className="text-2xl text-gray-600" />
@@ -418,7 +427,7 @@ function App() {
               ></div>
               <div className="flex flex-col items-start text-left w-full p-6">
                 <p className="text-2xl font-bold text-[#B43F3F]">Susihon Ta Malaybalay</p>
-                <p className="text-lg text-[#727D73]">UI/UX Designer</p>
+                <p className="text-lg text-[#727D73]">Prototype of a Malaybalay Trail</p>
                 <ul className="flex flex-col items-start gap-2 mt-4">
                   <li className="flex items-start gap-2">
                     <FaFigma className="text-2xl text-gray-600" />
