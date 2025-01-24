@@ -178,7 +178,7 @@ function App() {
               <li>
                 <a
                   href="./src/assets/Poma-Andrei-John.V.CV.pdf"
-                  className="bg-[#F0F0D7] text-black rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-gray-700 hover:text-white cursor-pointer"
+                  className="bg-[#F0F0D7] text-black rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-gray-400 hover:text-white cursor-pointer"
                   download
                   onClick={toggleMenu}
                 >
@@ -197,7 +197,7 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-      
+
           {/* Content Section */}
           <motion.div
             className="relative z-10 flex flex-col items-center text-center text-white gap-8 max-w-4xl px-4"
