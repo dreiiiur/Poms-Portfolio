@@ -540,25 +540,23 @@ function App() {
           </div>
         </div>
 
-        <footer className="w-screen bg-transparent p-6 rounded-t-xl ">
-          <div className="container mx-auto flex flex-col md:flex-row justify-between gap-6">
-            {/* Branding */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <p className="text-white font-bold text-2xl">Pomsicles</p>
-              <p className="text-gray-50 font-medium">© 2025 Pomsicles. All rights reserved.</p>
-            </div>
+        <footer className="w-full bg-transparent p-6 rounded-t-xl md:flex md:flex-row md:justify-between md:items-center md:gap-6">
+          {/* Branding */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2">
+            <p className="text-white font-bold text-2xl">Pomsicles</p>
+            <p className="text-gray-50 font-medium">© 2025 Pomsicles. All rights reserved.</p>
+          </div>
 
-            {/* Contact */}
-            <div className="flex flex-col items-center md:items-end text-center md:text-right">
-              <p className="text-white font-medium">Contact Us:</p>
-              <a
-                href="mailto:andreipoma1220@gmail.com"
-                className="text-[#D9DFC6] font-semibold flex items-center hover:underline"
-              >
-                <SiGmail className="text-2xl text-[#D9DFC6] mr-2" />
-                andreipoma1220@gmail.com
-              </a>
-            </div>
+          {/* Contact */}
+          <div className="flex flex-col items-center md:items-end text-center md:text-right md:w-1/2">
+            <p className="text-white font-medium">Contact Us:</p>
+            <a
+              href="mailto:andreipoma1220@gmail.com"
+              className="text-[#D9DFC6] font-semibold flex items-center hover:underline"
+            >
+              <SiGmail className="text-2xl text-[#D9DFC6] mr-2" />
+              andreipoma1220@gmail.com
+            </a>
           </div>
         </footer>
 
