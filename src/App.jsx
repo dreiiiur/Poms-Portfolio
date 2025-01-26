@@ -8,6 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { VscTools } from "react-icons/vsc";
+import { MdDarkMode } from "react-icons/md";
 
 import { FaHtml5 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -102,8 +103,15 @@ function App() {
               </li>
               <li>
                 <a href="./Poma-Andrei-John.V.CV.pdf" target="_blank" className="hover:text-white" download>
-                  <button className="bg-black text-white rounded-lg px-5 py-3 flex items-center gap-2 hover:bg-gray-700 hover:text-white">
+                  <button className="bg-black text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-gray-700 hover:text-white">
                     DOWNLOAD CV
+                  </button>
+                </a>
+              </li>
+              <li>
+                <a href="" target="_blank" className="hover:text-gray-600">
+                  <button className="">
+                  <MdDarkMode className="text-2xl"/>
                   </button>
                 </a>
               </li>
@@ -178,11 +186,21 @@ function App() {
               <li>
                 <a
                   href="./src/assets/Poma-Andrei-John.V.CV.pdf"
-                  className="bg-[#F0F0D7] text-black rounded-lg px-6 py-2 flex items-center gap-2 hover:bg-gray-400 hover:text-white cursor-pointer"
+                  className="bg-[#F0F0D7] text-black rounded-lg px-4 py-1 flex items-center gap-2 hover:bg-gray-400 hover:text-white cursor-pointer"
                   download
                   onClick={toggleMenu}
                 >
                   Download CV
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  className=""
+                 
+                  onClick={toggleMenu}
+                >
+                  <MdDarkMode className="text-2xl hover:text-gray-400"/>
                 </a>
               </li>
             </ul>
