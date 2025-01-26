@@ -109,7 +109,7 @@ function App() {
                   download
                 >
                   <button className="bg-black text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-[#677D6A] hover:text-white">
-                    Resume
+                    RESUME
                   </button>
                 </a>
               </li>
@@ -190,7 +190,7 @@ function App() {
               </li>
               <li>
                 <a
-                  href="./src/assets/Poma-Andrei-John.V.CV.pdf"
+                  href="./Poma-Andrei-John.V.CV.pdf"
                   className="bg-white text-black rounded-lg px-4 py-1 flex items-center gap-2 hover:bg-[#677D6A] hover:text-white cursor-pointer"
                   download
                   onClick={toggleMenu}
