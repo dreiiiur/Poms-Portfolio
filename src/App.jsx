@@ -85,7 +85,7 @@ function App() {
               </svg>
             </button>
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-6 lg:space-x-8 text-black gap-3 text-sm font-bold items-center">
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-black gap-2 text-sm font-bold items-center pr-4">
               <li>
                 <Link to="about" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
                   ABOUT
@@ -109,7 +109,7 @@ function App() {
                   download
                 >
                   <button className="bg-black text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-[#677D6A] hover:text-white">
-                    RESUME
+                    Resume
                   </button>
                 </a>
               </li>
