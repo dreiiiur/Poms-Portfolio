@@ -60,18 +60,18 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen max-w-screen flex flex-col bg-white max-w-screen mx-auto" id="home">
-        <header className="gap-4 sticky top-0 bg-transparent bg-opacity-70 backdrop-blur-md z-50">
+      <div className="min-h-screen max-w-screen flex flex-col bg-transparent max-w-screen mx-auto" id="home">
+        <header className="gap-4 sticky top-0 bg-white z-50 rounded-3xl">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-2xl font-black text-black tracking-wide">
-              <Link to="home" smooth={true} duration={500} className="hover:text-gray-600 cursor-pointer">
+              <Link to="home" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
                 🥦 POMSICLES
               </Link>
             </div>
             {/* Toggle Menu Button */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden text-black hover:text-gray-600 cursor-pointer"
+              className="lg:hidden text-black hover:text-[#677D6A] cursor-pointer"
               aria-label="Toggle menu"
             >
               <svg
@@ -87,31 +87,36 @@ function App() {
             {/* Desktop Navigation */}
             <ul className="hidden lg:flex space-x-6 lg:space-x-8 text-black gap-3 text-sm font-bold items-center">
               <li>
-                <Link to="about" smooth={true} duration={500} className="hover:text-gray-600 cursor-pointer">
+                <Link to="about" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
                   ABOUT
                 </Link>
               </li>
               <li>
-                <Link to="projects" smooth={true} duration={500} className="hover:text-gray-600 cursor-pointer">
+                <Link to="projects" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
                   PROJECTS
                 </Link>
               </li>
               <li>
-                <Link to="contacts" smooth={true} duration={500} className="hover:text-gray-600 cursor-pointer">
+                <Link to="contacts" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
                   CONTACTS
                 </Link>
               </li>
               <li>
-                <a href="./Poma-Andrei-John.V.CV.pdf" target="_blank" className="hover:text-white" download>
-                  <button className="bg-black text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-gray-700 hover:text-white">
-                    DOWNLOAD CV
+                <a
+                  href="./Poma-Andrei-John.V.CV.pdf"
+                  target="_blank"
+                  className="hover:text-white hover:bg-[#677D6A] transition-opacity duration-500 ease-in-out"
+                  download
+                >
+                  <button className="bg-black text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-[#677D6A] hover:text-white">
+                    RESUME
                   </button>
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" className="hover:text-gray-600">
+                <a href="" target="_blank" className="hover:text-[#677D6A]">
                   <button className="">
-                  <MdDarkMode className="text-2xl"/>
+                    <MdDarkMode className="text-2xl" />
                   </button>
                 </a>
               </li>
@@ -122,11 +127,11 @@ function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed  inset-0 bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center z-50">
+          <div className="fixed  inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
-              className="absolute top-4 right-4 text-white hover:text-gray-400 cursor-pointer"
+              className="absolute top-4 right-4 text-white hover:text-[#D9DFC6] cursor-pointer"
               aria-label="Close menu"
             >
               <svg
@@ -153,7 +158,7 @@ function App() {
                   to="about"
                   smooth={true}
                   duration={500}
-                  className="hover:text-gray-400 cursor-pointer"
+                  className="hover:text-[#E1EACD] cursor-pointer"
                   onClick={toggleMenu}
                 >
                   About
@@ -165,7 +170,7 @@ function App() {
                   to="projects"
                   smooth={true}
                   duration={500}
-                  className="hover:text-gray-400 cursor-pointer"
+                  className="hover:text-[#E1EACD] cursor-pointer"
                   onClick={toggleMenu}
                 >
                   Projects
@@ -177,7 +182,7 @@ function App() {
                   to="contacts"
                   smooth={true}
                   duration={500}
-                  className="hover:text-gray-400 cursor-pointer"
+                  className="hover:text-[#E1EACD] cursor-pointer"
                   onClick={toggleMenu}
                 >
                   Contacts
@@ -186,21 +191,21 @@ function App() {
               <li>
                 <a
                   href="./src/assets/Poma-Andrei-John.V.CV.pdf"
-                  className="bg-[#F0F0D7] text-black rounded-lg px-4 py-1 flex items-center gap-2 hover:bg-gray-400 hover:text-white cursor-pointer"
+                  className="bg-white text-black rounded-lg px-4 py-1 flex items-center gap-2 hover:bg-[#677D6A] hover:text-white cursor-pointer"
                   download
                   onClick={toggleMenu}
                 >
-                  Download CV
+                  Resume
                 </a>
               </li>
               <li>
                 <a
                   href=""
                   className=""
-                 
+
                   onClick={toggleMenu}
                 >
-                  <MdDarkMode className="text-2xl hover:text-gray-400"/>
+                  <MdDarkMode className="text-2xl hover:text-[#E1EACD]" />
                 </a>
               </li>
             </ul>
@@ -234,7 +239,7 @@ function App() {
 
             {/* Introductory Text */}
             <motion.div
-              className="text-[#889E73] text-4xl md:text-5xl font-mono font-semibold"
+              className="text-[#F0F0D7] text-4xl md:text-5xl font-bold leading-tight"
               initial={{ opacity: 0, y: 150 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -150 }}
@@ -260,7 +265,7 @@ function App() {
 
             {/* Title */}
             <motion.p
-              className="text-black text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+              className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1.5 }}
@@ -282,22 +287,22 @@ function App() {
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-3xl md:text-4xl text-gray-600 mr-2 hover:text-[#C5BAFF]" />,
+                  icon: <FaGithub className="text-3xl md:text-4xl text-[#F0F0D7] mr-2 hover:text-[#C5BAFF]" />,
                   target: "_blank",
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-3xl md:text-4xl text-gray-600 mr-2 hover:text-[#9ACBD0]" />,
+                  icon: <FaLinkedin className="text-3xl md:text-4xl text-[#F0F0D7] mr-2 hover:text-[#9ACBD0]" />,
                   target: "_blank",
                 },
                 {
                   href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
-                  icon: <FaFigma className="text-3xl md:text-4xl text-gray-600 mr-2 hover:text-[#F6C794]" />,
+                  icon: <FaFigma className="text-3xl md:text-4xl text-[#F0F0D7] mr-2 hover:text-[#F6C794]" />,
                   target: "_blank",
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-3xl md:text-4xl text-gray-600 mr-2 hover:text-[#FF8383]" />,
+                  icon: <SiGmail className="text-3xl md:text-4xl text-[#F0F0D7] mr-2 hover:text-[#FF8383]" />,
                   target: "_blank",
                 },
               ].map((link, index) => (
@@ -342,17 +347,17 @@ function App() {
             className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl md:w-1/2"
             variants={fadeIn}
           >
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-black font-mono">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E1EACD]">
               About Me?
             </p>
-            <p className="leading-relaxed text-gray-800 text-lg md:text-xl lg:text-2xl">
+            <p className="leading-relaxed text-gray-100 text-lg md:text-xl lg:text-2xl">
               I'm currently a 4th year student, taking Bachelor of Science in Information Technology at{" "}
               <b>Bulacan State University Bustos Campus</b>. I have a strong passion for web development
               and I'm eager to learn new technologies and grow as a developer.
             </p>
 
             <div>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-black font-mono flex items-center gap-2">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E1EACD] font-mono flex items-center gap-2">
                 <FaCode className="text-3xl md:text-4xl lg:text-4xl" /> Technologies
               </p>
               <motion.div
@@ -370,8 +375,8 @@ function App() {
             </div>
 
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-black flex items-center gap-2">
-                <VscTools className="text-3xl md:text-4xl text-black" /> Tools
+              <p className="text-2xl md:text-3xl font-bold text-[#E1EACD] flex items-center gap-2">
+                <VscTools className="text-3xl md:text-4xl text-[#E1EACD]" /> Tools
               </p>
               <motion.div
                 className="flex flex-wrap items-center gap-4 mt-4"
@@ -392,7 +397,7 @@ function App() {
         >
           {/* Section Title */}
           <p
-            className="text-3xl md:text-4xl font-extrabold text-black text-center mb-8 font-mono"
+            className="text-3xl md:text-4xl font-extrabold text-[#E1EACD] text-center mb-8"
           >
             PROJECTS
           </p>
@@ -403,7 +408,7 @@ function App() {
           >
             {/* Project Card 1 */}
             <div
-              className="flex flex-col items-center w-full  bg-white rounded-lg overflow-hidden shadow-lg"
+              className="flex flex-col items-center w-full bg-gray-100 rounded-lg overflow-hidden shadow-lg "
             >
               <div
                 className="w-full h-64 bg-center bg-cover"
@@ -434,7 +439,7 @@ function App() {
 
             {/* Project Card 2 */}
             <div
-              className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg"
+              className="flex flex-col items-center w-full bg-gray-100  rounded-lg overflow-hidden shadow-lg"
             >
               <div
                 className="w-full h-64 bg-center bg-cover"
@@ -465,7 +470,7 @@ function App() {
 
             {/* Project Card 3 */}
             <div
-              className="flex flex-col items-center w-full bg-white rounded-lg overflow-hidden shadow-lg"
+              className="flex flex-col items-center w-full bg-gray-100  rounded-lg overflow-hidden shadow-lg"
             >
               <div
                 className="w-full h-64 bg-center bg-cover"
@@ -497,33 +502,33 @@ function App() {
         </div>
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
-          <div className="flex flex-col items-center text-center text-[#727D73] bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
-            <p className="text-3xl font-bold text-black text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
+          <div className="flex flex-col items-center text-center text-white bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
+            <p className="text-3xl font-bold text-[#F0F0D7] text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
             <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12">
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-gray-600 mr-2 hover:text-[#AAB99A]" />,
+                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-[#F0F0D7] mr-2 hover:text-[#AAB99A]" />,
                   text: "Dreiiiur",
-                  textColor: "text-[#727D73]"
+                  textColor: "text-white"
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-gray-600 hover:text-[#AAB99A] mr-2" />,
+                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-[#D9DFC6] hover:text-[#AAB99A] mr-2" />,
                   text: "Andrei Poma",
-                  textColor: "text-[#727D73]"
+                  textColor: "text-white"
                 },
                 {
                   href: "https://www.facebook.com/dreiur/",
-                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-gray-600 hover:text-[#AAB99A] mr-2" />,
+                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-[#D9DFC6] hover:text-[#AAB99A] mr-2" />,
                   text: "Andrei Poma",
-                  textColor: "text-[#727D73]"
+                  textColor: "text-white"
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-gray-600 hover:text-[#AAB99A] mr-2" />,
+                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-[#D9DFC6] hover:text-[#AAB99A] mr-2" />,
                   text: "andreipoma1220@gmail.com",
-                  textColor: "text-[#727D73]"
+                  textColor: "text-white"
                 },
               ].map((link, index) => (
                 <a key={index} href={link.href} className={`flex items-center ${link.textColor} font-semibold hover:text-[#AAB99A]`}>
@@ -535,22 +540,22 @@ function App() {
           </div>
         </div>
 
-        <footer className="w-full bg-transparent p-6 rounded-t-xl">
+        <footer className="w-screen bg-transparent p-6 rounded-t-xl ">
           <div className="container mx-auto flex flex-col md:flex-row justify-between gap-6">
             {/* Branding */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <p className="text-black font-bold text-2xl">Pomsicles</p>
-              <p className="text-gray-600 font-medium">© 2025 Pomsicles. All rights reserved.</p>
+              <p className="text-white font-bold text-2xl">Pomsicles</p>
+              <p className="text-gray-50 font-medium">© 2025 Pomsicles. All rights reserved.</p>
             </div>
 
             {/* Contact */}
             <div className="flex flex-col items-center md:items-end text-center md:text-right">
-              <p className="text-black font-medium">Contact Us:</p>
+              <p className="text-white font-medium">Contact Us:</p>
               <a
                 href="mailto:andreipoma1220@gmail.com"
-                className="text-gray-600 font-semibold flex items-center hover:underline"
+                className="text-[#D9DFC6] font-semibold flex items-center hover:underline"
               >
-                <SiGmail className="text-2xl text-[#727D73] mr-2" />
+                <SiGmail className="text-2xl text-[#D9DFC6] mr-2" />
                 andreipoma1220@gmail.com
               </a>
             </div>
