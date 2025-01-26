@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-image: url("public/astigbg.jpg");
+  background-image: url("/astigbg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
