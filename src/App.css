@@ -3,13 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-image: url("/astigbg.jpg");
+  background-color: #1E201E;
+  /*background-image: url("/astigbg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: overlay;
+  background-blend-mode: overlay;*/
 }
 
 .logo {
