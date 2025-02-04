@@ -61,7 +61,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen max-w-screen flex flex-col bg-transparent max-w-screen mx-auto" id="home">
-        <header className="gap-4 sticky top-0 bg-white z-50 rounded-3xl">
+        <header className="gap-4 sticky top-0 bg-transparent z-50 rounded-3xl">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-2xl font-black text-black tracking-wide">
               <Link to="home" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
@@ -215,11 +215,36 @@ function App() {
 
         {/* Hero Section */}
         <motion.div
-          className="relative max-w-screen min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative max-w-screen min-h-screen flex items-center justify-center rounded-xl bg-white overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          <img
+            src="./bgasdf.png"
+            alt="Hero"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+          <motion.div
+            className="relative"
+            style={{
+              transform: "translateY(0px)",
+              WebkitTransform: "translateY(0px)",
+            }}
+            initial={{
+              backgroundPosition: "0px 0px",
+              WebkitBackgroundSize: "100% 100%",
+            }}
+            animate={{
+              backgroundPosition: "0px -500px",
+              WebkitBackgroundSize: "100% 120%",
+            }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+              repeat: Infinity,
+            }}
+          />
 
           {/* Content Section */}
           <motion.div
@@ -239,7 +264,7 @@ function App() {
 
             {/* Introductory Text */}
             <motion.div
-              className="text-[#F0F0D7] text-4xl md:text-5xl font-bold leading-tight"
+              className="text-[#45474B] text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight"
               initial={{ opacity: 0, y: 150 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -150 }}
@@ -265,7 +290,7 @@ function App() {
 
             {/* Title */}
             <motion.p
-              className="text-white text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+              className="text-[#677D6A] text-center text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1.5 }}
@@ -287,22 +312,22 @@ function App() {
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-3xl md:text-4xl text-[#F0F0D7] mr-2 hover:text-[#C5BAFF]" />,
+                  icon: <FaGithub className="text-3xl md:text-4xl text-[#45474B] mr-2 hover:text-[#C5BAFF]" />,
                   target: "_blank",
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-3xl md:text-4xl text-[#F0F0D7] mr-2 hover:text-[#9ACBD0]" />,
+                  icon: <FaLinkedin className="text-3xl md:text-4xl text-[#45474B] mr-2 hover:text-[#9ACBD0]" />,
                   target: "_blank",
                 },
                 {
                   href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
-                  icon: <FaFigma className="text-3xl md:text-4xl text-[#F0F0D7] mr-2 hover:text-[#F6C794]" />,
+                  icon: <FaFigma className="text-3xl md:text-4xl text-[#45474B] mr-2 hover:text-[#F6C794]" />,
                   target: "_blank",
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-3xl md:text-4xl text-[#F0F0D7] mr-2 hover:text-[#FF8383]" />,
+                  icon: <SiGmail className="text-3xl md:text-4xl text-[#45474B] mr-2 hover:text-[#FF8383]" />,
                   target: "_blank",
                 },
               ].map((link, index) => (
@@ -347,17 +372,17 @@ function App() {
             className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl md:w-1/2"
             variants={fadeIn}
           >
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E1EACD]">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-bold font-sans text-[#677D6A]">
               About Me?
             </p>
-            <p className="leading-relaxed text-gray-100 text-lg md:text-xl lg:text-2xl">
+            <p className="leading-relaxed text-[#45474B] text-lg md:text-xl lg:text-2xl">
               I'm currently a 4th year student, taking Bachelor of Science in Information Technology at{" "}
               <b>Bulacan State University Bustos Campus</b>. I have a strong passion for web development
               and I'm eager to learn new technologies and grow as a developer.
             </p>
 
             <div>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E1EACD] font-mono flex items-center gap-2">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#677D6A] font-mono flex items-center gap-2">
                 <FaCode className="text-3xl md:text-4xl lg:text-4xl" /> Technologies
               </p>
               <motion.div
@@ -375,8 +400,8 @@ function App() {
             </div>
 
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-[#E1EACD] flex items-center gap-2">
-                <VscTools className="text-3xl md:text-4xl text-[#E1EACD]" /> Tools
+              <p className="text-2xl md:text-3xl font-bold text-[#677D6A] flex items-center gap-2">
+                <VscTools className="text-3xl md:text-4xl text-[#677D6A]" /> Tools
               </p>
               <motion.div
                 className="flex flex-wrap items-center gap-4 mt-4"
@@ -397,7 +422,7 @@ function App() {
         >
           {/* Section Title */}
           <p
-            className="text-3xl md:text-4xl font-extrabold text-[#E1EACD] text-center mb-8"
+            className="text-3xl md:text-4xl font-extrabold text-[#677D6A] text-center mb-8"
           >
             PROJECTS
           </p>
@@ -503,32 +528,32 @@ function App() {
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
           <div className="flex flex-col items-center text-center text-white bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
-            <p className="text-3xl font-bold text-[#F0F0D7] text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
+            <p className="text-3xl font-bold text-[#677D6A] text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
             <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12">
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-[#F0F0D7] mr-2 hover:text-[#AAB99A]" />,
+                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-[#677D6A]" />,
                   text: "Dreiiiur",
-                  textColor: "text-white"
+                  textColor: "text-[#45474B]"
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-[#D9DFC6] hover:text-[#AAB99A] mr-2" />,
+                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-[#677D6A]" />,
                   text: "Andrei Poma",
-                  textColor: "text-white"
+                  textColor: "text-[#45474B]"
                 },
                 {
                   href: "https://www.facebook.com/dreiur/",
-                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-[#D9DFC6] hover:text-[#AAB99A] mr-2" />,
+                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-[#677D6A]" />,
                   text: "Andrei Poma",
-                  textColor: "text-white"
+                  textColor: "text-[#45474B]"
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-[#D9DFC6] hover:text-[#AAB99A] mr-2" />,
+                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-[#677D6A]" />,
                   text: "andreipoma1220@gmail.com",
-                  textColor: "text-white"
+                  textColor: "text-[#45474B]"
                 },
               ].map((link, index) => (
                 <a key={index} href={link.href} className={`flex items-center ${link.textColor} font-semibold hover:text-[#AAB99A]`}>
@@ -543,18 +568,18 @@ function App() {
         <footer className="w-full bg-transparent p-6 rounded-t-xl md:flex md:flex-row md:justify-between md:items-center md:gap-6">
           {/* Branding */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2">
-            <p className="text-white font-bold text-2xl">Pomsicles</p>
-            <p className="text-gray-50 font-medium">© 2025 Pomsicles. All rights reserved.</p>
+            <p className="text-[#45474B] font-bold text-2xl">Pomsicles</p>
+            <p className="text-[#45474B] font-medium">© 2025 Pomsicles. All rights reserved.</p>
           </div>
 
           {/* Contact */}
           <div className="flex flex-col items-center md:items-end text-center md:text-right md:w-1/2">
-            <p className="text-white font-medium">Contact Us:</p>
+            <p className="text-[#45474B] font-medium">Contact Us:</p>
             <a
               href="mailto:andreipoma1220@gmail.com"
-              className="text-[#D9DFC6] font-semibold flex items-center hover:underline"
+              className="text-[#45474B] font-semibold flex items-center hover:underline"
             >
-              <SiGmail className="text-2xl text-[#D9DFC6] mr-2" />
+              <SiGmail className="text-2xl text-[#45474B] mr-2" />
               andreipoma1220@gmail.com
             </a>
           </div>

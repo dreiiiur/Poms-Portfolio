@@ -3,7 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #1E201E;
+  background-color: #f0f0f0;
+  font-family: poppins, sans-serif;
   /*background-image: url("/astigbg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -49,5 +50,11 @@
   color: #888;
 }
 ::-webkit-scrollbar {
-  display: none;
+  background-color: #e1e1e1;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #677D6A;
+  border-radius: 10px;
 }
