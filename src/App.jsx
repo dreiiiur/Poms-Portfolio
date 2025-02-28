@@ -1,5 +1,5 @@
 
-import SplashScreen from './components/SplashScreen';
+import './App.css'
 import React, { useState, useEffect } from 'react';
 
 import { IoMdDownload } from "react-icons/io";
@@ -64,7 +64,7 @@ function App() {
         <header className="gap-4 sticky top-0 bg-transparent z-50 rounded-3xl">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-2xl font-black text-black tracking-wide">
-              <Link to="home" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
+              <Link to="home" smooth={true} duration={500} className="hover:text-gray-600 cursor-pointer">
                 🥦 POMSICLES
               </Link>
             </div>
@@ -85,19 +85,19 @@ function App() {
               </svg>
             </button>
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-black gap-2 text-sm font-bold items-center pr-4">
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-black gap-2 text-sm font-bold items-center pr-4 hover:text-gray-600">
               <li>
-                <Link to="about" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
+                <Link to="about" smooth={true} duration={500} className=" cursor-pointer">
                   ABOUT
                 </Link>
               </li>
               <li>
-                <Link to="projects" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
+                <Link to="projects" smooth={true} duration={500} className=" cursor-pointer">
                   PROJECTS
                 </Link>
               </li>
               <li>
-                <Link to="contacts" smooth={true} duration={500} className="hover:text-[#677D6A] cursor-pointer">
+                <Link to="contacts" smooth={true} duration={500} className=" cursor-pointer">
                   CONTACTS
                 </Link>
               </li>
@@ -108,13 +108,13 @@ function App() {
                   className="hover:text-white hover:bg-[#677D6A] transition-opacity duration-500 ease-in-out"
                   download
                 >
-                  <button className="bg-black text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-[#677D6A] hover:text-white">
+                  <button className="bg-black text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-gray-600 hover:text-white">
                     RESUME
                   </button>
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" className="hover:text-[#677D6A]">
+                <a href="" target="_blank" className="">
                   <button className="">
                     <MdDarkMode className="text-2xl" />
                   </button>
@@ -290,7 +290,7 @@ function App() {
 
             {/* Title */}
             <motion.p
-              className="text-[#677D6A] text-center text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold leading-tight"
+              className="text-gray-500 text-center text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold leading-tight"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1.5 }}
@@ -372,7 +372,7 @@ function App() {
             className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl md:w-1/2"
             variants={fadeIn}
           >
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold font-sans text-[#677D6A]">
+            <p className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans text-black">
               About Me?
             </p>
             <p className="leading-relaxed text-[#45474B] text-lg md:text-xl lg:text-2xl">
@@ -382,7 +382,7 @@ function App() {
             </p>
 
             <div>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#677D6A] font-mono flex items-center gap-2">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-black font-mono flex items-center gap-2">
                 <FaCode className="text-3xl md:text-4xl lg:text-4xl" /> Technologies
               </p>
               <motion.div
@@ -400,8 +400,8 @@ function App() {
             </div>
 
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-[#677D6A] flex items-center gap-2">
-                <VscTools className="text-3xl md:text-4xl text-[#677D6A]" /> Tools
+              <p className="text-2xl md:text-3xl font-bold text-black flex items-center gap-2">
+                <VscTools className="text-3xl md:text-4xl" /> Tools
               </p>
               <motion.div
                 className="flex flex-wrap items-center gap-4 mt-4"
@@ -422,7 +422,7 @@ function App() {
         >
           {/* Section Title */}
           <p
-            className="text-3xl md:text-4xl font-extrabold text-[#677D6A] text-center mb-8"
+            className="text-3xl md:text-4xl font-extrabold text-black text-center mb-8"
           >
             PROJECTS
           </p>
@@ -527,36 +527,36 @@ function App() {
         </div>
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
-          <div className="flex flex-col items-center text-center text-white bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
-            <p className="text-3xl font-bold text-[#677D6A] text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12">
+          <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
+            <p className="text-3xl font-bold text-black text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12 hover:text-gray-600">
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-[#677D6A]" />,
+                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-black mr-2 hover:text-gray-600" />,
                   text: "Dreiiiur",
                   textColor: "text-[#45474B]"
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-[#677D6A]" />,
+                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-gray-600" />,
                   text: "Andrei Poma",
                   textColor: "text-[#45474B]"
                 },
                 {
                   href: "https://www.facebook.com/dreiur/",
-                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-[#677D6A]" />,
+                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-gray-600" />,
                   text: "Andrei Poma",
                   textColor: "text-[#45474B]"
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-[#677D6A]" />,
+                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-gray-500" />,
                   text: "andreipoma1220@gmail.com",
                   textColor: "text-[#45474B]"
                 },
               ].map((link, index) => (
-                <a key={index} href={link.href} className={`flex items-center ${link.textColor} font-semibold hover:text-[#AAB99A]`}>
+                <a key={index} href={link.href} className={`flex items-center ${link.textColor} font-semibold hover:text-gray-600`}>
                   {link.icon}
                   <span className="hidden sm:inline">{link.text}</span>
                 </a>
