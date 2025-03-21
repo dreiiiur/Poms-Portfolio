@@ -583,6 +583,47 @@ function App() {
               andreipoma1220@gmail.com
             </a>
           </div>
+          {/* Chat Bot */}
+          <div className="flex flex-col items-center md:items-end text-center md:text-right md:w-1/2">
+            <p className="text-[#45474B] font-medium">Talk to us:</p>
+            <div className="bg-white rounded-lg p-4 w-96">
+              <p className="text-sm font-medium">Chat Bot</p>
+              <input
+                type="text"
+                className="w-full p-2 border border-gray-300 rounded-lg"
+                placeholder="Type something..."
+                onChange={(e) => {
+                  const inputText = e.target.value;
+                  const responses = [
+                    "I see what you did there!",
+                    "That's a great question!",
+                    "I'm not sure I understand.",
+                    "I'll be right back, I need to go charge my battery.",
+                  ];
+                  const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+
+                  fetch("https://api.gemini.ai/v1/generate", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      "User-Agent": "Pomsicles Website",
+                      "Authorization": "Bearer 9f7faa7c-dc2c-4e1d-9a6e-6f9a3ddc4d4c",
+                    },
+                    body: JSON.stringify({ input: inputText }),
+                  })
+                    .then((response) => response.json())
+                    .then((data) => {
+                      const aiResponse = data.response || "No response from AI.";
+                      alert(`${randomResponse} ${aiResponse}`);
+                    })
+                    .catch((error) => {
+                      console.error("Error:", error);
+                      alert("There was an error processing your request.");
+                    });
+                }}
+              />
+            </div>
+          </div>
         </footer>
 
       </div>
