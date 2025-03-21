@@ -584,7 +584,7 @@ function App() {
             </a>
           </div>
           {/* Chat Bot */}
-          <div className="flex flex-col items-center md:items-end text-center md:text-right md:w-1/2">
+          {/* <div className="flex flex-col items-center md:items-end text-center md:text-right md:w-1/2">
             <p className="text-[#45474B] font-medium">Talk to us:</p>
             <div className="bg-white rounded-lg p-4 w-96">
               <p className="text-sm font-medium">Chat Bot</p>
@@ -623,7 +623,7 @@ function App() {
                 }}
               />
             </div>
-          </div>
+          </div> */}
         </footer>
 
       </div>
