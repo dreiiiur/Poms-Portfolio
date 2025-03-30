@@ -85,19 +85,19 @@ function App() {
               </svg>
             </button>
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-black gap-2 text-sm font-bold items-center pr-4 hover:text-gray-600">
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-black gap-2 text-sm font-bold items-center pr-4">
               <li>
-                <Link to="about" smooth={true} duration={500} className=" cursor-pointer">
+                <Link to="about" smooth={true} duration={500} className="hover:text-gray-500 cursor-pointer">
                   ABOUT
                 </Link>
               </li>
               <li>
-                <Link to="projects" smooth={true} duration={500} className=" cursor-pointer">
+                <Link to="projects" smooth={true} duration={500} className="hover:text-gray-500 cursor-pointer">
                   PROJECTS
                 </Link>
               </li>
               <li>
-                <Link to="contacts" smooth={true} duration={500} className=" cursor-pointer">
+                <Link to="contacts" smooth={true} duration={500} className="hover:text-gray-500 cursor-pointer">
                   CONTACTS
                 </Link>
               </li>
@@ -114,7 +114,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" className="">
+                <a href="" target="_blank" className="hover:text-gray-500">
                   <button className="">
                     <MdDarkMode className="text-2xl" />
                   </button>
@@ -151,7 +151,7 @@ function App() {
             </button>
 
             {/* Menu Items */}
-            <ul className="flex flex-col items-center gap-6 text-white text-xl font-bold">
+            <ul className="flex flex-col items-start gap-6 text-white text-xl font-bold">
               <li className="flex items-center gap-2 text-white text-xl font-bold">
                 <FaUser className="text-white" />
                 <Link
@@ -198,14 +198,14 @@ function App() {
                   Resume
                 </a>
               </li>
-              <li>
+              <li className="flex items-center gap-2 text-white text-xl font-bold">
                 <a
                   href=""
-                  className=""
+                  className="items-center gap-2 hover:text-[#E1EACD] cursor-pointer"
 
                   onClick={toggleMenu}
                 >
-                  <MdDarkMode className="text-2xl hover:text-[#E1EACD]" />
+                  <MdDarkMode className="text-centeritems-center gap-2 text-2xl hover:text-[#E1EACD]" />
                 </a>
               </li>
             </ul>
@@ -215,16 +215,12 @@ function App() {
 
         {/* Hero Section */}
         <motion.div
-          className="relative max-w-screen min-h-screen flex items-center justify-center rounded-xl bg-white overflow-hidden"
+          className="relative max-w-screen min-h-screen flex items-center justify-center rounded-xl  overflow-hidden bg-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <img
-            src="./bgasdf.png"
-            alt="Hero"
-            className="absolute top-0 left-0 w-full h-full object-cover"
-          />
+          
           <motion.div
             className="relative"
             style={{
@@ -255,16 +251,16 @@ function App() {
           >
             {/* Profile Image */}
             <motion.img
-              src="./portfolio.png"
+              src="./image.jpg"
               alt="Profile"
-              className="w-[250px] h-[250px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] rounded-full mb-6 hover:scale-105 transition-transform duration-300"
+              className="w-[250px] h-[250px] md:w-[250px] md:h-[250px] lg:w-[1048px] lg:h-[400px] mb-6 hover:scale-105 rounded-xl transition-transform duration-300 shadow-lg"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
 
             {/* Introductory Text */}
             <motion.div
-              className="text-[#45474B] text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight"
+              className="bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-400 text-center text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight"
               initial={{ opacity: 0, y: 150 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -150 }}
@@ -446,7 +442,7 @@ function App() {
                   <li className="flex items-start gap-2">
                     <FaCode className="text-2xl text-gray-600" />
                     <span className="text-lg text-gray-600 hover:text-blue-500">
-                      Django, Tailwind
+                      Django, TailwindCSS
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -454,7 +450,7 @@ function App() {
                     <a
                       href="https://github.com/ClydeMondero/nature-ninjas.git"
                       className="text-lg text-gray-600 hover:text-violet-500"
-                    >
+                      target="_blank">
                       Github
                     </a>
                   </li>
@@ -485,7 +481,7 @@ function App() {
                     <a
                       href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
                       className="text-lg text-gray-600 hover:text-violet-500"
-                    >
+                      target="_blank">
                       Project Link
                     </a>
                   </li>
@@ -516,15 +512,80 @@ function App() {
                     <a
                       href="https://github.com/dreiiiur/Task-Matcha"
                       className="text-lg text-gray-600 hover:text-violet-500"
-                    >
+                      target="_blank">
                       Github
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
+
+            {/* Project Card 4 */}
+            <div
+              className="flex flex-col items-center w-full bg-gray-100  rounded-lg overflow-hidden shadow-lg"
+            >
+              <div
+                className="w-full h-64 bg-center bg-cover"
+                style={{ backgroundImage: `url("./industry-system.jpg")` }}
+              ></div>
+              <div className="flex flex-col items-start text-left w-full p-6">
+                <p className="text-2xl font-bold text-blue-600">Industry System</p>
+                <p className="text-lg text-[#727D73]">Industry System</p>
+                <ul className="flex flex-col items-start gap-2 mt-4">
+                  <li className="flex items-start gap-2">
+                    <FaCode className="text-2xl text-gray-600" />
+                    <span className="text-lg text-gray-600 hover:text-blue-500">
+                      PHP, mySQL, TailwindCSS
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <FaGithub className="text-2xl text-gray-600" />
+                    <a
+                      href="https://github.com/dreiiiur/Industry-System"
+                      className="text-lg text-gray-600 hover:text-violet-500"
+                    target="_blank">
+                      Project Link
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            
+            {/* Project Card 5 */}
+            <div
+              className="flex flex-col items-center w-full bg-gray-100  rounded-lg overflow-hidden shadow-lg"
+            >
+              <div
+                className="w-full h-64 bg-center bg-cover"
+                style={{ backgroundImage: `url("./matcha-madness1.png")` }}
+              ></div>
+              <div className="flex flex-col items-start text-left w-full p-6">
+                <p className="text-2xl font-bold text-[#76885B]">Matcha Madness</p>
+                <p className="text-lg text-[#727D73]">Matcha Products/Beverages Store Prototype</p>
+                <ul className="flex flex-col items-start gap-2 mt-4">
+                  <li className="flex items-start gap-2">
+                    <FaFigma className="text-2xl text-gray-600" />
+                    <span className="text-lg text-gray-600 hover:text-blue-500">
+                      Figma
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <FaFigma className="text-2xl text-gray-600" />
+                    <a
+                      href="https://www.figma.com/proto/djbaS2IE0zQJylhWnNCHN4/Matcha-Madness?page-id=0%3A1&node-id=16-2&p=f&viewport=364%2C80%2C0.45&t=ihICf0FVdEPV9a3k-1&scaling=scale-down&content-scaling=fixed"
+                      className="text-lg text-gray-600 hover:text-violet-500"
+                    target="_blank">
+                      Project Link
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
           </div>
         </div>
+
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
           <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
