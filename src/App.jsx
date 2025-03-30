@@ -484,7 +484,7 @@ function App() {
                   <li className="flex items-start gap-2">
                     <FaFigma className="text-2xl text-gray-600" />
                     <a
-                      href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
+                      href="https://www.figma.com/proto/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?node-id=21-43&p=f&t=Do5kUWBLzHge4YXy-1&scaling=contain&content-scaling=fixed&page-id=0%3A1"
                       className="text-lg text-gray-600 hover:text-violet-500"
                       target="_blank">
                       Project Link
