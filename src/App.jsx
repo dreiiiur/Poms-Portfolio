@@ -21,6 +21,8 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { FaBootstrap } from "react-icons/fa";
 import { FaPhp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { SiXampp } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
 
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
@@ -37,6 +39,7 @@ import { Link } from 'react-scroll';
 
 
 import './App.css'
+import { FaM } from 'react-icons/fa6';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -392,6 +395,7 @@ function App() {
                 <motion.div variants={fadeIn}><RiTailwindCssFill className="text-4xl text-[#a5f3fc]" /></motion.div>
                 <motion.div variants={fadeIn}><FaBootstrap className="text-4xl text-[#563d7c]" /></motion.div>
                 <motion.div variants={fadeIn}><FaPhp className="text-4xl text-[#AEB2D5]" /></motion.div>
+                <motion.div variants={fadeIn}><SiMysql className="text-4xl text-blue-500" /></motion.div>
               </motion.div>
             </div>
 
@@ -407,6 +411,7 @@ function App() {
                 <motion.div variants={fadeIn}><VscVscode className="text-4xl text-[#0078d7]" /></motion.div>
                 <motion.div variants={fadeIn}><SiAdobephotoshop className="text-4xl text-[#4FCCFE]" /></motion.div>
                 <motion.div variants={fadeIn}><FaGithub className="text-4xl text-[#6e5494]" /></motion.div>
+                <motion.div variants={fadeIn}><SiXampp className="text-4xl text-orange-500" /></motion.div>
               </motion.div>
             </div>
           </motion.div>
