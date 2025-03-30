@@ -549,7 +549,7 @@ function App() {
                       href="https://github.com/dreiiiur/Industry-System"
                       className="text-lg text-gray-600 hover:text-violet-500"
                     target="_blank">
-                      Project Link
+                      Github
                     </a>
                   </li>
                 </ul>
