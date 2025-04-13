@@ -232,7 +232,7 @@ function App() {
     <motion.img
       src="./gradpic1.jpg"
       alt="Profile"
-      className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[500px] lg:h-[550px] rounded-[2rem] object-cover shadow-xl"
+      className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[550px] lg:h-[600px] rounded-[2rem] object-cover shadow-xl"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
@@ -273,7 +273,7 @@ function App() {
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 1.5 }}
     >
-      Front-End Developer & UI/UX Designer
+      Aspiring Front-End Developer & UI/UX Designer. I specialize in creating engaging and visually appealing user interfaces.
     </motion.p>
 
     {/* Social Links */}
