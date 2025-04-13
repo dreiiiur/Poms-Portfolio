@@ -268,7 +268,7 @@ function App() {
 
     {/* Title */}
     <motion.p
-      className="text-gray-600 text-lg sm:text-xl md:text-2xl font-regular"
+      className="text-gray-600 text-lg sm:text-xl md:text-2xl font-regular leading-relaxed"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 1.5 }}
@@ -278,7 +278,7 @@ function App() {
 
     {/* Social Links */}
     <motion.div
-      className="flex flex-wrap justify-center md:justify-start gap-4 text-2xl"
+      className="flex flex-wrap justify-center md:justify-start gap-4 text-3xl"
       initial={{ opacity: 0, y: 150 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
