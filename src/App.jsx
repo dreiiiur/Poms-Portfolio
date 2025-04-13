@@ -333,7 +333,7 @@ function App() {
       <Link to="projects" smooth={true} duration={500} className="bg-gradient-to-bl border-2 border-gradient-to-bl  from-green-600 to-green-800 text-white font-bold py-2 px-6 rounded-lg cursor-pointer">
         Projects
       </Link>
-      <Link to="about" smooth={true} duration={500} className="bg-white text-green-800 border-2 border-green-800 hover:bg-gradient-to-bl hover:from-green-600 hover:to-green-800 hover:text-white font-bold py-2 px-6 cursor-pointer rounded-lg">
+      <Link to="contacts" smooth={true} duration={500} className="bg-white text-green-800 border-2 border-green-800 hover:bg-gradient-to-bl hover:from-green-600 hover:to-green-800 hover:text-white font-bold py-2 px-6 cursor-pointer rounded-lg">
         Contact
       </Link>
 </motion.div>
