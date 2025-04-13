@@ -30,6 +30,8 @@ import { Typewriter } from "react-simple-typewriter";
 import { FaUser } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 import { FaMailBulk } from "react-icons/fa";
+import { TbSquareLetterPFilled } from "react-icons/tb";
+
 
 
 
@@ -66,15 +68,15 @@ function App() {
       <div className="min-h-screen max-w-screen flex flex-col bg-transparent max-w-screen mx-auto" id="home">
         <header className="gap-4 sticky top-0 bg-transparent z-50 rounded-3xl">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
-            <div className="text-2xl font-black text-black tracking-wide">
-              <Link to="home" smooth={true} duration={500} className="hover:text-gray-600 cursor-pointer">
-                🥦 POMSICLES
+            <div className="text-5xl font-black text-green-800 tracking-wide">
+              <Link to="home" smooth={true} duration={500} className="hover:text-green-700 cursor-pointer">
+              <TbSquareLetterPFilled />
               </Link>
             </div>
             {/* Toggle Menu Button */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden text-black hover:text-[#677D6A] cursor-pointer"
+              className="lg:hidden text-green-800 hover:text-green-500 cursor-pointer"
               aria-label="Toggle menu"
             >
               <svg
@@ -88,19 +90,19 @@ function App() {
               </svg>
             </button>
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-black gap-2 text-sm font-bold items-center pr-4">
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-800 gap-2 text-sm font-bold items-center pr-4">
               <li>
-                <Link to="about" smooth={true} duration={500} className="hover:text-gray-500 cursor-pointer">
+                <Link to="about" smooth={true} duration={500} className="hover:text-green-800 cursor-pointer">
                   ABOUT
                 </Link>
               </li>
               <li>
-                <Link to="projects" smooth={true} duration={500} className="hover:text-gray-500 cursor-pointer">
+                <Link to="projects" smooth={true} duration={500} className="hover:text-green-800 cursor-pointer">
                   PROJECTS
                 </Link>
               </li>
               <li>
-                <Link to="contacts" smooth={true} duration={500} className="hover:text-gray-500 cursor-pointer">
+                <Link to="contacts" smooth={true} duration={500} className="hover:text-green-800 cursor-pointer">
                   CONTACTS
                 </Link>
               </li>
@@ -108,16 +110,16 @@ function App() {
                 <a
                   href="./Poma-Andrei-John.V.CV.pdf"
                   target="_blank"
-                  className="hover:text-white hover:bg-[#677D6A] transition-opacity duration-500 ease-in-out"
+                  className="hover:text-white cursor-pointer transition-opacity duration-500 ease-in-out"
                   download
                 >
-                  <button className="bg-black text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-gray-600 hover:text-white">
+                  <button className="bg-green-800 text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-green-700 hover:text-white">
                     RESUME
                   </button>
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" className="hover:text-gray-500">
+                <a href="" target="_blank" className="hover:text-green-800">
                   <button className="">
                     <MdDarkMode className="text-2xl" />
                   </button>
@@ -130,11 +132,11 @@ function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed  inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center z-50">
+          <div className="fixed font-regular inset-0 bg-white flex flex-col  justify-center items-center z-50 gap-8">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
-              className="absolute top-4 right-4 text-white hover:text-[#D9DFC6] cursor-pointer"
+              className="absolute top-4 right-4 text-gray-800 hover:text-green-500 cursor-pointer"
               aria-label="Close menu"
             >
               <svg
@@ -154,38 +156,38 @@ function App() {
             </button>
 
             {/* Menu Items */}
-            <ul className="flex flex-col items-start gap-6 text-white text-xl font-bold">
-              <li className="flex items-center gap-2 text-white text-xl font-bold">
-                <FaUser className="text-white" />
+            <ul className="flex flex-col items-start gap-6 text-gray-800 justify-center p-4">
+              <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
+                <FaUser className="text-gray-800 hover:text-green-500" />
                 <Link
                   to="about"
                   smooth={true}
                   duration={500}
-                  className="hover:text-[#E1EACD] cursor-pointer"
+                  className="hover:text-green-500 cursor-pointer"
                   onClick={toggleMenu}
                 >
                   About
                 </Link>
               </li>
-              <li className="flex items-center gap-2 text-white text-xl font-bold">
-                <GrProjects className="text-white" />
+              <li className="flex items-center gap-2 text-gray-800 text-lg">
+                <GrProjects className="text-gray-800" />
                 <Link
                   to="projects"
                   smooth={true}
                   duration={500}
-                  className="hover:text-[#E1EACD] cursor-pointer"
+                  className="hover:text-green-500 cursor-pointer"
                   onClick={toggleMenu}
                 >
                   Projects
                 </Link>
               </li>
-              <li className="flex items-center gap-2 text-white text-xl font-bold">
-                <FaMailBulk className="text-white" />
+              <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
+                <FaMailBulk className="text-gray-800 hover:text-green-500" />
                 <Link
                   to="contacts"
                   smooth={true}
                   duration={500}
-                  className="hover:text-[#E1EACD] cursor-pointer"
+                  className="hover:text-green-500 cursor-pointer"
                   onClick={toggleMenu}
                 >
                   Contacts
@@ -194,7 +196,7 @@ function App() {
               <li>
                 <a
                   href="./Poma-Andrei-John.V.CV.pdf"
-                  className="bg-white text-black rounded-lg px-4 py-1 flex items-center gap-2 hover:bg-[#677D6A] hover:text-white cursor-pointer"
+                  className="bg-green-800 text-white rounded-md px-6 py-1 flex items-center gap-2 hover:bg-green-600 hover:text-white cursor-pointer font-bold"
                   download
                   onClick={toggleMenu}
                 >
@@ -216,134 +218,127 @@ function App() {
         )}
 
 
-        {/* Hero Section */}
-        <motion.div
-          className="relative max-w-screen min-h-screen flex items-center justify-center rounded-xl  overflow-hidden bg-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+       {/* Hero Section */}
+<motion.div
+  className="relative max-w-screen min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-12 bg-white overflow-hidden rounded-xl shadow-xl"
+  initial={{ opacity: 0, x: -100 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+>
+  {/* Profile Image */}
+  <motion.div
+    className="relative flex justify-center items-center w-full md:w-1/2 mb-10 md:mb-0"
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+  >
+    <motion.img
+      src="./gradpic1.jpg"
+      alt="Profile"
+      className="w-[220px] h-[220px] md:w-[300px] md:h-[300px] lg:w-[600px] lg:h-[660px] rounded-[2rem] object-cover shadow-lg shadow-green-600/50"
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+    />
+  </motion.div>
+
+  {/* Content Section */}
+  <motion.div
+    className="relative z-10 flex flex-col items-start text-start text-white gap-8 w-full md:w-1/2 px-4"
+    initial={{ opacity: 0, x: 50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+  >
+    {/* Introductory Text */}
+    <motion.div
+      className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 text-2xl sm:text-4xl md:text-6xl font-extrabold leading-tight"
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -150 }}
+      transition={{
+        delay: 0.5,
+        duration: 1,
+        ease: [0.2, 0.8, 0.2, 1],
+      }}
+    >
+      <Typewriter
+        words={[
+          "Kamusta? Ako si Andrei!",
+          "Hello, I'm Andrei!",
+        ]}
+        loop={Infinity}
+        typeSpeed={100}
+        deleteSpeed={60}
+        delaySpeed={2000}
+      />
+    </motion.div>
+
+    {/* Title */}
+    <motion.p
+      className="text-gray-600 text-xl sm:text-2xl md:text-3xl font-bold leading-tight items-center text-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1, duration: 1.5 }}
+    >
+      Front-End Developer & UI/UX Designer
+    </motion.p>
+
+    {/* Social Links */}
+    <motion.div
+      className="flex flex-wrap items-center justify-center gap-6 text-lg md:text-xl"
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: 1.5,
+        duration: 1,
+        ease: [0.3, 0.7, 0.3, 1],
+      }}
+    >
+      {[
+        {
+          href: "https://github.com/dreiiiur",
+          icon: <FaGithub className="text-3xl md:text-4xl text-green-800 hover:text-[#C5BAFF]" />,
+        },
+        {
+          href: "https://www.linkedin.com/in/andreipoma/",
+          icon: <FaLinkedin className="text-3xl md:text-4xl text-green-800 hover:text-[#9ACBD0]" />,
+        },
+        {
+          href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
+          icon: <FaFigma className="text-3xl md:text-4xl text-green-800 hover:text-[#F6C794]" />,
+        },
+        {
+          href: "mailto:andreipoma1220@gmail.com",
+          icon: <SiGmail className="text-3xl md:text-4xl text-green-800 hover:text-[#FF8383]" />,
+        },
+      ].map((link, index) => (
+        <a
+          key={index}
+          href={link.href}
+          className="transition-colors duration-300"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          
-          <motion.div
-            className="relative"
-            style={{
-              transform: "translateY(0px)",
-              WebkitTransform: "translateY(0px)",
-            }}
-            initial={{
-              backgroundPosition: "0px 0px",
-              WebkitBackgroundSize: "100% 100%",
-            }}
-            animate={{
-              backgroundPosition: "0px -500px",
-              WebkitBackgroundSize: "100% 120%",
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-              repeat: Infinity,
-            }}
-          />
-
-          {/* Content Section */}
-          <motion.div
-            className="relative z-10 flex flex-col items-center text-center text-white gap-8 max-w-4xl px-4"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            {/* Profile Image */}
-            <motion.img
-              src="./image.jpg"
-              alt="Profile"
-              className="w-[250px] h-[250px] md:w-[250px] md:h-[250px] lg:w-[1048px] lg:h-[400px] mb-6 hover:scale-105 rounded-xl transition-transform duration-300 shadow-lg"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            />
-
-            {/* Introductory Text */}
-            <motion.div
-              className="bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-400 text-center text-2xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight"
-              initial={{ opacity: 0, y: 150 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -150 }}
-              transition={{
-                delay: 0.5,
-                duration: 1,
-                ease: [0.2, 0.8, 0.2, 1],
-              }}
-            >
-              <Typewriter
-                words={[
-                  "Kamusta? Ako si Andrei!",
-                  "Hello, I'm Andrei!",
-                  "안녕하세요, 저는 안드레이에요.",
-                  "こんにちは、私はアンドレイです。",
-                ]}
-                loop={Infinity}
-                typeSpeed={100}
-                deleteSpeed={60}
-                delaySpeed={2000}
-              />
-            </motion.div>
-
-            {/* Title */}
-            <motion.p
-              className="text-gray-500 text-center text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold leading-tight"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 1.5 }}
-            >
-              Front-End Developer & UI/UX Designer
-            </motion.p>
-
-            {/* Social Links */}
-            <motion.div
-              className="flex flex-wrap items-center justify-center gap-6 text-lg md:text-xl"
-              initial={{ opacity: 0, y: 150 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 1.5,
-                duration: 1,
-                ease: [0.3, 0.7, 0.3, 1],
-              }}
-            >
-              {[
-                {
-                  href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-3xl md:text-4xl text-[#45474B] mr-2 hover:text-[#C5BAFF]" />,
-                  target: "_blank",
-                },
-                {
-                  href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-3xl md:text-4xl text-[#45474B] mr-2 hover:text-[#9ACBD0]" />,
-                  target: "_blank",
-                },
-                {
-                  href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
-                  icon: <FaFigma className="text-3xl md:text-4xl text-[#45474B] mr-2 hover:text-[#F6C794]" />,
-                  target: "_blank",
-                },
-                {
-                  href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-3xl md:text-4xl text-[#45474B] mr-2 hover:text-[#FF8383]" />,
-                  target: "_blank",
-                },
-              ].map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="flex items-center hover:text-[#FFF] transition-colors duration-300"
-                  target={link.target}
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </motion.div>
-          </motion.div>
-        </motion.div>
-
-
+          {link.icon}
+        </a>
+      ))}
+    </motion.div>
+    {/* Buttons */}
+    <motion.div
+      className="flex flex-row sm:flex-row sm:gap-4 items-center justify-center gap-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 2, duration: 1.5 }}
+    >
+      <Link to="projects" smooth={true} duration={500} className="bg-gradient-to-bl border-2 border-gradient-to-bl  from-green-600 to-green-800 text-white font-bold py-2 px-6 rounded-lg cursor-pointer">
+        Projects
+      </Link>
+      <Link to="about" smooth={true} duration={500} className="bg-white text-green-800 border-2 border-green-800 hover:bg-gradient-to-bl hover:from-green-600 hover:to-green-800 hover:text-white font-bold py-2 px-6 cursor-pointer rounded-lg">
+        Contact
+      </Link>
+</motion.div>
+  </motion.div>
+</motion.div>
 
         {/* About Section */}
         <motion.div
@@ -371,17 +366,17 @@ function App() {
             className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl md:w-1/2"
             variants={fadeIn}
           >
-            <p className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans text-black">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-green-800">
               About Me?
             </p>
-            <p className="leading-relaxed text-[#45474B] text-lg md:text-xl lg:text-2xl">
+            <p className="leading-relaxed text-gray-600 text-lg md:text-xl lg:text-2xl">
               I'm currently a 4th year student, taking Bachelor of Science in Information Technology at{" "}
               <b>Bulacan State University Bustos Campus</b>. I have a strong passion for web development
               and I'm eager to learn new technologies and grow as a developer.
             </p>
 
             <div>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-black font-mono flex items-center gap-2">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-800 font-mono flex items-center gap-2">
                 <FaCode className="text-3xl md:text-4xl lg:text-4xl" /> Technologies
               </p>
               <motion.div
@@ -400,7 +395,7 @@ function App() {
             </div>
 
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-black flex items-center gap-2">
+              <p className="text-2xl md:text-3xl font-bold text-green-800 flex items-center gap-2">
                 <VscTools className="text-3xl md:text-4xl" /> Tools
               </p>
               <motion.div
@@ -423,7 +418,7 @@ function App() {
         >
           {/* Section Title */}
           <p
-            className="text-3xl md:text-4xl font-extrabold text-black text-center mb-8"
+            className="text-3xl md:text-4xl font-extrabold text-green-800 text-center mb-8"
           >
             PROJECTS
           </p>
@@ -594,30 +589,30 @@ function App() {
         {/* Contact Section */}
         <div className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4" id="contacts">
           <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
-            <p className="text-3xl font-bold text-black text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12 hover:text-gray-600">
+            <p className="text-3xl font-bold text-green-800 text-center flex items-center justify-center gap-2">📧 Get in Touch with me.</p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12 hover:text-green-600">
               {[
                 {
                   href: "https://github.com/dreiiiur",
-                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-black mr-2 hover:text-gray-600" />,
+                  icon: <FaGithub className="text-2xl md:text-3xl font-mono text-green-800 mr-2 hover:text-green-700" />,
                   text: "Dreiiiur",
-                  textColor: "text-[#45474B]"
+                  textColor: "text-gray-600"
                 },
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-gray-600" />,
+                  icon: <FaLinkedin className="text-2xl md:text-3xl font-mono text-green-800 mr-2 hover:text-green-700" />,
                   text: "Andrei Poma",
-                  textColor: "text-[#45474B]"
+                  textColor: "text-gray-600"
                 },
                 {
                   href: "https://www.facebook.com/dreiur/",
-                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-gray-600" />,
+                  icon: <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-green-800 mr-2 hover:text-green-700" />,
                   text: "Andrei Poma",
                   textColor: "text-[#45474B]"
                 },
                 {
                   href: "mailto:andreipoma1220@gmail.com",
-                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-[#45474B] mr-2 hover:text-gray-500" />,
+                  icon: <SiGmail className="text-2xl md:text-3xl font-mono text-green-800 mr-2 hover:text-green-700" />,
                   text: "andreipoma1220@gmail.com",
                   textColor: "text-[#45474B]"
                 },
@@ -634,8 +629,8 @@ function App() {
         <footer className="w-full bg-transparent p-6 rounded-t-xl md:flex md:flex-row md:justify-between md:items-center md:gap-6">
           {/* Branding */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2">
-            <p className="text-[#45474B] font-bold text-2xl">Pomsicles</p>
-            <p className="text-[#45474B] font-medium">© 2025 Pomsicles. All rights reserved.</p>
+            <p className="text-green-800 font-bold text-2xl">Andrei Poma</p>
+            <p className="text-gray-600 font-medium">© 2025 Pomsicles. All rights reserved.</p>
           </div>
 
           {/* Contact */}
@@ -643,9 +638,9 @@ function App() {
             <p className="text-[#45474B] font-medium">Contact Us:</p>
             <a
               href="mailto:andreipoma1220@gmail.com"
-              className="text-[#45474B] font-semibold flex items-center hover:underline"
+              className="text-green-800 font-semibold flex items-center hover:underline"
             >
-              <SiGmail className="text-2xl text-[#45474B] mr-2" />
+              <SiGmail className="text-2xl text-green-800 mr-2" />
               andreipoma1220@gmail.com
             </a>
           </div>
