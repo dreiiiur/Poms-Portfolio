@@ -66,7 +66,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen max-w-screen flex flex-col bg-transparent max-w-screen mx-auto" id="home">
-        <header className="gap-4 sticky top-0 bg-transparent z-50 rounded-3xl">
+        <header className="gap-4 sticky top-0 bg-transparent z-50 rounded-3xl backdrop-blur-lg bg-white/30">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-5xl font-black text-green-800 tracking-wide">
               <Link to="home" smooth={true} duration={500} className="hover:text-green-700 cursor-pointer">
@@ -216,18 +216,15 @@ function App() {
             </ul>
           </div>
         )}
-
-
-       {/* Hero Section */}
 <motion.div
-  className="relative max-w-screen min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-12 bg-white overflow-hidden rounded-xl shadow-xl"
+  className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 py-12 bg-white overflow-hidden rounded-xl shadow-xl"
   initial={{ opacity: 0, x: -100 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 1, ease: "easeOut" }}
 >
   {/* Profile Image */}
   <motion.div
-    className="relative flex justify-center items-center w-full md:w-1/2 mb-10 md:mb-0"
+    className="flex justify-center items-center w-full md:w-1/2 mb-10 md:mb-0"
     initial={{ opacity: 0, x: -100 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 1, ease: "easeOut" }}
@@ -235,7 +232,7 @@ function App() {
     <motion.img
       src="./gradpic1.jpg"
       alt="Profile"
-      className="w-[220px] h-[220px] md:w-[300px] md:h-[300px] lg:w-[600px] lg:h-[660px] rounded-[2rem] object-cover shadow-lg shadow-green-600/50"
+      className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[500px] lg:h-[550px] rounded-[2rem] object-cover shadow-xl"
       initial={{ opacity: 0, x: -100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
@@ -244,17 +241,16 @@ function App() {
 
   {/* Content Section */}
   <motion.div
-    className="relative z-10 flex flex-col items-start text-start text-white gap-8 w-full md:w-1/2 px-4"
+    className="flex flex-col items-center md:items-start text-center md:text-left text-gray-800 gap-6 w-full md:w-1/2"
     initial={{ opacity: 0, x: 50 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 1, ease: "easeOut" }}
   >
     {/* Introductory Text */}
-    <motion.div
-      className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 text-2xl sm:text-4xl md:text-6xl font-extrabold leading-tight"
+    <motion.h1
+      className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
       initial={{ opacity: 0, y: 150 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -150 }}
       transition={{
         delay: 0.5,
         duration: 1,
@@ -262,20 +258,17 @@ function App() {
       }}
     >
       <Typewriter
-        words={[
-          "Kamusta? Ako si Andrei!",
-          "Hello, I'm Andrei!",
-        ]}
+        words={["Kamusta? Ako si Andrei!", "Hello, I'm Andrei!"]}
         loop={Infinity}
         typeSpeed={100}
         deleteSpeed={60}
         delaySpeed={2000}
       />
-    </motion.div>
+    </motion.h1>
 
     {/* Title */}
     <motion.p
-      className="text-gray-600 text-xl sm:text-2xl md:text-3xl font-bold leading-tight items-center text-center"
+      className="text-gray-600 text-lg sm:text-xl md:text-2xl font-regular"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 1.5 }}
@@ -285,7 +278,7 @@ function App() {
 
     {/* Social Links */}
     <motion.div
-      className="flex flex-wrap items-center justify-center gap-6 text-lg md:text-xl"
+      className="flex flex-wrap justify-center md:justify-start gap-4 text-2xl"
       initial={{ opacity: 0, y: 150 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -297,19 +290,19 @@ function App() {
       {[
         {
           href: "https://github.com/dreiiiur",
-          icon: <FaGithub className="text-3xl md:text-4xl text-green-800 hover:text-[#C5BAFF]" />,
+          icon: <FaGithub className="text-green-800 hover:text-[#C5BAFF]" />,
         },
         {
           href: "https://www.linkedin.com/in/andreipoma/",
-          icon: <FaLinkedin className="text-3xl md:text-4xl text-green-800 hover:text-[#9ACBD0]" />,
+          icon: <FaLinkedin className="text-green-800 hover:text-[#9ACBD0]" />,
         },
         {
           href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
-          icon: <FaFigma className="text-3xl md:text-4xl text-green-800 hover:text-[#F6C794]" />,
+          icon: <FaFigma className="text-green-800 hover:text-[#F6C794]" />,
         },
         {
           href: "mailto:andreipoma1220@gmail.com",
-          icon: <SiGmail className="text-3xl md:text-4xl text-green-800 hover:text-[#FF8383]" />,
+          icon: <SiGmail className="text-green-800 hover:text-[#FF8383]" />,
         },
       ].map((link, index) => (
         <a
@@ -323,22 +316,34 @@ function App() {
         </a>
       ))}
     </motion.div>
+
     {/* Buttons */}
     <motion.div
-      className="flex flex-row sm:flex-row sm:gap-4 items-center justify-center gap-4"
+      className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 2, duration: 1.5 }}
     >
-      <Link to="projects" smooth={true} duration={500} className="bg-gradient-to-bl border-2 border-gradient-to-bl  from-green-600 to-green-800 text-white font-bold py-2 px-6 rounded-lg cursor-pointer">
+      <Link
+        to="projects"
+        smooth={true}
+        duration={500}
+        className="bg-gradient-to-bl from-green-600 to-green-800 text-white font-bold py-2 px-6 rounded-lg cursor-pointer text-center"
+      >
         Projects
       </Link>
-      <Link to="contacts" smooth={true} duration={500} className="bg-white text-green-800 border-2 border-green-800 hover:bg-gradient-to-bl hover:from-green-600 hover:to-green-800 hover:text-white font-bold py-2 px-6 cursor-pointer rounded-lg">
+      <Link
+        to="contacts"
+        smooth={true}
+        duration={500}
+        className="bg-white text-green-800 border-2 border-green-800 hover:bg-gradient-to-bl hover:from-green-600 hover:to-green-800 hover:text-white font-bold py-2 px-6 rounded-lg cursor-pointer text-center"
+      >
         Contact
       </Link>
-</motion.div>
+    </motion.div>
   </motion.div>
 </motion.div>
+
 
         {/* About Section */}
         <motion.div
