@@ -631,66 +631,39 @@ function App() {
           </div>
         </div>
 
-        <footer className="w-full bg-transparent p-6 rounded-t-xl md:flex md:flex-row md:justify-between md:items-center md:gap-6">
-          {/* Branding */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2">
-            <p className="text-green-800 font-bold text-2xl">Andrei Poma</p>
-            <p className="text-gray-600 font-medium">© 2025 Pomsicles. All rights reserved.</p>
-          </div>
+        <footer className="w-full bg-white border-t border-gray-200 px-6 py-10 rounded-t-2xl shadow-lg">
+  <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between">
+    
+    {/* Branding Section */}
+    <div className="flex flex-col gap-3">
+      <h1 className="font-bold text-start text-2xl sm:text-3xl text-green-800">Andrei Poma 💚</h1>
+      <p className="text-gray-600 text-start sm:text-lg max-w-xl">
+        A passionate web developer with a focus on designing and building responsive and scalable web applications.
+      </p>
+    </div>
 
-          {/* Contact */}
-          <div className="flex flex-col items-center md:items-end text-center md:text-right md:w-1/2">
-            <p className="text-[#45474B] font-medium">Contact Us:</p>
-            <a
-              href="mailto:andreipoma1220@gmail.com"
-              className="text-green-800 font-semibold flex items-center hover:underline"
-            >
-              <SiGmail className="text-2xl text-green-800 mr-2" />
-              andreipoma1220@gmail.com
-            </a>
-          </div>
-          {/* Chat Bot */}
-          {/* <div className="flex flex-col items-center md:items-end text-center md:text-right md:w-1/2">
-            <p className="text-[#45474B] font-medium">Talk to us:</p>
-            <div className="bg-white rounded-lg p-4 w-96">
-              <p className="text-sm font-medium">Chat Bot</p>
-              <input
-                type="text"
-                className="w-full p-2 border border-gray-300 rounded-lg"
-                placeholder="Type something..."
-                onChange={(e) => {
-                  const inputText = e.target.value;
-                  const responses = [
-                    "I see what you did there!",
-                    "That's a great question!",
-                    "I'm not sure I understand.",
-                    "I'll be right back, I need to go charge my battery.",
-                  ];
-                  const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+    {/* Links Section */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      {/* Navigation Links */}
+      <div className="flex flex-col gap-2 text-start">
+        <p className="font-bold text-lg text-green-800">Links</p>
+        <Link to="home" className="text-gray-600 hover:text-green-700 cursor-pointer transition">Home</Link>
+        <Link to="about" className="text-gray-600 hover:text-green-700 cursor-pointer transition">About</Link>
+        <Link to="projects" className="text-gray-600 hover:text-green-700 cursor-pointer transition">Projects</Link>
+        <Link to="contacts" className="text-gray-600 hover:text-green-700 cursor-pointer transition">Contact</Link>
+      </div>
 
-                  fetch("https://api.gemini.ai/v1/generate", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                      "User-Agent": "Pomsicles Website",
-                      "Authorization": "Bearer 9f7faa7c-dc2c-4e1d-9a6e-6f9a3ddc4d4c",
-                    },
-                    body: JSON.stringify({ input: inputText }),
-                  })
-                    .then((response) => response.json())
-                    .then((data) => {
-                      const aiResponse = data.response || "No response from AI.";
-                      alert(`${randomResponse} ${aiResponse}`);
-                    })
-                    .catch((error) => {
-                      console.error("Error:", error);
-                      alert("There was an error processing your request.");
-                    });
-                }}
-              />
-            </div>
-          </div> */}
-        </footer>
+      {/* Social Contacts */}
+      <div className="flex flex-col gap-2 text-start">
+        <p className="font-bold text-lg text-green-800">Contacts</p>
+        <a href="https://www.facebook.com/dreiur/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-700 cursor-pointer transition">Facebook</a>
+        <a href="https://www.linkedin.com/in/andreipoma/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-700 cursor-pointer transition">LinkedIn</a>
+        <a href="https://github.com/dreiiiur" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-700 cursor-pointer transition">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
       </div>
     </>
