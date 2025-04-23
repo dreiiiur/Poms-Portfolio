@@ -267,7 +267,7 @@ function App() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <motion.img
-              src="./gradpic1.jpg"
+              src="./123456.jpg"
               alt="Profile"
               className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[550px] lg:h-[600px] rounded-[2rem] object-cover shadow-xl"
               initial={{ opacity: 0, x: -100 }}
