@@ -82,7 +82,7 @@ function App() {
       >
         <header className="gap-4 sticky top-0  z-50 rounded-3xl backdrop-blur-lg bg-white/50">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
-            <div className="text-5xl font-black text-green-800 tracking-wide">
+            <div className="text-5xl font-black text-green-600 tracking-wide">
               <Link
                 to="home"
                 smooth={true}
@@ -152,7 +152,7 @@ function App() {
                   className="hover:text-white cursor-pointer transition-opacity duration-500 ease-in-out"
                   download
                 >
-                  <button className="bg-green-800 text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:bg-green-700 hover:text-white">
+                  <button className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:scale-105 hover:text-white">
                     RESUME
                   </button>
                 </a>
@@ -170,7 +170,7 @@ function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed font-regular inset-0 bg-white flex flex-col  justify-center items-center z-50 gap-8">
+          <div className="fixed font-regular inset-0 bg-gradient-to-b from-white to-green-100 flex flex-col  justify-center items-center z-50 gap-8">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
@@ -247,34 +247,58 @@ function App() {
                   className="items-center gap-2 hover:text-[#E1EACD] cursor-pointer"
                   onClick={toggleMenu}
                 >
-                  <MdDarkMode className="text-centeritems-center gap-2 text-2xl hover:text-[#E1EACD]" />
+                  <MdDarkMode className="text-center justify-center gap-2 text-2xl text-green-800 hover:text-[#E1EACD]" />
                 </a>
               </li>
             </ul>
           </div>
         )}
         <motion.div
-          className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 py-12 bg-transparent overflow-hidden"
+          className="relative w-full min-h-screen bg-gradient-to-t from-white to-green-100 flex flex-col md:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 py-12 rounded-lg overflow-hidden"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          {/* Profile Image */}
-          <motion.div
-            className="flex justify-center items-center w-full md:w-1/2 mb-10 md:mb-0"
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <motion.img
-              src="./123456.jpg"
-              alt="Profile"
-              className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[550px] lg:h-[600px] rounded-[2rem] object-cover shadow-xl"
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            />
-          </motion.div>
+        {/* Profile Image */}
+<motion.div
+  className="relative flex justify-center items-center w-full md:w-1/2 mb-10 md:mb-0 group"
+  initial={{ opacity: 0, x: -100 }}
+  animate={{ opacity: 1, x: 0 }}
+  whileHover={{ scale: 1.05 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+>
+  <motion.img
+    src="./123456.jpg"
+    alt="Profile"
+    className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[550px] lg:h-[600px] rounded-[2rem] object-cover shadow-xl filter drop-shadow-md"
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+  />
+
+  {/* Vector Art on Hover */}
+  <motion.div
+    className="absolute top-0 left-0 w-full h-full rounded-[2rem] bg-[#00000080] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 0 }}
+    whileHover={{ opacity: 1 }}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+    >
+      <path
+        fill="none"
+        stroke="#fff"
+        strokeWidth="2"
+        d="M50 0L60 20L70 0L80 20L90 0L100 20L0 20L10 0L20 20L30 0L40 20L50 0"
+      />
+    </svg>
+  </motion.div>
+</motion.div>
+
 
           {/* Content Section */}
           <motion.div
@@ -392,7 +416,7 @@ function App() {
 
         {/* About Section */}
         <motion.div
-          className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4"
+          className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen gap-6 p-4"
           id="about"
           initial="hidden"
           whileInView="visible"
@@ -416,19 +440,19 @@ function App() {
             className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl md:w-1/2"
             variants={fadeIn}
           >
-            <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">
               About Me?
             </p>
-            <p className="leading-relaxed text-gray-600 text-lg md:text-xl lg:text-2xl">
+            <p className="leading-relaxed text-gray-800 text-lg md:text-xl lg:text-2xl">
               I'm currently a 4th year student, taking Bachelor of Science in
               Information Technology at{" "}
-              <b>Bulacan State University Bustos Campus</b>. I have a strong
+              <b className="text-green-600">Bulacan State University Bustos Campus</b>. I have a strong
               passion for web development and I'm eager to learn new
               technologies and grow as a developer.
             </p>
 
             <div>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-800 font-mono flex items-center gap-2">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 font-mono flex items-center gap-2">
                 <FaCode className="text-3xl md:text-4xl lg:text-4xl" />{" "}
                 Technologies
               </p>
@@ -464,7 +488,7 @@ function App() {
             </div>
 
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-green-800 flex items-center gap-2">
+              <p className="text-2xl md:text-3xl font-bold text-green-600 flex items-center gap-2">
                 <VscTools className="text-3xl md:text-4xl" /> Tools
               </p>
               <motion.div
@@ -492,14 +516,14 @@ function App() {
         </motion.div>
 
         <div
-          className="flex flex-col items-center justify-center w-full min-h-screen bg-transparent gap-12 px-8 py-16"
+          className="flex flex-col items-center justify-center w-full min-h-screen gap-4 px-8 py-16"
           id="projects"
         >
           {/* Section Title */}
-          <h2 className="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 mb-12">
-              Projects
+          <h2 className="text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
+              <b className="text-green-600">Projects</b> that I've worked on and contributed to.
             </h2>
-
+            <p className="text-xl text-gray-600 mb-12">Here are some personal projects, freelance projects, and school projects I've contributed to.</p>
           {/* Projects Container */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
             {/* Project Card Template */}
@@ -602,41 +626,42 @@ function App() {
 
         {/* Testimonial Section */}
         <section
-          className="min-h-screen w-full bg-transparent flex items-center justify-center py-16"
+          className="min-h-screen w-full bg-gradient-to-b from-white to-green-100   flex items-center justify-center py-16"
           id="testimonials"
         >
           <div className="w-full max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 mb-12">
-              What they say about me?
+            <h2 className="text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
+              What they say <b className="text-green-600">About me?</b>
             </h2>
+            <p className="text-lg text-gray-600 mb-12">Here are some testimonials from my clients and people I've worked with.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
               {[
                 {
                   image:
                     "https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-1/485079722_3908545429463270_3993449192919758734_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFM08urZFK3iGIvGcVYIYhPNul6J4x632Y26XonjHrfZkrYqA1xpFeVveO1tQT1hAjnEzj2Uz9E_7Sn91Zkj1yX&_nc_ohc=1iWhtLRUmfEQ7kNvwHNhIak&_nc_oc=AdmilqH350fl0nVsT6lDbR0Euis1ccFCLHMbL6TFhyaAGucjuHAfHIDN2CrDVAlPoRo&_nc_zt=24&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=upBIWt59wVXo9mBYYqbTtg&oh=00_AfGdaOoVY310GDC3PnHYlkDvQ-NM70jrB6Ua4n9_Uzio2w&oe=680D6804",
                   name: "Marrianne Tameta",
-                  position: "Co-Intern/QA @shift101",
+                  position: "Web Developer",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 4,
                 },
                 {
                   image: "https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-1/432783749_3170328106434114_6182646494488330411_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=103&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFUEwdJPm9dzf_d9RMlDHUgq6ExbaaeOX-roTFtpp45fyYwHYIpLq-37Gq_CSf5v4thHiKzZckmiajWWIHmPVVt&_nc_ohc=Qdb7cw9q6fMQ7kNvwEyGcX4&_nc_oc=AdmINbW5QdSZzVABs_ICm8N1CyJRNJOOb4mVxhCWctPRioMdMaXbqT-hLUjXsEkl484&_nc_zt=24&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=NyEZ3i7HiV1d8n4nygLXgQ&oh=00_AfHWakFLQJGPHSR1aoTBiuyE3uE6BHxo8Z4hX_bjrztSAw&oe=680D7684",
                   name: "Josh Laturnas",
-                  position: "Co-Intern/Web Dev @shift101",
+                  position: "Backend Developer",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 5,
                 },
                 {
                   image: "https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-1/486025218_3896533637230502_841214430026573250_n.jpg?stp=c3.0.931.931a_dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFJUk6ynRlVgLj6tXd1nZKUr4jai2Sr_eKviNqLZKv94nR9jkBotiXzG1EjKDyE8SVrKTtXChgyZq87w09ObLS5&_nc_ohc=3YyadeJTSSMQ7kNvwFY7ndW&_nc_oc=AdnEXj9xJCHjdY7C861il1liR3sQRFhsTQw5qZvhLvi4yMUZkNIdOtxm6YjVVp-xPLg&_nc_zt=24&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=NP-IWPyybvHa0PcO5gD2Og&oh=00_AfGOzCAYITqfIT_flFGei0PF_va9af3qXu6myTY3kHbP6A&oe=680D7EAB",
                   name: "Mj Abante",
-                  position: "BSIT UB/ Fullstack Dev",
+                  position: "Fullstack Developer",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 5,
                 },
                 {
                   image: "https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-1/465062151_2340025386339353_752878490139429169_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeG2_0969-46YNwxG_fcEJlnus1yIdHZTEC6zXIh0dlMQBCdDahTJHjX3-yJwT-mHQm83B09bRv5DnEeuEJgPrBz&_nc_ohc=o49R35ma-b0Q7kNvwGW5NmJ&_nc_oc=AdnYj4_v_pbdmaKq0Oqc35upcW_lGNGyWXi-VJxVsZjbQiFqB46r3kYuVMLakDbVULc&_nc_zt=24&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=KrSG9G9POvKMAnjpHvsHqg&oh=00_AfGN3d3Jix2mE_cxVXLYuCdpGXCLKdSzXMUUZBi0mm-6-g&oe=680EA1B9",
                   name: "Erlinda Bien",
-                  position: "Previous Client",
+                  position: "Client",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 5,
                 },
@@ -652,10 +677,10 @@ function App() {
                       className="w-24 h-24 rounded-full object-cover"
                     />
                     <div className="flex flex-col text-start">
-                      <p className="text-xl font-semibold text-green-600">
+                      <p className="text-xl font-semibold text-gray-600">
                         {item.name}
                       </p>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-green-600">
                         {item.position}
                       </p>
                     </div>
@@ -686,19 +711,19 @@ function App() {
 
         {/* Contact Section */}
         <div
-          className="flex items-center justify-center w-full min-h-screen bg-transparent rounded-xl gap-6 p-4"
+          className="flex items-center justify-center w-full min-h-screen bg-gradient-to-t from-white to-green-100 gap-6 p-4"
           id="contacts"
         >
           <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
-            <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 text-center flex items-center justify-center gap-2">
-              Let's get in touch.
+            <h2 className="text-3xl sm:text-4xl font-regular bg-clip-text text-transparent bg-gray-800 text-center flex items-center justify-center gap-2">
+              <b className="text-green-600">Connect</b> with me.
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12 hover:text-green-600">
               {[
                 {
                   href: "https://github.com/dreiiiur",
                   icon: (
-                    <FaGithub className="text-3xl md:text-4xl font-mono text-green-800 mr-2 hover:text-green-700" />
+                    <FaGithub className="text-2xl md:text-3xl font-mono text-green-600 mr-2 hover:text-green-700" />
                   ),
                   text: "Dreiiiur",
                   textColor: "text-gray-600",
@@ -706,7 +731,7 @@ function App() {
                 {
                   href: "https://www.linkedin.com/in/andreipoma/",
                   icon: (
-                    <FaLinkedin className="text-3xl md:text-4xl font-mono text-green-800 mr-2 hover:text-green-700" />
+                    <FaLinkedin className="text-2xl md:text-3xl font-mono text-green-600 mr-2 hover:text-green-700" />
                   ),
                   text: "Andrei Poma",
                   textColor: "text-gray-600",
@@ -714,7 +739,7 @@ function App() {
                 {
                   href: "https://www.facebook.com/dreiur/",
                   icon: (
-                    <FaFacebookMessenger className="text-3xl md:text-4xl font-mono text-green-800 mr-2 hover:text-green-700" />
+                    <FaFacebookMessenger className="text-2xl md:text-3xl font-mono text-green-600 mr-2 hover:text-green-700" />
                   ),
                   text: "Andrei Poma",
                   textColor: "text-[#45474B]",
@@ -722,7 +747,7 @@ function App() {
                 {
                   href: "mailto:andreipoma1220@gmail.com",
                   icon: (
-                    <SiGmail className="text-3xl md:text-4xl font-mono text-green-800 mr-2 hover:text-green-700" />
+                    <SiGmail className="text-2xl md:text-3xl font-mono text-green-600 mr-2 hover:text-green-700" />
                   ),
                   text: "andreipoma1220@gmail.com",
                   textColor: "text-[#45474B]",
@@ -731,17 +756,17 @@ function App() {
                 <a
                   key={index}
                   href={link.href}
-                  className={`flex items-center ${link.textColor} font-semibold hover:text-gray-600`}
+                  className={`flex items-center ${link.textColor} font-regular hover:text-gray-600`}
                 >
                   {link.icon}
-                  <span className="hidden sm:inline">{link.text}</span>
+                  <span className="hidden sm:inline text-gray-600">{link.text}</span>
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        <footer className="bg-gray-100  px-6 py-12 rounded-t-2xl shadow-lg">
+        <footer className="bg-gradient-to-b from-white to-green-100   px-6 py-12 rounded-b-lg shadow-lg">
           <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between">
             {/* Branding Section */}
             <div className="flex flex-col gap-3">
