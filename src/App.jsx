@@ -766,7 +766,7 @@ function App() {
           </div>
         </div>
 
-        <footer className="bg-gradient-to-b from-gray-50 to-green-100   px-6 py-12 rounded-b-lg shadow-lg">
+        <footer className="bg-gradient-to-b from-white to-green-100   px-6 py-12 rounded-b-lg shadow-lg">
           <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between">
             {/* Branding Section */}
             <div className="flex flex-col gap-3">
