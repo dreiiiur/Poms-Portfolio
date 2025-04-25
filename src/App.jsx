@@ -254,7 +254,7 @@ function App() {
           </div>
         )}
         <motion.div
-          className="relative w-full min-h-screen bg-gradient-to-t from-white to-green-100 flex flex-col md:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 py-12 rounded-lg overflow-hidden"
+          className="relative w-full min-h-screen bg-gradient-to-t from-gray-50 to-green-100 flex flex-col md:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 py-12 rounded-lg overflow-hidden"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -626,7 +626,7 @@ function App() {
 
         {/* Testimonial Section */}
         <section
-          className="min-h-screen w-full bg-gradient-to-b from-white to-green-100   flex items-center justify-center py-16"
+          className="min-h-screen w-full bg-gradient-to-b from-gray-50 to-green-100   flex items-center justify-center py-16"
           id="testimonials"
         >
           <div className="w-full max-w-6xl mx-auto px-6">
@@ -766,7 +766,7 @@ function App() {
           </div>
         </div>
 
-        <footer className="bg-gradient-to-b from-white to-green-100   px-6 py-12 rounded-b-lg shadow-lg">
+        <footer className="bg-gradient-to-b from-gray-50 to-green-100   px-6 py-12 rounded-b-lg shadow-lg">
           <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between">
             {/* Branding Section */}
             <div className="flex flex-col gap-3">
