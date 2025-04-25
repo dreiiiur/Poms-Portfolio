@@ -630,7 +630,7 @@ function App() {
           id="testimonials"
         >
           <div className="w-full max-w-6xl mx-auto px-6">
-            <h2 className="text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
+            <h2 className="text-3xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
               What they say <b className="text-green-600">About me?</b>
             </h2>
             <p className="text-lg text-gray-600 mb-12">Here are some testimonials from my clients and people I've worked with.</p>
@@ -715,7 +715,7 @@ function App() {
           id="contacts"
         >
           <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
-            <h2 className="text-3xl sm:text-4xl font-regular bg-clip-text text-transparent bg-gray-800 text-center flex items-center justify-center gap-2">
+            <h2 className="flex-row text-2xl sm:text-3xl md:text-4xl font-regular bg-clip-text text-transparent bg-gray-800 text-center flex items-center justify-center gap-2">
               <b className="text-green-600">Connect</b> with me.
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12 hover:text-green-600">
