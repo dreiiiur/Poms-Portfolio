@@ -38,6 +38,7 @@ import { Link } from "react-scroll";
 
 import "./App.css";
 import { FaM } from "react-icons/fa6";
+import { link } from "framer-motion/client";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -268,7 +269,7 @@ function App() {
   transition={{ duration: 1, ease: "easeOut" }}
 >
   <motion.img
-    src="./123456.jpg"
+    src="./123123.jpg"
     alt="Profile"
     className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[550px] lg:h-[600px] rounded-[2rem] object-cover shadow-xl filter drop-shadow-md"
     initial={{ opacity: 0, x: -100 }}
@@ -398,7 +399,7 @@ function App() {
                 to="projects"
                 smooth={true}
                 duration={500}
-                className="bg-gradient-to-bl from-green-600 to-green-800 text-white font-bold py-2 px-6 rounded-lg cursor-pointer text-center"
+                className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-2 px-6 rounded-lg cursor-pointer text-center"
               >
                 Projects
               </Link>
@@ -425,13 +426,13 @@ function App() {
         >
           {/* Left Section - Profile Picture */}
           <motion.div
-            className="flex justify-center items-center md:w-1/2"
+            className="flex justify-center items-center md:w-1/3"
             variants={fadeIn}
           >
             <img
-              src="./pis.jpg"
+              src="./123123.jpg"
               alt="Profile"
-              className="w-75 h-70 md:w-screen md:h-1/2 object-cover shadow rounded-xl"
+              className="w-60 h-52 md:w-full md:h-full object-cover shadow rounded-lg"
             />
           </motion.div>
 
@@ -568,6 +569,14 @@ function App() {
                 link: "https://www.figma.com/proto/djbaS2IE0zQJylhWnNCHN4/Matcha-Madness?page-id=0%3A1&node-id=16-2&p=f&viewport=364%2C80%2C0.45&t=ihICf0FVdEPV9a3k-1&scaling=scale-down&content-scaling=fixed",
                 textColor: "#76885B",
               },
+              {
+                image: "./Aural-Nexus.png",
+                title: "Aural Nexus",
+                description: "Web-Based Game for Students",
+                tech: "Figma",
+                link: "https://www.figma.com/proto/J4ejpBHqCimF0xXvvfdZX3/Aural-Nexus--Copy-?page-id=0%3A1&node-id=2105-23&viewport=403%2C1577%2C0.12&t=zY0WhVWoutEKqik6-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2105%3A23",
+                textColor: "#76885B",
+              },
             ].map((project, index) => (
               <div
                 key={index}
@@ -640,7 +649,7 @@ function App() {
                   image:
                     "https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-1/485079722_3908545429463270_3993449192919758734_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFM08urZFK3iGIvGcVYIYhPNul6J4x632Y26XonjHrfZkrYqA1xpFeVveO1tQT1hAjnEzj2Uz9E_7Sn91Zkj1yX&_nc_ohc=1iWhtLRUmfEQ7kNvwHNhIak&_nc_oc=AdmilqH350fl0nVsT6lDbR0Euis1ccFCLHMbL6TFhyaAGucjuHAfHIDN2CrDVAlPoRo&_nc_zt=24&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=upBIWt59wVXo9mBYYqbTtg&oh=00_AfGdaOoVY310GDC3PnHYlkDvQ-NM70jrB6Ua4n9_Uzio2w&oe=680D6804",
                   name: "Marrianne Tameta",
-                  position: "Web Developer",
+                  position: "Full Stack Developer",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 4,
                 },
