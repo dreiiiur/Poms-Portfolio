@@ -148,7 +148,7 @@ function App() {
               </li>
               <li>
                 <a
-                  href="./Poma-Andrei-John.V.CV.pdf"
+                  href="./Poma-Andrei-John.V.CV2025.pdf"
                   target="_blank"
                   className="hover:text-white cursor-pointer transition-opacity duration-500 ease-in-out"
                   download
@@ -234,7 +234,7 @@ function App() {
               </li>
               <li>
                 <a
-                  href="./Poma-Andrei-John.V.CV.pdf"
+                  href="./Poma-Andrei-John.V.CV2025.pdf"
                   className="bg-green-800 text-white rounded-md px-6 py-1 flex items-center gap-2 hover:bg-green-600 hover:text-white cursor-pointer font-bold"
                   download
                   onClick={toggleMenu}
