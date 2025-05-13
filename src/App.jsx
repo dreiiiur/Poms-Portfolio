@@ -524,7 +524,7 @@ function App() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
               <b className="text-green-600">Projects</b> that I've worked on and contributed to.
             </h2>
-            <p className="text-lg text-gray-600 mb-12">Here are some personal projects, freelance projects, and school projects I've contributed to.</p>
+            <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">Here are some personal projects, freelance projects, and school projects I've contributed to.</p>
           {/* Projects Container */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
             {/* Project Card Template */}
@@ -642,7 +642,7 @@ function App() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
               What they say <b className="text-green-600">About me?</b>
             </h2>
-            <p className="text-lg text-gray-600 mb-12">Here are some testimonials from my clients and people I've worked with.</p>
+            <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">Here are some testimonials from my clients and people I've worked with.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
               {[
                 {
