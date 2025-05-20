@@ -37,8 +37,6 @@ import jsPDF from "jspdf";
 import { Link } from "react-scroll";
 
 import "./App.css";
-import { FaM } from "react-icons/fa6";
-import { link } from "framer-motion/client";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,35 +58,20 @@ function App() {
     },
   };
 
-  const handleDownload = () => {
-    const pdf = new jsPDF();
-    pdf.text("Hello, this is a sample PDF file.", 10, 10);
-    pdf.save("sample.pdf");
-  };
-
-  const splashScreen = () => {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-        <span className="sr-only">Loading...</span>
-        <div className="animate-spin h-16 w-16 border-4 border-blue-500 border-t-transparent rounded-full"></div>
-      </div>
-    );
-  };
-
   return (
     <>
       <div
         className="min-h-screen max-w-screen flex flex-col bg-transparent max-w-screen mx-auto "
         id="home"
       >
-        <header className="gap-4 sticky top-0  z-50 rounded-3xl backdrop-blur-lg bg-white/50">
+        <header className="gap-4 sticky top-0 z-50 rounded-3xl">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
-            <div className="text-5xl font-black text-green-600 tracking-wide">
+            <div className="text-5xl text-gray-700 tracking-wide">
               <Link
                 to="home"
                 smooth={true}
                 duration={500}
-                className="hover:text-green-700 cursor-pointer"
+                className="hover:text-green-400 text-green-500 cursor-pointer"
               >
                 <TbSquareLetterPFilled />
               </Link>
@@ -115,7 +98,7 @@ function App() {
               </svg>
             </button>
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-800 gap-2 text-sm font-bold items-center pr-4">
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-700 gap-2 text-sm font-bold items-center pr-4 bg-white backdrop-blur-md transition duration-500" >
               <li>
                 <Link
                   to="about"
@@ -171,7 +154,7 @@ function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed font-regular inset-0 bg-gradient-to-b from-white to-green-100 flex flex-col  justify-center items-center z-50 gap-8">
+          <div className="fixed font-regular inset-0 bg-gradient-to-b from-white to-green-100 flex flex-col items-center justify-center z-50 gap-8">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
@@ -195,7 +178,7 @@ function App() {
             </button>
 
             {/* Menu Items */}
-            <ul className="flex flex-col items-start gap-6 text-gray-800 justify-center p-4">
+            <ul className="flex flex-col gap-6 text-gray-800">
               <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
                 <FaUser className="text-gray-800 hover:text-green-500" />
                 <Link
@@ -208,8 +191,8 @@ function App() {
                   About
                 </Link>
               </li>
-              <li className="flex items-center gap-2 text-gray-800 text-lg">
-                <GrProjects className="text-gray-800" />
+              <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
+                <GrProjects className="text-gray-800 hover:text-green-500" />
                 <Link
                   to="projects"
                   smooth={true}
@@ -235,7 +218,7 @@ function App() {
               <li>
                 <a
                   href="./Poma-Andrei-John.V.CV2025.pdf"
-                  className="bg-green-800 text-white rounded-md px-6 py-1 flex items-center gap-2 hover:bg-green-600 hover:text-white cursor-pointer font-bold"
+                  className="bg-green-800 text-white rounded-md px-6 py-2 flex items-center gap-2 hover:bg-green-600 hover:text-white cursor-pointer"
                   download
                   onClick={toggleMenu}
                 >
@@ -255,276 +238,236 @@ function App() {
           </div>
         )}
         <motion.div
-          className="relative w-full min-h-screen bg-gradient-to-t from-gray-50 to-green-100 flex flex-col md:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 py-12 rounded-lg overflow-hidden"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-12 text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-        {/* Profile Image */}
-<motion.div
-  className="relative flex justify-center items-center w-full md:w-1/2 mb-10 md:mb-0 group"
-  initial={{ opacity: 0, x: -100 }}
-  animate={{ opacity: 1, x: 0 }}
-  whileHover={{ scale: 1.05 }}
-  transition={{ duration: 1, ease: "easeOut" }}
->
-  <motion.img
-    src="./123123.jpg"
-    alt="Profile"
-    className="w-[180px] h-[180px] sm:w-[220px] sm:h-[220px] md:w-[260px] md:h-[260px] lg:w-[550px] lg:h-[600px] rounded-[2rem] object-cover shadow-xl filter drop-shadow-md"
-    initial={{ opacity: 0, x: -100 }}
-    animate={{ opacity: 1, x: 0 }}
-    whileHover={{ scale: 1.05 }}
-    transition={{ duration: 1, ease: "easeOut" }}
-  />
-
-  {/* Vector Art on Hover */}
-  <motion.div
-    className="absolute top-0 left-0 w-full h-full rounded-[2rem] bg-[#00000080] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 0 }}
-    whileHover={{ opacity: 1 }}
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 100"
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-    >
-      <path
-        fill="none"
-        stroke="#fff"
-        strokeWidth="2"
-        d="M50 0L60 20L70 0L80 20L90 0L100 20L0 20L10 0L20 20L30 0L40 20L50 0"
-      />
-    </svg>
-  </motion.div>
-</motion.div>
-
-
-          {/* Content Section */}
+          {/* Profile Image */}
           <motion.div
-            className="flex flex-col items-center md:items-start text-center md:text-left text-gray-800 gap-6 w-full md:w-1/2"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="relative flex justify-center items-center mb-10 group"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            {/* Introductory Text */}
-            <motion.h1
-              className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800 text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
-              initial={{ opacity: 0, y: 150 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.5,
-                duration: 1,
-                ease: [0.2, 0.8, 0.2, 1],
-              }}
-            >
-              <Typewriter
-                words={["Kamusta? Ako si Andrei!", "Hello, I'm Andrei!"]}
-                loop={Infinity}
-                typeSpeed={100}
-                deleteSpeed={60}
-                delaySpeed={2000}
-              />
-            </motion.h1>
-
-            {/* Title */}
-            <motion.p
-              className="text-gray-600 text-lg sm:text-xl md:text-2xl font-regular leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 1.5 }}
-            >
-              Aspiring Front-End Developer & UI/UX Designer. I specialize in
-              creating engaging and visually appealing user interfaces.
-            </motion.p>
-
-            {/* Social Links */}
+            <motion.img
+              src="/123123.jpg"
+              alt="Profile"
+              className="w-70 h-70 sm:w-72 sm:h-72 md:w-74 md:h-74 lg:w-[420px] lg:h-[420px] rounded-[2rem] object-cover shadow-xl drop-shadow-md"
+            />
+            {/* Optional Overlay Vector on Hover */}
             <motion.div
-              className="flex flex-wrap justify-center md:justify-start gap-4 text-3xl"
-              initial={{ opacity: 0, y: 150 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 1.5,
-                duration: 1,
-                ease: [0.3, 0.7, 0.3, 1],
-              }}
+              className="absolute top-0 left-0 w-full h-full rounded-[2rem] bg-[#00000060] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              whileHover={{ opacity: 1 }}
             >
-              {[
-                {
-                  href: "https://github.com/dreiiiur",
-                  icon: (
-                    <FaGithub className="text-green-800 hover:text-[#C5BAFF]" />
-                  ),
-                },
-                {
-                  href: "https://www.linkedin.com/in/andreipoma/",
-                  icon: (
-                    <FaLinkedin className="text-green-800 hover:text-[#9ACBD0]" />
-                  ),
-                },
-                {
-                  href: "https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1",
-                  icon: (
-                    <FaFigma className="text-green-800 hover:text-[#F6C794]" />
-                  ),
-                },
-                {
-                  href: "mailto:andreipoma1220@gmail.com",
-                  icon: (
-                    <SiGmail className="text-green-800 hover:text-[#FF8383]" />
-                  ),
-                },
-              ].map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="transition-colors duration-300"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.icon}
-                </a>
-              ))}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              >
+                <path
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth="2"
+                  d="M50 0L60 20L70 0L80 20L90 0L100 20L0 20L10 0L20 20L30 0L40 20L50 0"
+                />
+                <path
+                  fill="none"
+                  stroke="#fff"
+                  strokeWidth="2"
+                  d="M50 0L65 25L70 0L80 25L90 0L100 25L0 25L10 0L20 25L30 0L40 25L50 0"
+                />
+              </svg>
             </motion.div>
+          </motion.div>
 
-            {/* Buttons */}
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2, duration: 1.5 }}
+          <motion.p
+            className="text-gray-700 text-xl sm:text-2xl md:text-2xl max-w-5xl mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
+          >
+            Hi! My name is Andrei, and I'm a{" "}
+            <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl">
+              Front-End Developer & UI/UX Designer
+            </b>
+            . I specialize in creating engaging and visually appealing user
+            interfaces.
+          </motion.p>
+
+          {/* Social Icons */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-6 text-3xl mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            <a
+              href="https://github.com/dreiiiur"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Link
-                to="projects"
-                smooth={true}
-                duration={500}
-                className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-2 px-6 rounded-lg cursor-pointer text-center"
-              >
-                Projects
-              </Link>
-              <Link
-                to="contacts"
-                smooth={true}
-                duration={500}
-                className="bg-white text-green-800 border-2 border-green-800 hover:bg-gradient-to-bl hover:from-green-600 hover:to-green-800 hover:text-white font-bold py-2 px-6 rounded-lg cursor-pointer text-center"
-              >
-                Contact
-              </Link>
-            </motion.div>
+              <FaGithub className="text-green-600 hover:text-[#C5BAFF] transition" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/andreipoma/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="text-green-600 hover:text-[#9ACBD0] transition" />
+            </a>
+            <a
+              href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFigma className="text-green-600 hover:text-[#F6C794] transition" />
+            </a>
+            <a
+              href="mailto:andreipoma1220@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SiGmail className="text-green-600 hover:text-[#FF8383] transition" />
+            </a>
+          </motion.div>
+
+          {/* Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+          >
+            <Link
+              to="projects"
+              smooth={true}
+              duration={500}
+              className="bg-green-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-green-700 transition"
+            >
+              Projects
+            </Link>
+            <Link
+              to="contacts"
+              smooth={true}
+              duration={500}
+              className="border-2 border-green-700 text-green-700 font-semibold py-2 px-6 rounded-lg hover:bg-green-700 hover:text-white transition"
+            >
+              Contact
+            </Link>
           </motion.div>
         </motion.div>
 
         {/* About Section */}
         <motion.div
-          className="flex flex-col md:flex-row items-center justify-center w-full min-h-screen gap-6 p-4"
           id="about"
+          className="relative flex flex-col items-center justify-center w-full min-h-screen px-6 py-20 gap-12 text-center bg-gradient-to-b from-white to-green-50"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }} // Trigger animation on repeated scrolls, 50% visibility
+          viewport={{ once: false, amount: 0.5 }}
           variants={stagger}
         >
-          {/* Left Section - Profile Picture */}
+          {/* Title */}
           <motion.div
-            className="flex justify-center items-center md:w-1/3"
+            className="max-w-4xl flex flex-col items-center gap-6"
             variants={fadeIn}
           >
-            <img
-              src="./123123.jpg"
-              alt="Profile"
-              className="w-60 h-52 md:w-full md:h-full object-cover shadow rounded-lg"
-            />
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-500 to-green-400 bg-clip-text text-transparent">
+              About Me
+            </h2>
+            <div className="w-16 h-1 bg-green-500 rounded-full" />
+
+            <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+              I'm a{" "}
+              <strong className="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-600">
+                Freelance Front-End Developer and UI/UX Designer
+              </strong>{" "}
+              based from San Rafael, Bulacan. I'm passionate about creating
+              engaging digital experiences through modern web development and
+              thoughtful UI/UX design.
+            </p>
           </motion.div>
 
-          {/* Right Section - Content */}
+          {/* Technologies Section */}
           <motion.div
-            className="flex flex-col text-left text-[#727D73] gap-6 max-w-3xl md:w-1/2"
+            className="max-w-4xl w-full flex flex-col items-center gap-4"
             variants={fadeIn}
           >
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">
-              About Me?
-            </p>
-            <p className="leading-relaxed text-gray-800 text-lg md:text-xl lg:text-2xl">
-              I'm currently a 4th year student, taking Bachelor of Science in
-              Information Technology at{" "}
-              <b className="text-green-600">Bulacan State University Bustos Campus</b>. I have a strong
-              passion for web development and I'm eager to learn new
-              technologies and grow as a developer.
-            </p>
+            <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+              <FaCode className="text-3xl" /> Technologies I Use
+            </h3>
+            <div className="w-12 h-1 bg-gradient-to-r from-green-500 to-green-600 rounded-full" />
+            <motion.div
+              className="flex flex-wrap justify-center items-center gap-6"
+              variants={stagger}
+            >
+              {[
+                FaHtml5,
+                FaCss3Alt,
+                IoLogoJavascript,
+                FaReact,
+                RiTailwindCssFill,
+                FaBootstrap,
+                FaPhp,
+                SiMysql,
+              ].map((Icon, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={fadeIn}
+                  className="hover:scale-110 transition-transform"
+                >
+                  <Icon className="text-4xl md:text-5xl text-green-600" />
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
 
-            <div>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 font-mono flex items-center gap-2">
-                <FaCode className="text-3xl md:text-4xl lg:text-4xl" />{" "}
-                Technologies
-              </p>
-              <motion.div
-                className="flex flex-wrap items-center gap-4 mt-4"
-                variants={stagger}
-              >
-                <motion.div variants={fadeIn}>
-                  <FaHtml5 className="text-4xl text-blue-400" />
+          {/* Tools Section */}
+          <motion.div
+            className="max-w-4xl w-full flex flex-col items-center gap-4 mt-6"
+            variants={fadeIn}
+          >
+            <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+              <VscTools className="text-3xl" /> Tools I Work With
+            </h3>
+            <div className="w-12 h-1 bg-green-300 rounded-full" />
+            <motion.div
+              className="flex flex-wrap justify-center items-center gap-6"
+              variants={stagger}
+            >
+              {[
+                PiFigmaLogoDuotone,
+                VscVscode,
+                SiAdobephotoshop,
+                FaGithub,
+                SiXampp,
+              ].map((Icon, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={fadeIn}
+                  className="hover:scale-110 transition-transform"
+                >
+                  <Icon className="text-4xl md:text-5xl text-green-600" />
                 </motion.div>
-                <motion.div variants={fadeIn}>
-                  <FaCss3Alt className="text-4xl text-[#264de4]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <IoLogoJavascript className="text-4xl text-[#F0DB4F]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <FaReact className="text-4xl text-[#61DBFB]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <RiTailwindCssFill className="text-4xl text-[#a5f3fc]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <FaBootstrap className="text-4xl text-[#563d7c]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <FaPhp className="text-4xl text-[#AEB2D5]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <SiMysql className="text-4xl text-blue-500" />
-                </motion.div>
-              </motion.div>
-            </div>
-
-            <div>
-              <p className="text-2xl md:text-3xl font-bold text-green-600 flex items-center gap-2">
-                <VscTools className="text-3xl md:text-4xl" /> Tools
-              </p>
-              <motion.div
-                className="flex flex-wrap items-center gap-4 mt-4"
-                variants={stagger}
-              >
-                <motion.div variants={fadeIn}>
-                  <PiFigmaLogoDuotone className="text-4xl text-[#0acf83]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <VscVscode className="text-4xl text-[#0078d7]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <SiAdobephotoshop className="text-4xl text-[#4FCCFE]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <FaGithub className="text-4xl text-[#6e5494]" />
-                </motion.div>
-                <motion.div variants={fadeIn}>
-                  <SiXampp className="text-4xl text-orange-500" />
-                </motion.div>
-              </motion.div>
-            </div>
+              ))}
+            </motion.div>
           </motion.div>
         </motion.div>
 
         <div
-          className="flex flex-col items-center justify-center w-full min-h-screen gap-4 px-8 py-16"
+          className="flex flex-col  bg-gradient-to-b from-green-50 to-white items-center justify-center w-full min-h-screen gap-4 px-8 py-16"
           id="projects"
         >
           {/* Section Title */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
-              <b className="text-green-600">Projects</b> that I've worked on and contributed to.
-            </h2>
-            <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">Here are some personal projects, freelance projects, and school projects I've contributed to.</p>
+            <b className="text-green-600">Projects</b> that I've worked on and
+            contributed to.
+          </h2>
+          <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">
+            Here are some personal projects, freelance projects, and school
+            projects I've contributed to.
+          </p>
           {/* Projects Container */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
             {/* Project Card Template */}
@@ -571,7 +514,7 @@ function App() {
               },
               {
                 image: "./Aural-Nexus.png",
-                title: "Aural Nexus",
+                title: "Aural Nexus UI Design",
                 description: "Web-Based Game for Students",
                 tech: "Figma",
                 link: "https://www.figma.com/proto/J4ejpBHqCimF0xXvvfdZX3/Aural-Nexus--Copy-?page-id=0%3A1&node-id=2105-23&viewport=403%2C1577%2C0.12&t=zY0WhVWoutEKqik6-1&scaling=contain&content-scaling=fixed&starting-point-node-id=2105%3A23",
@@ -635,40 +578,42 @@ function App() {
 
         {/* Testimonial Section */}
         <section
-          className="min-h-screen w-full bg-gradient-to-b from-gray-50 to-green-100   flex items-center justify-center py-16"
+          className="min-h-screen w-full bg-gradient-to-b from-white to-green-50   flex items-center justify-center py-16"
           id="testimonials"
         >
           <div className="w-full max-w-6xl mx-auto px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
               What they say <b className="text-green-600">About me?</b>
             </h2>
-            <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">Here are some testimonials from my clients and people I've worked with.</p>
+            <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">
+              Here are some testimonials from my clients and people I've worked
+              with.
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
               {[
                 {
-                  image:
-                    "https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-1/485079722_3908545429463270_3993449192919758734_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFM08urZFK3iGIvGcVYIYhPNul6J4x632Y26XonjHrfZkrYqA1xpFeVveO1tQT1hAjnEzj2Uz9E_7Sn91Zkj1yX&_nc_ohc=1iWhtLRUmfEQ7kNvwHNhIak&_nc_oc=AdmilqH350fl0nVsT6lDbR0Euis1ccFCLHMbL6TFhyaAGucjuHAfHIDN2CrDVAlPoRo&_nc_zt=24&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=upBIWt59wVXo9mBYYqbTtg&oh=00_AfGdaOoVY310GDC3PnHYlkDvQ-NM70jrB6Ua4n9_Uzio2w&oe=680D6804",
+                  image: "./karina.jpg",
                   name: "Marrianne Tameta",
                   position: "Full Stack Developer",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 4,
                 },
                 {
-                  image: "https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-1/432783749_3170328106434114_6182646494488330411_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=103&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFUEwdJPm9dzf_d9RMlDHUgq6ExbaaeOX-roTFtpp45fyYwHYIpLq-37Gq_CSf5v4thHiKzZckmiajWWIHmPVVt&_nc_ohc=Qdb7cw9q6fMQ7kNvwEyGcX4&_nc_oc=AdmINbW5QdSZzVABs_ICm8N1CyJRNJOOb4mVxhCWctPRioMdMaXbqT-hLUjXsEkl484&_nc_zt=24&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=NyEZ3i7HiV1d8n4nygLXgQ&oh=00_AfHWakFLQJGPHSR1aoTBiuyE3uE6BHxo8Z4hX_bjrztSAw&oe=680D7684",
+                  image: "./karina.jpg",
                   name: "Josh Laturnas",
                   position: "Backend Developer",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 5,
                 },
                 {
-                  image: "https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-1/486025218_3896533637230502_841214430026573250_n.jpg?stp=c3.0.931.931a_dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFJUk6ynRlVgLj6tXd1nZKUr4jai2Sr_eKviNqLZKv94nR9jkBotiXzG1EjKDyE8SVrKTtXChgyZq87w09ObLS5&_nc_ohc=3YyadeJTSSMQ7kNvwFY7ndW&_nc_oc=AdnEXj9xJCHjdY7C861il1liR3sQRFhsTQw5qZvhLvi4yMUZkNIdOtxm6YjVVp-xPLg&_nc_zt=24&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=NP-IWPyybvHa0PcO5gD2Og&oh=00_AfGOzCAYITqfIT_flFGei0PF_va9af3qXu6myTY3kHbP6A&oe=680D7EAB",
+                  image: "./karina.jpg",
                   name: "Mj Abante",
                   position: "Fullstack Developer",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 5,
                 },
                 {
-                  image: "https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-1/465062151_2340025386339353_752878490139429169_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeG2_0969-46YNwxG_fcEJlnus1yIdHZTEC6zXIh0dlMQBCdDahTJHjX3-yJwT-mHQm83B09bRv5DnEeuEJgPrBz&_nc_ohc=o49R35ma-b0Q7kNvwGW5NmJ&_nc_oc=AdnYj4_v_pbdmaKq0Oqc35upcW_lGNGyWXi-VJxVsZjbQiFqB46r3kYuVMLakDbVULc&_nc_zt=24&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=KrSG9G9POvKMAnjpHvsHqg&oh=00_AfGN3d3Jix2mE_cxVXLYuCdpGXCLKdSzXMUUZBi0mm-6-g&oe=680EA1B9",
+                  image: "./karina.jpg",
                   name: "Erlinda Bien",
                   position: "Client",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
@@ -689,15 +634,11 @@ function App() {
                       <p className="text-xl font-semibold text-gray-600">
                         {item.name}
                       </p>
-                      <p className="text-sm text-green-600">
-                        {item.position}
-                      </p>
+                      <p className="text-sm text-green-600">{item.position}</p>
                     </div>
                   </div>
                   <div className="flex items-center justify-center text-center gap-2 mt-4">
-                    <label className="text-sm text-gray-600">
-                      Rating:
-                    </label>
+                    <label className="text-sm text-gray-600">Rating:</label>
                     {[1, 2, 3, 4, 5].map((rating) => (
                       <span
                         key={rating}
@@ -709,9 +650,7 @@ function App() {
                       </span>
                     ))}
                   </div>
-                  <p className="text-sm text-gray-600 mt-4">
-                    {item.text}
-                  </p>
+                  <p className="text-sm text-gray-600 mt-4">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -720,7 +659,7 @@ function App() {
 
         {/* Contact Section */}
         <div
-          className="flex items-center justify-center w-full min-h-screen bg-gradient-to-t from-white to-green-100 gap-6 p-4"
+          className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-green-50 to-white gap-6 p-4"
           id="contacts"
         >
           <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
@@ -768,14 +707,16 @@ function App() {
                   className={`flex items-center ${link.textColor} font-regular hover:text-gray-600`}
                 >
                   {link.icon}
-                  <span className="hidden sm:inline text-gray-600">{link.text}</span>
+                  <span className="hidden sm:inline text-gray-600">
+                    {link.text}
+                  </span>
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        <footer className="bg-gradient-to-b from-white to-green-100   px-6 py-12 rounded-b-lg shadow-lg">
+        <footer className="bg-gradient-to-b from-white to-green-50   px-6 py-12 rounded-b-lg shadow-lg">
           <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between">
             {/* Branding Section */}
             <div className="flex flex-col gap-3">
@@ -792,7 +733,9 @@ function App() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {/* Navigation Links */}
               <div className="flex flex-col gap-4 text-start">
-                <p className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">Links</p>
+                <p className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">
+                  Links
+                </p>
                 <Link
                   to="home"
                   className="text-gray-600 hover:text-green-700 cursor-pointer transition"
@@ -821,7 +764,9 @@ function App() {
 
               {/* Social Contacts */}
               <div className="flex flex-col gap-4 text-start">
-                <p className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">Contacts</p>
+                <p className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">
+                  Contacts
+                </p>
                 <a
                   href="https://www.facebook.com/dreiur/"
                   target="_blank"
