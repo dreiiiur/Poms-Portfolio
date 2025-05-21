@@ -206,9 +206,19 @@ function App() {
             </button>
 
             {/* Menu Items */}
-            <ul className="flex flex-col gap-6 text-gray-800 items-center" >
+            <ul className="flex flex-col gap-6 text-gray-800 items-center font-bold" >
               <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
-                
+                <Link
+                  to="home"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-green-500 cursor-pointer"
+                  onClick={toggleMenu}
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
                 <Link
                   to="about"
                   smooth={true}
