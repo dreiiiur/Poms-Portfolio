@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 
-import { IoMdDownload } from "react-icons/io";
 import { FaFigma, FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookMessenger } from "react-icons/fa";
@@ -24,15 +23,12 @@ import { SiGmail } from "react-icons/si";
 import { SiXampp } from "react-icons/si";
 import { SiMysql } from "react-icons/si";
 
-import { motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
-
 import { FaUser } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 import { FaMailBulk } from "react-icons/fa";
 import { TbSquareLetterPFilled } from "react-icons/tb";
 
-import jsPDF from "jspdf";
+import { motion } from "framer-motion";
 
 import { Link } from "react-scroll";
 
@@ -64,7 +60,7 @@ function App() {
         className="min-h-screen max-w-screen flex flex-col bg-transparent max-w-screen mx-auto "
         id="home"
       >
-        <header className="gap-4 sticky top-0 z-50 rounded-3xl">
+        <header className="gap-4 sticky top-0 z-50 rounded-3xl backdrop-blur-md">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-5xl text-gray-700 tracking-wide">
               <Link
@@ -76,10 +72,11 @@ function App() {
                 <TbSquareLetterPFilled />
               </Link>
             </div>
+
             {/* Toggle Menu Button */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden text-green-800 hover:text-green-500 cursor-pointer"
+              className="lg:hidden flex items-center justify-center w-10 h-10 text-green-800 hover:text-green-500 rounded-full hover:bg-green-100 transition duration-300 ease-in-out"
               aria-label="Toggle menu"
             >
               <svg
@@ -87,7 +84,7 @@ function App() {
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/3000/svg"
               >
                 <path
                   strokeLinecap="round"
@@ -98,13 +95,13 @@ function App() {
               </svg>
             </button>
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-700 gap-2 text-sm font-bold items-center pr-4 bg-white backdrop-blur-md transition duration-500" >
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-600 gap-2 text-sm font-bold items-center pr-4  backdrop-blur-md transition duration-500">
               <li>
                 <Link
                   to="about"
                   smooth={true}
                   duration={500}
-                  className="hover:text-green-800 cursor-pointer"
+                  className="hover:text-green-500 cursor-pointer"
                 >
                   ABOUT
                 </Link>
@@ -114,7 +111,7 @@ function App() {
                   to="projects"
                   smooth={true}
                   duration={500}
-                  className="hover:text-green-800 cursor-pointer"
+                  className="hover:text-green-500 cursor-pointer"
                 >
                   PROJECTS
                 </Link>
@@ -124,7 +121,7 @@ function App() {
                   to="contacts"
                   smooth={true}
                   duration={500}
-                  className="hover:text-green-800 cursor-pointer"
+                  className="hover:text-green-500 cursor-pointer"
                 >
                   CONTACTS
                 </Link>
@@ -142,7 +139,7 @@ function App() {
                 </a>
               </li>
               <li>
-                <a href="" target="_blank" className="hover:text-green-800">
+                <a href="" target="_blank" className="hover:text-green-500">
                   <button className="">
                     <MdDarkMode className="text-2xl" />
                   </button>
@@ -154,11 +151,11 @@ function App() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed font-regular inset-0 bg-gradient-to-b from-white to-green-100 flex flex-col items-center justify-center z-50 gap-8">
+          <div className="fixed font-regular inset-0 bg-gradient-to-b from-white to-green-50 flex flex-col items-center justify-center z-50 gap-8">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
-              className="absolute top-4 right-4 text-gray-800 hover:text-green-500 cursor-pointer"
+              className="absolute top-4 right-4 text-gray-800 hover:text-green-500 cursor-pointer "
               aria-label="Close menu"
             >
               <svg
@@ -178,9 +175,9 @@ function App() {
             </button>
 
             {/* Menu Items */}
-            <ul className="flex flex-col gap-6 text-gray-800">
+            <ul className="flex flex-col gap-6 text-gray-800 items-center" >
               <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
-                <FaUser className="text-gray-800 hover:text-green-500" />
+                
                 <Link
                   to="about"
                   smooth={true}
@@ -192,7 +189,7 @@ function App() {
                 </Link>
               </li>
               <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
-                <GrProjects className="text-gray-800 hover:text-green-500" />
+                
                 <Link
                   to="projects"
                   smooth={true}
@@ -204,7 +201,7 @@ function App() {
                 </Link>
               </li>
               <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
-                <FaMailBulk className="text-gray-800 hover:text-green-500" />
+                
                 <Link
                   to="contacts"
                   smooth={true}
@@ -218,146 +215,121 @@ function App() {
               <li>
                 <a
                   href="./Poma-Andrei-John.V.CV2025.pdf"
-                  className="bg-green-800 text-white rounded-md px-6 py-2 flex items-center gap-2 hover:bg-green-600 hover:text-white cursor-pointer"
+                  className="bg-gradient-to-r from-green-400 to-green-500 text-white rounded-md px-6 py-2 flex items-center gap-2 hover:bg-green-600 hover:text-white cursor-pointer"
                   download
                   onClick={toggleMenu}
                 >
                   Resume
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-white text-xl font-bold">
-                <a
-                  href=""
-                  className="items-center gap-2 hover:text-[#E1EACD] cursor-pointer"
-                  onClick={toggleMenu}
-                >
-                  <MdDarkMode className="text-center justify-center gap-2 text-2xl text-green-800 hover:text-[#E1EACD]" />
-                </a>
-              </li>
             </ul>
           </div>
         )}
+
         <motion.div
-          className="relative w-full min-h-screen flex flex-col items-center justify-center px-6 py-12 text-center"
+          className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-12 bg-white rounded-lg"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1 }}
         >
-          {/* Profile Image */}
-          <motion.div
-            className="relative flex justify-center items-center mb-10 group"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <motion.img
-              src="/123123.jpg"
-              alt="Profile"
-              className="w-70 h-70 sm:w-72 sm:h-72 md:w-74 md:h-74 lg:w-[420px] lg:h-[420px] rounded-[2rem] object-cover shadow-xl drop-shadow-md"
-            />
-            {/* Optional Overlay Vector on Hover */}
-            <motion.div
-              className="absolute top-0 left-0 w-full h-full rounded-[2rem] bg-[#00000060] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-              whileHover={{ opacity: 1 }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 100 100"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          {/* Text Content */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl mt-12 lg:mt-0">
+            <p className="text-gray-600 text-lg mb-2">Hello There!</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+              I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600">Andrei</span>,
+              <br />
+              Freelance{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500">
+                Web Designer
+              </span>
+              <br />
+              based in Philippines.
+            </h1>
+            <p className="text-gray-500 mt-4 text-base sm:text-lg s">
+              I’m an Freelance Web Designer and Front-End Developer based in the Philippines. I have a passion for creating visually stunning and user-friendly websites and apps.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6">
+              <button className="bg-gradient-to-r from-green-400 to-green-500 text-white py-2 px-6 rounded-full font-semibold">
+                 <Link
+                  to="projects"
+                  smooth={true}
+                  duration={500}
+                  className="cursor-pointer"
+                >
+                  View my Projects
+                </Link>
+              </button>
+              <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-2 px-6 rounded-full font-semibold">
+                <Link to="contacts" smooth={true} duration={500} className="cursor-pointer">Contact Me</Link
+                >
+              </button>
+            </div>
+
+            {/* Socials */}
+            <div className="flex gap-6 justify-center lg:justify-start mt-8 text-3xl text-green-600">
+              <a
+                href="https://github.com/dreiiiur"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <path
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  d="M50 0L60 20L70 0L80 20L90 0L100 20L0 20L10 0L20 20L30 0L40 20L50 0"
-                />
-                <path
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="2"
-                  d="M50 0L65 25L70 0L80 25L90 0L100 25L0 25L10 0L20 25L30 0L40 25L50 0"
-                />
-              </svg>
-            </motion.div>
-          </motion.div>
+                <FaGithub className="hover:text-black transition" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/andreipoma/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="hover:text-blue-500 transition" />
+              </a>
+              <a
+                href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFigma className="hover:text-pink-400 transition" />
+              </a>
+              <a
+                href="mailto:andreipoma1220@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiGmail className="hover:text-red-500 transition" />
+              </a>
+            </div>
+          </div>
 
-          <motion.p
-            className="text-gray-700 text-xl sm:text-2xl md:text-2xl max-w-5xl mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 1 }}
-          >
-            Hi! My name is Andrei, and I'm a{" "}
-            <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl">
-              Front-End Developer & UI/UX Designer
-            </b>
-            . I specialize in creating engaging and visually appealing user
-            interfaces.
-          </motion.p>
-
-          {/* Social Icons */}
+          {/* Profile Image Section with Animated Background */}
           <motion.div
-            className="flex flex-wrap justify-center gap-6 text-3xl mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
+            className="relative mt-12 lg:mt-0"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0, scale: 1.05 }}
+            transition={{ duration: 1 }}
           >
-            <a
-              href="https://github.com/dreiiiur"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="text-green-600 hover:text-[#C5BAFF] transition" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/andreipoma/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin className="text-green-600 hover:text-[#9ACBD0] transition" />
-            </a>
-            <a
-              href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?m=auto&t=gpOC35CdVSYqT0x4-1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFigma className="text-green-600 hover:text-[#F6C794] transition" />
-            </a>
-            <a
-              href="mailto:andreipoma1220@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SiGmail className="text-green-600 hover:text-[#FF8383] transition" />
-            </a>
-          </motion.div>
-
-          {/* Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-          >
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              className="bg-green-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-green-700 transition"
-            >
-              Projects
-            </Link>
-            <Link
-              to="contacts"
-              smooth={true}
-              duration={500}
-              className="border-2 border-green-700 text-green-700 font-semibold py-2 px-6 rounded-lg hover:bg-green-700 hover:text-white transition"
-            >
-              Contact
-            </Link>
+            {/* Animated Background Circle */}
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-r from-green-200 to-orange-200"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1.2 }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                repeatType: "reverse",
+              }}
+            />
+            <img
+              src="/gradpic123.png"
+              alt="Profile"
+              className="relative w-[400px] sm:w-[480px] lg:w-[460px] h-auto object-cover rounded-full filter drop-shadow-lg"
+            />
+            {/* Role Badge */}
+            <div className="absolute -left-3 md:-left-9 bottom-6 bg-gradient-to-r from-green-400 to-green-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md">
+              UI/UX Designer
+            </div>
           </motion.div>
         </motion.div>
+
 
         {/* About Section */}
         <motion.div
@@ -376,16 +348,14 @@ function App() {
             <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-500 to-green-400 bg-clip-text text-transparent">
               About Me
             </h2>
-            <div className="w-16 h-1 bg-green-500 rounded-full" />
+            <div className="w-16 h-1 bg-gradient-to-r from-orange-300 to-red-500 rounded-full" />
 
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-              I'm a{" "}
+              I am {" "}
               <strong className="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-600">
-                Freelance Front-End Developer and UI/UX Designer
-              </strong>{" "}
-              based from San Rafael, Bulacan. I'm passionate about creating
-              engaging digital experiences through modern web development and
-              thoughtful UI/UX design.
+                Andrei John V. Poma
+              </strong>, a fresh graduate freelancer based in San Rafael, Bulacan. I am passionate about creating
+              engaging digital experiences through web development and thoughtful UI/UX design.
             </p>
           </motion.div>
 
@@ -397,7 +367,7 @@ function App() {
             <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
               <FaCode className="text-3xl" /> Technologies I Use
             </h3>
-            <div className="w-12 h-1 bg-gradient-to-r from-green-500 to-green-600 rounded-full" />
+            <div className="w-12 h-1 bg-gradient-to-r from-orange-300 to-red-500 rounded-full" />
             <motion.div
               className="flex flex-wrap justify-center items-center gap-6"
               variants={stagger}
@@ -417,7 +387,7 @@ function App() {
                   variants={fadeIn}
                   className="hover:scale-110 transition-transform"
                 >
-                  <Icon className="text-4xl md:text-5xl text-green-600" />
+                  <Icon className="text-4xl md:text-5xl text-gray-600" />
                 </motion.div>
               ))}
             </motion.div>
@@ -429,9 +399,9 @@ function App() {
             variants={fadeIn}
           >
             <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
-              <VscTools className="text-3xl" /> Tools I Work With
+              <VscTools className="text-3xl" /> Tools I Use 
             </h3>
-            <div className="w-12 h-1 bg-green-300 rounded-full" />
+            <div className="w-12 h-1 bg-gradient-to-r from-orange-300 to-red-500 rounded-full" />
             <motion.div
               className="flex flex-wrap justify-center items-center gap-6"
               variants={stagger}
@@ -448,7 +418,7 @@ function App() {
                   variants={fadeIn}
                   className="hover:scale-110 transition-transform"
                 >
-                  <Icon className="text-4xl md:text-5xl text-green-600" />
+                  <Icon className="text-4xl md:text-5xl text-gray-600" />
                 </motion.div>
               ))}
             </motion.div>
@@ -460,8 +430,8 @@ function App() {
           id="projects"
         >
           {/* Section Title */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
-            <b className="text-green-600">Projects</b> that I've worked on and
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-600 mb-12">
+            <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">Projects</b> that I've worked on and
             contributed to.
           </h2>
           <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">
@@ -582,8 +552,8 @@ function App() {
           id="testimonials"
         >
           <div className="w-full max-w-6xl mx-auto px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-800 mb-12">
-              What they say <b className="text-green-600">About me?</b>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-600 mb-12">
+              What they say <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">About me?</b>
             </h2>
             <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">
               Here are some testimonials from my clients and people I've worked
@@ -607,7 +577,7 @@ function App() {
                 },
                 {
                   image: "./karina.jpg",
-                  name: "Mj Abante",
+                  name: "Angelo Parungao",
                   position: "Fullstack Developer",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 5,
@@ -615,6 +585,13 @@ function App() {
                 {
                   image: "./karina.jpg",
                   name: "Erlinda Bien",
+                  position: "Client",
+                  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
+                  rating: 5,
+                },
+                {
+                  image: "./karina.jpg",
+                  name: "Kris",
                   position: "Client",
                   text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.",
                   rating: 5,
