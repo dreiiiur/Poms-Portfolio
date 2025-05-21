@@ -283,7 +283,7 @@ function App() {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6">
-              <button className="bg-gray-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition duration-300 ease-in-out px-8">
+              <button className="bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition hover:scale-105 duration-300 ease-in-out">
                  <Link
                   to="projects"
                   smooth={true}
@@ -294,7 +294,7 @@ function App() {
                 </Link>
               </button>
               <button className="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white py-2 px-6 rounded-lg font-semibold hover:scale-105 transition duration-300 ease-in-out">
-                <Link to="contacts" smooth={true} duration={500} className="cursor-pointer">Contact Me</Link
+                <Link to="contacts" smooth={true} duration={500} className="cursor-pointer">Contact Me 🩶</Link
                 >
               </button>
             </div>
