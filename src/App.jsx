@@ -25,6 +25,7 @@ import { SiMysql } from "react-icons/si";
 import { PiHandWavingThin } from "react-icons/pi";
 import { MdOutlineRateReview } from "react-icons/md";
 import { MdMailOutline } from "react-icons/md";
+import { PiReadCvLogoBold } from "react-icons/pi";
 
 import { FaUser } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
@@ -46,6 +47,7 @@ import { CiMail } from "react-icons/ci";
 
 import { CgProfile } from "react-icons/cg";
 import { motion } from "framer-motion";
+import { PiReadCvLogo } from "react-icons/pi";
 
 import { Link } from "react-scroll";
 
@@ -113,7 +115,7 @@ function App() {
             </button>
 
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-600 gap-2 text-sm font-bold items-center shadow-lg bg-[#eeeeee] justify-center pr-4 backdrop-blur-md transition duration-500 py-2 px-6 rounded-xl mx-auto">
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-600 gap-2 text-sm font-bold items-center shadow-lg bg-gradient-to-b from-[#eeeeee] to-gray-200 justify-center pr-4 backdrop-blur-md transition duration-500 py-3 px-6 rounded-xl mx-auto">
                <li>
                 <Link
                   to="home"
@@ -164,18 +166,7 @@ function App() {
                  <IoMail className="hover:text-green-500 cursor-pointer text-xl md:text-2xl"/>
                 </Link>
               </li>
-              <li>
-                <a
-                  href="./Poma-Andrei-John.V.CV2025.pdf"
-                  target="_blank"
-                  className="hover:text-white cursor-pointer transition-opacity duration-500 ease-in-out"
-                  download
-                >
-                  <button className="bg-gradient-to-r from-green-400 to-green-600 text-white rounded-lg p-2 flex items-center gap-2 hover:scale-105 transition duration-500 ease-in-out">
-                    RESUME
-                  </button>
-                </a>
-              </li>
+             
             </ul>
           </nav>
         </header>
@@ -301,9 +292,15 @@ function App() {
                   View my Projects
                 </Link>
               </button>
-              <button className="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white py-2 px-6 rounded-lg font-semibold hover:scale-105 transition duration-300 ease-in-out">
-                <Link to="contacts" smooth={true} duration={500} className="cursor-pointer">Contact Me 🩶</Link
-                >
+              <button className="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white py-2 px-6 rounded-lg font-semibold hover:scale-105 transition duration-300 ease-in-out flex items-center gap-2">
+                <a
+                  href="./Poma-Andrei-John.V.CV2025.pdf"
+                  target="_blank"
+                  className="hover:text-white cursor-pointer transition-opacity duration-500 ease-in-out"
+                  download>
+                  Download CV
+                </a>
+                <PiReadCvLogoBold className="animate-bounce transition duration-500 ease-in-out text-xl" />
               </button>
             </div>
 
@@ -349,7 +346,7 @@ function App() {
           >
             {/* Animated Background Circle */}
             <motion.div
-              className="absolute top-0 left-0 w-full h-full bg-green-400 circle"
+              className="absolute top-0 left-0 w-full h-full bg-gray-600 circle"
               initial={{ scale: 0.9 }}
               animate={{ scale:1.1 }}
               transition={{
