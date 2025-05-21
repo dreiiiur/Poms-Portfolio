@@ -38,12 +38,12 @@ import { GoHomeFill } from "react-icons/go";
 import { IoCall } from "react-icons/io5";
 import { FaUserCircle } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
+import { FaEye } from "react-icons/fa";
 
 import { AiFillProject } from "react-icons/ai";
 import { MdRateReview } from "react-icons/md";
 
 import { CiMail } from "react-icons/ci";
-
 
 import { CgProfile } from "react-icons/cg";
 import { motion } from "framer-motion";
@@ -95,35 +95,49 @@ function App() {
             {/* Toggle Menu Button */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden flex items-center justify-center w-10 h-10 text-green-800 hover:text-green-500 rounded-full hover:bg-green-100 transition duration-300 ease-in-out"
+              className="lg:hidden flex items-center justify-center w-10 h-10 text-gray-600  hover:text-green-500 rounded-full transition duration-300 ease-in-out"
               aria-label="Toggle menu"
             >
               <svg
                 className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/3000/svg"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  d="M3 6H21"
+                  stroke="currentColor"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                />
+                <path
+                  d="M3 12H21"
+                  stroke="currentColor"
                   strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M3 18H21"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
 
             {/* Desktop Navigation */}
             <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-600 gap-2 text-sm font-bold items-center shadow-lg bg-gradient-to-b from-[#eeeeee] to-gray-200 justify-center pr-4 backdrop-blur-md transition duration-500 py-3 px-6 rounded-xl mx-auto">
-               <li>
+              <li>
                 <Link
                   to="home"
                   smooth={true}
                   duration={500}
                   className="hover:text-green-500 cursor-pointer"
                 >
-                  <GoHomeFill className="hover:text-green-500 cursor-pointer text-xl md:text-2xl"/>
+                  <GoHomeFill className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
                 </Link>
               </li>
               <li>
@@ -153,7 +167,7 @@ function App() {
                   duration={500}
                   className="hover:text-green-500 cursor-pointer"
                 >
-                  <MdRateReview className="hover:text-green-500 cursor-pointer text-xl md:text-2xl"/>
+                  <MdRateReview className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
                 </Link>
               </li>
               <li>
@@ -163,21 +177,20 @@ function App() {
                   duration={500}
                   className="hover:text-green-500 cursor-pointer"
                 >
-                 <IoMail className="hover:text-green-500 cursor-pointer text-xl md:text-2xl"/>
+                  <IoMail className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
                 </Link>
               </li>
-             
             </ul>
           </nav>
         </header>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="fixed font-regular inset-0 bg-gradient-to-b from-white to-green-50 flex flex-col items-center justify-center z-50 gap-8">
+          <div className="fixed font-regular inset-0flex flex-col items-center bg-white justify-center z-50 gap-8">
             {/* Close Button */}
             <button
               onClick={toggleMenu}
-              className="absolute top-4 right-4 text-gray-800 hover:text-green-500 cursor-pointer "
+              className="absolute top-4 right-4 text-gray-800 hover:text-green-500 cursor-pointer"
               aria-label="Close menu"
             >
               <svg
@@ -196,65 +209,56 @@ function App() {
               </svg>
             </button>
 
-            {/* Menu Items */}
-            <ul className="flex flex-col gap-6 text-gray-800 items-center font-bold" >
-              <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
-                <Link
-                  to="home"
-                  smooth={true}
-                  duration={500}
-                  className="hover:text-green-500 cursor-pointer"
-                  onClick={toggleMenu}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
-                <Link
-                  to="about"
-                  smooth={true}
-                  duration={500}
-                  className="hover:text-green-500 cursor-pointer"
-                  onClick={toggleMenu}
-                >
-                  About
-                </Link>
-              </li>
-              <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
-                
-                <Link
-                  to="projects"
-                  smooth={true}
-                  duration={500}
-                  className="hover:text-green-500 cursor-pointer"
-                  onClick={toggleMenu}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li className="flex items-center gap-2 text-gray-800 hover:text-green-500 text-lg">
-                
-                <Link
-                  to="contacts"
-                  smooth={true}
-                  duration={500}
-                  className="hover:text-green-500 cursor-pointer"
-                  onClick={toggleMenu}
-                >
-                  Contacts
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="./Poma-Andrei-John.V.CV2025.pdf"
-                  className="bg-gradient-to-r from-green-400 to-green-500 text-white rounded-md px-6 py-2 flex items-center gap-2 hover:bg-green-600 hover:text-white cursor-pointer"
-                  download
-                  onClick={toggleMenu}
-                >
-                  Resume
-                </a>
-              </li>
-            </ul>
+            <div className="fixed top-0 left-0 h-full w-72 bg-white shadow-xl rounded-r-3xl p-6 flex flex-col justify-between">
+              {/* User Info */}
+              <div>
+                <div className="flex items-center gap-4 mb-8">
+                  <img
+                    src="/gradpic123.png"
+                    alt="User Avatar"
+                    className="w-12 h-12 rounded-full"
+                  />
+                  <div>
+                    <h4 className="text-gray-600 font-bold text-lg">Andrei Poma</h4>
+                    
+                  </div>
+                </div>
+
+                {/* Menu Items */}
+                <ul className="space-y-5 text-gray-800">
+                  <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
+                    <GoHomeFill className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                    <Link to="home" smooth={true} duration={500} className="hover:text-green-500 cursor-pointer">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
+                    <FaUserCircle className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                    <Link to="about" smooth={true} duration={500} className="hover:text-green-500 cursor-pointer">
+                      <i className="fas fa-history"></i> About
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
+                    <AiFillProject className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                    <Link to="projects" smooth={true} duration={500} className="hover:text-green-500 cursor-pointer">
+                      <i className="fas fa-ticket-alt"></i> Projects
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
+                    <MdRateReview className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                    <Link to="testimonials" smooth={true} duration={500} className="hover:text-green-500 cursor-pointer">
+                      <i className="fas fa-map-marker-alt"></i> Testimonials
+                    </Link>
+                  </li>
+                  <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
+                    <IoMail className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                    <Link to="contacts" smooth={true} duration={500} className="hover:text-green-500 cursor-pointer">
+                      <i className="fas fa-user"></i> Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         )}
 
@@ -268,22 +272,27 @@ function App() {
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl mt-12 lg:mt-0">
             <p className="text-gray-600 text-lg mb-2">— Hello There!</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-600 leading-tight mb-4">
-              I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 font-sans ">Andrei </span> 
-              <PiHandWavingThin className="animate-bounce transition duration-500 ease-in-out inline-block" />, 
+              I’m{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 font-sans ">
+                Andrei{" "}
+              </span>
+              <PiHandWavingThin className="animate-bounce transition duration-500 ease-in-out inline-block" />
+              ,
               <br />
-              Freelance{" "}           
-                Web Designer
+              Freelance Web Designer
               <br />
               based in Bulacan.
             </h1>
             <p className="text-gray-500 mt-4 text-base sm:text-lg s">
-              I’m a Freelance Web Designer and Front-End Developer based in the Bulacan, Philippines. I have a passion for creating visually stunning and user-friendly websites and apps.
+              I’m a Freelance Web Designer and Front-End Developer based in the
+              Bulacan, Philippines. I have a passion for creating visually
+              stunning and user-friendly websites and apps.
             </p>
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6">
-              <button className="bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition hover:scale-105 duration-300 ease-in-out">
-                 <Link
+              <button className="bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition hover:scale-105 duration-300 ease-in-out flex items-center gap-2">
+                <Link
                   to="projects"
                   smooth={true}
                   duration={500}
@@ -291,13 +300,15 @@ function App() {
                 >
                   View my Projects
                 </Link>
+                <FaEye className="animate-bounce transition duration-500 ease-in-out text-xl" />
               </button>
               <button className="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white py-2 px-6 rounded-lg font-semibold hover:scale-105 transition duration-300 ease-in-out flex items-center gap-2">
                 <a
                   href="./Poma-Andrei-John.V.CV2025.pdf"
                   target="_blank"
                   className="hover:text-white cursor-pointer transition-opacity duration-500 ease-in-out"
-                  download>
+                  download
+                >
                   Download CV
                 </a>
                 <PiReadCvLogoBold className="animate-bounce transition duration-500 ease-in-out text-xl" />
@@ -348,7 +359,7 @@ function App() {
             <motion.div
               className="absolute top-0 left-0 w-full h-full bg-gray-600 circle"
               initial={{ scale: 0.9 }}
-              animate={{ scale:1.1 }}
+              animate={{ scale: 1.1 }}
               transition={{
                 repeat: Infinity,
                 duration: 2,
@@ -362,7 +373,6 @@ function App() {
             />
           </motion.div>
         </motion.div>
-
 
         {/* About Section */}
         <motion.div
@@ -384,11 +394,14 @@ function App() {
             <div className="w-16 h-1 bg-gradient-to-r from-green-400 to-green-500 rounded-full" />
 
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
-              I am {" "}
+              I am{" "}
               <strong className="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-600">
                 Andrei John V. Poma
-              </strong>, a fresh graduate IT student from Bulacan and currently a freelance web designer based in San Rafael, Bulacan. I am passionate about creating
-              engaging digital experiences through web development and thoughtful UI/UX design.
+              </strong>
+              , a fresh graduate IT student from Bulacan and currently a
+              freelance web designer based in San Rafael, Bulacan. I am
+              passionate about creating engaging digital experiences through web
+              development and thoughtful UI/UX design.
             </p>
           </motion.div>
 
@@ -432,7 +445,7 @@ function App() {
             variants={fadeIn}
           >
             <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold text-gray-600">
-              <VscTools className="text-3xl" /> Tools I Use 
+              <VscTools className="text-3xl" /> Tools I Use
             </h3>
             <div className="w-12 h-1 bg-gradient-to-r from-green-400 to-green-500 rounded-full" />
             <motion.div
@@ -464,8 +477,10 @@ function App() {
         >
           {/* Section Title */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-600 mb-12">
-            <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">Projects</b> that I've worked on and
-            contributed to.
+            <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">
+              Projects
+            </b>{" "}
+            that I've worked on and contributed to.
           </h2>
           <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">
             Here are some personal projects, freelance projects, and school
@@ -586,7 +601,10 @@ function App() {
         >
           <div className="w-full max-w-6xl mx-auto px-6">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-center bg-clip-text text-transparent bg-gray-600 mb-12">
-              What they say <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">About me?</b>
+              What they say{" "}
+              <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">
+                About me?
+              </b>
             </h2>
             <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-12">
               Here are some testimonials from my clients and people I've worked
@@ -674,7 +692,10 @@ function App() {
         >
           <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
             <h2 className="flex-row text-2xl sm:text-3xl md:text-4xl font-regular bg-clip-text text-transparent bg-gray-800 text-center flex items-center justify-center gap-2">
-              <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">Connect</b> with me.
+              <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">
+                Connect
+              </b>{" "}
+              with me.
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12 hover:text-green-600">
               {[
