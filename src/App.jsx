@@ -243,10 +243,10 @@ function App() {
                 Web Designer
               </span>
               <br />
-              based in Philippines.
+              based in Bulacan.
             </h1>
             <p className="text-gray-500 mt-4 text-base sm:text-lg s">
-              I’m a Freelance Web Designer and Front-End Developer based in the Philippines. I have a passion for creating visually stunning and user-friendly websites and apps.
+              I’m a Freelance Web Designer and Front-End Developer based in the Bulacan, Philippines. I have a passion for creating visually stunning and user-friendly websites and apps.
             </p>
 
             {/* Buttons */}
