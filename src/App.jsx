@@ -236,7 +236,7 @@ function App() {
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl mt-12 lg:mt-0">
             <p className="text-gray-600 text-lg mb-2">Hello There!</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600">Andrei</span>,
+              I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 font-sans ">Andrei</span>,
               <br />
               Freelance{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500">
@@ -246,7 +246,7 @@ function App() {
               based in Philippines.
             </h1>
             <p className="text-gray-500 mt-4 text-base sm:text-lg s">
-              I’m an Freelance Web Designer and Front-End Developer based in the Philippines. I have a passion for creating visually stunning and user-friendly websites and apps.
+              I’m a Freelance Web Designer and Front-End Developer based in the Philippines. I have a passion for creating visually stunning and user-friendly websites and apps.
             </p>
 
             {/* Buttons */}
@@ -334,7 +334,7 @@ function App() {
         {/* About Section */}
         <motion.div
           id="about"
-          className="relative flex flex-col items-center justify-center w-full min-h-screen px-6 py-20 gap-12 text-center bg-gradient-to-b from-white to-green-50"
+          className="relative flex flex-col items-center justify-center w-full min-h-screen px-6 py-20 gap-12 text-center bg-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.5 }}
@@ -354,7 +354,7 @@ function App() {
               I am {" "}
               <strong className="bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-600">
                 Andrei John V. Poma
-              </strong>, a fresh graduate freelancer based in San Rafael, Bulacan. I am passionate about creating
+              </strong>, a fresh graduate IT student from Bulacan and currently a freelance web designer based in San Rafael, Bulacan. I am passionate about creating
               engaging digital experiences through web development and thoughtful UI/UX design.
             </p>
           </motion.div>
@@ -426,7 +426,7 @@ function App() {
         </motion.div>
 
         <div
-          className="flex flex-col  bg-gradient-to-b from-green-50 to-white items-center justify-center w-full min-h-screen gap-4 px-8 py-16"
+          className="flex flex-col  bg-white items-center justify-center w-full min-h-screen gap-4 px-8 py-16"
           id="projects"
         >
           {/* Section Title */}
@@ -548,7 +548,7 @@ function App() {
 
         {/* Testimonial Section */}
         <section
-          className="min-h-screen w-full bg-gradient-to-b from-white to-green-50   flex items-center justify-center py-16"
+          className="min-h-screen w-full bg-white flex items-center justify-center py-16"
           id="testimonials"
         >
           <div className="w-full max-w-6xl mx-auto px-6">
@@ -636,7 +636,7 @@ function App() {
 
         {/* Contact Section */}
         <div
-          className="flex items-center justify-center w-full min-h-screen bg-gradient-to-b from-green-50 to-white gap-6 p-4"
+          className="flex items-center justify-center w-full min-h-screen bg-white gap-6 p-4"
           id="contacts"
         >
           <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
