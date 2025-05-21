@@ -280,10 +280,8 @@ function App() {
               I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 font-sans ">Andrei </span> 
               <PiHandWavingThin className="animate-bounce transition duration-500 ease-in-out inline-block" />, 
               <br />
-              Freelance{" "}
-              <span className="block md:inline-block">
+              Freelance{" "}           
                 Web Designer
-              </span>
               <br />
               based in Bulacan.
             </h1>
