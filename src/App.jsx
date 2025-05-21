@@ -22,12 +22,29 @@ import { FaPhp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { SiXampp } from "react-icons/si";
 import { SiMysql } from "react-icons/si";
+import { PiHandWavingThin } from "react-icons/pi";
+import { MdOutlineRateReview } from "react-icons/md";
+import { MdMailOutline } from "react-icons/md";
 
 import { FaUser } from "react-icons/fa";
 import { GrProjects } from "react-icons/gr";
 import { FaMailBulk } from "react-icons/fa";
 import { TbSquareLetterPFilled } from "react-icons/tb";
+import { GoProjectRoadmap } from "react-icons/go";
+import { IoIosMail } from "react-icons/io";
+import { HiDocumentArrowDown } from "react-icons/hi2";
+import { GoHomeFill } from "react-icons/go";
+import { IoCall } from "react-icons/io5";
+import { FaUserCircle } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
 
+import { AiFillProject } from "react-icons/ai";
+import { MdRateReview } from "react-icons/md";
+
+import { CiMail } from "react-icons/ci";
+
+
+import { CgProfile } from "react-icons/cg";
 import { motion } from "framer-motion";
 
 import { Link } from "react-scroll";
@@ -57,17 +74,17 @@ function App() {
   return (
     <>
       <div
-        className="min-h-screen max-w-screen flex flex-col bg-transparent max-w-screen mx-auto "
+        className="min-h-screen max-w-screen flex flex-col bg-transparent dark:bg-[#EEEEEE] max-w-screen mx-auto "
         id="home"
       >
-        <header className="gap-4 sticky top-0 z-50 rounded-3xl backdrop-blur-md">
+        <header className="gap-4 sticky top-0 z-50 rounded-3xl ">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-4">
             <div className="text-5xl text-gray-700 tracking-wide">
               <Link
                 to="home"
                 smooth={true}
                 duration={500}
-                className="hover:text-green-400 text-green-500 cursor-pointer"
+                className="hover:text-green-500 text-gray-600 cursor-pointer transition duration-300 ease-in-out"
               >
                 <TbSquareLetterPFilled />
               </Link>
@@ -94,8 +111,19 @@ function App() {
                 ></path>
               </svg>
             </button>
+
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-600 gap-2 text-sm font-bold items-center pr-4  backdrop-blur-md transition duration-500">
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-600 gap-2 text-sm font-bold items-center shadow-lg bg-[#eeeeee] justify-center pr-4 backdrop-blur-md transition duration-500 py-2 px-6 rounded-xl mx-auto">
+               <li>
+                <Link
+                  to="home"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-green-500 cursor-pointer"
+                >
+                  <GoHomeFill className="hover:text-green-500 cursor-pointer text-xl md:text-2xl"/>
+                </Link>
+              </li>
               <li>
                 <Link
                   to="about"
@@ -103,7 +131,7 @@ function App() {
                   duration={500}
                   className="hover:text-green-500 cursor-pointer"
                 >
-                  ABOUT
+                  <FaUserCircle className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
                 </Link>
               </li>
               <li>
@@ -113,7 +141,17 @@ function App() {
                   duration={500}
                   className="hover:text-green-500 cursor-pointer"
                 >
-                  PROJECTS
+                  <AiFillProject className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="testimonials"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-green-500 cursor-pointer"
+                >
+                  <MdRateReview className="hover:text-green-500 cursor-pointer text-xl md:text-2xl"/>
                 </Link>
               </li>
               <li>
@@ -123,7 +161,7 @@ function App() {
                   duration={500}
                   className="hover:text-green-500 cursor-pointer"
                 >
-                  CONTACTS
+                 <IoMail className="hover:text-green-500 cursor-pointer text-xl md:text-2xl"/>
                 </Link>
               </li>
               <li>
@@ -133,15 +171,8 @@ function App() {
                   className="hover:text-white cursor-pointer transition-opacity duration-500 ease-in-out"
                   download
                 >
-                  <button className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg px-4 py-2 flex items-center gap-2 hover:scale-105 hover:text-white">
+                  <button className="bg-gradient-to-r from-green-400 to-green-600 text-white rounded-lg p-2 flex items-center gap-2 hover:scale-105 transition duration-500 ease-in-out">
                     RESUME
-                  </button>
-                </a>
-              </li>
-              <li>
-                <a href="" target="_blank" className="hover:text-green-500">
-                  <button className="">
-                    <MdDarkMode className="text-2xl" />
                   </button>
                 </a>
               </li>
@@ -227,19 +258,20 @@ function App() {
         )}
 
         <motion.div
-          className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-12 bg-white rounded-lg"
+          className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-12 rounded-lg"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           {/* Text Content */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl mt-12 lg:mt-0">
-            <p className="text-gray-600 text-lg mb-2">Hello There!</p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 font-sans ">Andrei</span>,
+            <p className="text-gray-600 text-lg mb-2">— Hello There!</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-600 leading-tight mb-4">
+              I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 font-sans ">Andrei </span> 
+              <PiHandWavingThin className="animate-bounce transition duration-500 ease-in-out inline-block" />, 
               <br />
               Freelance{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500">
+              <span className="block md:inline-block">
                 Web Designer
               </span>
               <br />
@@ -251,7 +283,7 @@ function App() {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6">
-              <button className="bg-gradient-to-r from-green-400 to-green-500 text-white py-2 px-6 rounded-full font-semibold">
+              <button className="bg-gray-600 text-white py-2 px-6 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition duration-300 ease-in-out px-8">
                  <Link
                   to="projects"
                   smooth={true}
@@ -261,41 +293,41 @@ function App() {
                   View my Projects
                 </Link>
               </button>
-              <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-2 px-6 rounded-full font-semibold">
+              <button className="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white py-2 px-6 rounded-lg font-semibold hover:scale-105 transition duration-300 ease-in-out">
                 <Link to="contacts" smooth={true} duration={500} className="cursor-pointer">Contact Me</Link
                 >
               </button>
             </div>
 
             {/* Socials */}
-            <div className="flex gap-6 justify-center lg:justify-start mt-8 text-3xl text-green-600">
+            <div className="flex gap-6 justify-center lg:justify-start mt-8 text-3xl text-gray-600 ">
               <a
                 href="https://github.com/dreiiiur"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaGithub className="hover:text-black transition" />
+                <FaGithub className="hover:text-purple-500 hover:scale-105 transition duration-300 ease-in-out" />
               </a>
               <a
                 href="https://www.linkedin.com/in/andreipoma/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin className="hover:text-blue-500 transition" />
+                <FaLinkedin className="hover:text-blue-500 hover:scale-105 transition duration-300 ease-in-out" />
               </a>
               <a
                 href="https://www.figma.com/design/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaFigma className="hover:text-pink-400 transition" />
+                <FaFigma className="hover:text-pink-400 hover:scale-105 transition duration-300 ease-in-out" />
               </a>
               <a
                 href="mailto:andreipoma1220@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <SiGmail className="hover:text-red-500 transition" />
+                <SiGmail className="hover:text-red-500 hover:scale-105 transition duration-300 ease-in-out  " />
               </a>
             </div>
           </div>
@@ -309,9 +341,9 @@ function App() {
           >
             {/* Animated Background Circle */}
             <motion.div
-              className="absolute top-0 left-0 w-full h-full rounded-full bg-gradient-to-r from-green-200 to-orange-200"
+              className="absolute top-0 left-0 w-full h-full bg-green-400 circle"
               initial={{ scale: 0.9 }}
-              animate={{ scale: 1.2 }}
+              animate={{ scale:1.1 }}
               transition={{
                 repeat: Infinity,
                 duration: 2,
@@ -323,10 +355,6 @@ function App() {
               alt="Profile"
               className="relative w-[400px] sm:w-[480px] lg:w-[460px] h-auto object-cover rounded-full filter drop-shadow-lg"
             />
-            {/* Role Badge */}
-            <div className="absolute -left-3 md:-left-9 bottom-6 bg-gradient-to-r from-green-400 to-green-500 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md">
-              UI/UX Designer
-            </div>
           </motion.div>
         </motion.div>
 
@@ -334,7 +362,7 @@ function App() {
         {/* About Section */}
         <motion.div
           id="about"
-          className="relative flex flex-col items-center justify-center w-full min-h-screen px-6 py-20 gap-12 text-center bg-white"
+          className="relative flex flex-col items-center justify-center w-full min-h-screen px-6 py-20 gap-12 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.5 }}
@@ -345,10 +373,10 @@ function App() {
             className="max-w-4xl flex flex-col items-center gap-6"
             variants={fadeIn}
           >
-            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-500 to-green-400 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-600">
               About Me
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-orange-300 to-red-500 rounded-full" />
+            <div className="w-16 h-1 bg-gradient-to-r from-green-400 to-green-500 rounded-full" />
 
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
               I am {" "}
@@ -364,10 +392,10 @@ function App() {
             className="max-w-4xl w-full flex flex-col items-center gap-4"
             variants={fadeIn}
           >
-            <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+            <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold text-gray-600">
               <FaCode className="text-3xl" /> Technologies I Use
             </h3>
-            <div className="w-12 h-1 bg-gradient-to-r from-orange-300 to-red-500 rounded-full" />
+            <div className="w-12 h-1 bg-gradient-to-r from-green-400 to-green-500 rounded-full" />
             <motion.div
               className="flex flex-wrap justify-center items-center gap-6"
               variants={stagger}
@@ -398,10 +426,10 @@ function App() {
             className="max-w-4xl w-full flex flex-col items-center gap-4 mt-6"
             variants={fadeIn}
           >
-            <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+            <h3 className="flex items-center justify-center gap-2 text-2xl font-semibold text-gray-600">
               <VscTools className="text-3xl" /> Tools I Use 
             </h3>
-            <div className="w-12 h-1 bg-gradient-to-r from-orange-300 to-red-500 rounded-full" />
+            <div className="w-12 h-1 bg-gradient-to-r from-green-400 to-green-500 rounded-full" />
             <motion.div
               className="flex flex-wrap justify-center items-center gap-6"
               variants={stagger}
@@ -426,7 +454,7 @@ function App() {
         </motion.div>
 
         <div
-          className="flex flex-col  bg-white items-center justify-center w-full min-h-screen gap-4 px-8 py-16"
+          className="flex flex-col  items-center justify-center w-full min-h-screen gap-4 px-8 py-16"
           id="projects"
         >
           {/* Section Title */}
@@ -493,7 +521,7 @@ function App() {
             ].map((project, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center w-full bg-white rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-105"
+                className="flex flex-col items-center w-full bg-white bg-opacity-30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg transition-transform transform hover:scale-105"
               >
                 <div
                   className="w-full h-64 bg-center bg-cover"
@@ -548,7 +576,7 @@ function App() {
 
         {/* Testimonial Section */}
         <section
-          className="min-h-screen w-full bg-white flex items-center justify-center py-16"
+          className="min-h-screen w-full flex items-center justify-center py-16"
           id="testimonials"
         >
           <div className="w-full max-w-6xl mx-auto px-6">
@@ -636,12 +664,12 @@ function App() {
 
         {/* Contact Section */}
         <div
-          className="flex items-center justify-center w-full min-h-screen bg-white gap-6 p-4"
+          className="flex items-center justify-center w-full min-h-screen gap-6 p-4"
           id="contacts"
         >
           <div className="flex flex-col items-center text-center bg-transparent gap-12 w-full p-6 md:w-full md:px-12">
             <h2 className="flex-row text-2xl sm:text-3xl md:text-4xl font-regular bg-clip-text text-transparent bg-gray-800 text-center flex items-center justify-center gap-2">
-              <b className="text-green-600">Connect</b> with me.
+              <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">Connect</b> with me.
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl md:gap-8 lg:gap-12 hover:text-green-600">
               {[
@@ -693,11 +721,11 @@ function App() {
           </div>
         </div>
 
-        <footer className="bg-gradient-to-b from-white to-green-50   px-6 py-12 rounded-b-lg shadow-lg">
+        <footer className="  px-6 py-12 rounded-b-lg shadow-lg">
           <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between">
             {/* Branding Section */}
             <div className="flex flex-col gap-3">
-              <h1 className="font-bold text-start text-4xl sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-800">
+              <h1 className="font-bold text-start text-4xl sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600">
                 Andrei Poma
               </h1>
               <p className="text-gray-600 text-start sm:text-lg max-w-xl">
