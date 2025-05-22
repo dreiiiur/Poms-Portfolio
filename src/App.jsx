@@ -576,7 +576,7 @@ function App() {
               {
                 image: "./natureNinjas1.jpg",
                 title: "Nature Ninjas",
-                description: "Climate Awareness Website for Kids",
+                description: "Contributed to the Frontend of this website",
                 tech: "Django",
                 tech2: "TailwindCSS",
                 github: "https://github.com/ClydeMondero/nature-ninjas.git",
@@ -584,14 +584,14 @@ function App() {
               {
                 image: "./susihontamalaybalayhero.png",
                 title: "Susihon Ta Malaybalay",
-                description: "Prototype of a Malaybalay Trail",
+                description: "Handled the UI/UX Design.",
                 tech: "Figma",
                 link: "https://www.figma.com/proto/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?node-id=21-43&p=f&t=Do5kUWBLzHge4YXy-1&scaling=contain&content-scaling=fixed&page-id=0%3A1",
               },
               {
                 image: "./Matcha-Madness.png",
                 title: "Task-Matcha",
-                description: "Task List",
+                description: "Delivered a task management website",
                 tech: "React.js",
                 tech2: "TailwindCSS",
                 github: "https://github.com/dreiiiur/Task-Matcha",
@@ -599,7 +599,7 @@ function App() {
               {
                 image: "./industry-system.jpg",
                 title: "Industry System",
-                description: "Industry System",
+                description: "Handled the UI/UX Design of this website and Front-End Development",
                 tech: "PHP",
                 tech2: "TailwindCSS",
                 tech3: "MySQL",
@@ -608,16 +608,25 @@ function App() {
               {
                 image: "./matcha-madness1.png",
                 title: "Matcha Madness",
-                description: "Matcha Products/Beverages Store Prototype",
+                description: "Handled the UI/UX Design of this website",
                 tech: "Figma",
                 link: "https://www.figma.com/proto/djbaS2IE0zQJylhWnNCHN4/Matcha-Madness?page-id=0%3A1&node-id=16-2&p=f",
               },
               {
                 image: "./Aural-Nexus.png",
-                title: "Aural Nexus UI Design",
-                description: "Web-Based Game for Students",
+                title: "Aural Nexus",
+                description: "Handled the UI/UX Design of this website",
                 tech: "Figma",
                 link: "https://www.figma.com/proto/J4ejpBHqCimF0xXvvfdZX3/Aural-Nexus--Copy-?page-id=0%3A1&node-id=2105-23",
+              },
+              {
+                image: "./crescentree.png",
+                title: "Crescentree",
+                description: "Handled the Full-Stack Development of this website",
+                tech: "WordPress",
+                tech2: "Astra",
+                tech3: "TydioAI",
+                wordpress: "https://www.crescentreellc.com/",
               },
             ].map((project, index) => (
               <div
@@ -659,6 +668,16 @@ function App() {
                         rel="noopener noreferrer"
                       >
                         <FaFigma /> View Project
+                      </a>
+                    )}
+                    {project.wordpress && (
+                      <a
+                        href={project.wordpress}
+                        className="text-sm text-gray-400 hover:text-violet-400 flex items-center gap-2 mt-2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaWordpress /> Visit Website
                       </a>
                     )}
                   </div>
