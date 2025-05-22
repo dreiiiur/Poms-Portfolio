@@ -727,7 +727,7 @@ function App() {
                     alt={item.name}
                     className="w-20 h-20 rounded-full object-cover border-2 border-green-400"
                   />
-                  <div>
+                  <div className="text-left">
                     <p className="text-xl font-semibold text-gray-600">{item.name}</p>
                     <p className=" text-start text-sm text-green-500">{item.position}</p>
                   </div>
