@@ -1,7 +1,7 @@
+
 #root {
-  max-width: 100%;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
   background-color: #eeeeee;
   font-family: poppins, sans-serif;
@@ -14,6 +14,9 @@
   background-blend-mode: overlay;*/
 }
 .circle{
+  border-radius: 35% 75% 75% 35% / 35% 35% 75% 75% ;
+}
+.picture{
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
 }
 .logo {
@@ -54,6 +57,7 @@
 ::-webkit-scrollbar {
   background-color: #e1e1e1;
   width: 8px;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
