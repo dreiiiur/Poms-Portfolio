@@ -10,6 +10,7 @@ import { MdDarkMode } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaWordpress } from "react-icons/fa";
 
+
 import { FaHtml5 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { SiAdobephotoshop } from "react-icons/si";
@@ -116,7 +117,7 @@ function App() {
       image: "./karina.jpg",
       name: "Erlinda Bien",
       position: "Client",
-      text: "Efficient, communicative, and very easy to work with. The final output was beyond what I imagined.",
+      text: "We are incredibly grateful to Mr. Andrei, an outstanding IT student, for developing our app. His dedication, technical skill, and attention to detail brought our ideas to life in a smooth, user-friendly application. Thank you for your excellent work and professionalism!",
       rating: 5,
     },
     {
@@ -705,47 +706,48 @@ function App() {
         </div>
 
         {/* Testimonial Section */}
-         <section
-      className="relative min-h-screen w-full flex items-center justify-center py-16 px-4 overflow-hidden"
-      id="testimonials"
-    >
-      {/* Minimal Background Effects */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gray-500/50 rounded-full blur-2xl translate-x-1/3 translate-y-1/3 z-0"></div>
+        <section
+  className="relative min-h-screen w-full flex items-center justify-center py-16 px-4 overflow-hidden"
+  id="testimonials"
+>
+  {/* Minimal Background Effects */}
+  <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-300/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 z-0"></div>
 
-      {/* Main Content */}
-      <div className="relative w-full max-w-6xl mx-auto z-10">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl text-center text-gray-600 mb-6">
-          What they say{" "}
-          <b className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500">
-            About me?
-          </b>
-        </h2>
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-500 text-center mb-12">
-          A few words from clients and colleagues.
-        </p>
+  {/* Main Content */}
+  <div className="relative w-full max-w-6xl mx-auto z-10">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800 mb-4">
+      What they say{" "}
+      <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600">
+        About me?
+      </span>
+    </h2>
+    <p className="text-md sm:text-lg md:text-xl text-gray-500 text-center mb-12">
+      A few words from clients and colleagues.
+    </p>
 
-        <Slider {...settings}>
-          {testimonials.map((item, index) => (
-            <div key={index} className="px-4">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-8 max-w-3xl mx-auto text-gray-200 hover:scale-105 transition-transform">
-                <div className="flex items-center gap-4 shadow-lg rounded-2xl p-4 border-white/20 pb-4 mb-4">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-20 h-20 rounded-full object-cover border-2 border-green-400"
-                  />
-                  <div className="text-left">
-                    <p className="text-xl font-semibold text-gray-600">{item.name}</p>
-                    <p className=" text-start text-sm text-green-500">{item.position}</p>
-                  </div>
-                </div>
-                <p className="text-base text-justify leading-relaxed text-gray-500">{item.text}</p>
+    <Slider {...settings}>
+      {testimonials.map((item, index) => (
+        <div key={index} className="px-4">
+          <div className="rounded-2xl shadow-md hover:shadow-2xl transition-transform p-8 max-w-xl mx-auto text-gray-800 bg-white">
+            <div className="flex items-center gap-4 mb-6">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-16 h-16 rounded-full object-cover border-2 border-green-400 shadow-md"
+              />
+              <div className="text-left">
+                <p className="text-lg font-semibold text-gray-800">{item.name}</p>
+                <p className="text-sm text-green-600">{item.position}</p>
               </div>
             </div>
-          ))}
-        </Slider>
+            <p className="text-base leading-relaxed text-gray-600">{item.text}</p>
           </div>
-        </section>
+        </div>
+      ))}
+    </Slider>
+  </div>
+</section>
+
         {/* Wavy SVG Separator */}
         <div className="relative w-full overflow-hidden leading-none -mt-10 z-10">
           <svg
