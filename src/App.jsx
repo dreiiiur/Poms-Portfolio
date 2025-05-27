@@ -9,7 +9,7 @@ import { VscTools } from "react-icons/vsc";
 import { MdDarkMode } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaWordpress } from "react-icons/fa";
-
+import { FaBehanceSquare } from "react-icons/fa";
 
 import { FaHtml5 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -577,6 +577,22 @@ function App() {
             Here are some personal, freelance, and school projects I've worked
             on and contributed to.
           </p>
+          {/* Behance Link */}
+          <div className="flex flex-col items-center justify-center w-full max-w-3xl mb-12 sm:mb-16">
+            <p className="text-lg sm:text-xl text-gray-400 text-center mb-4 sm:mb-6">
+              I also do graphic design and UI/UX design that you can check out on{" "}
+              <span className="font-bold">Behance</span>
+            </p>
+            <a
+              href="https://www.behance.net/gallery/226837617/My-Designs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center px-6 py-3 bg-blue-500 hover:bg-green-500 text-white rounded-md shadow-sm sm:w-fit transition-all duration-300"
+            >
+              <FaBehanceSquare className="mr-2" /> Check out my designs on Behance
+            </a>
+          </div>
+          
 
           {/* Projects Container */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
