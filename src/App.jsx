@@ -899,6 +899,12 @@ function App() {
                   Projects
                 </Link>
                 <Link
+                  to="testimonials"
+                  className="text-gray-400 hover:text-green-400 cursor-pointer transition"
+                >
+                  Testimonials
+                </Link>
+                <Link
                   to="contacts"
                   className="text-gray-400 hover:text-green-400 cursor-pointer transition"
                 >
