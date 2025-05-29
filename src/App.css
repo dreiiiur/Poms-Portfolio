@@ -3,7 +3,7 @@
   max-width: 1920px;
   margin: 0 auto;
   text-align: center;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   font-family: poppins, sans-serif;
   /*background-image: url("/astigbg.jpg");
   background-size: cover;
@@ -64,3 +64,23 @@
   background-color: #000000;
   border-radius: 10px;
 }
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+

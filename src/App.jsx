@@ -351,7 +351,7 @@ function App() {
           </div>
         )}
 
-        <motion.div
+       <motion.div
           className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-12 rounded-lg "
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -433,16 +433,65 @@ function App() {
           </motion.div>
         </motion.div>
 
-        {/* Wavy SVG Separator */}
-        <div className="relative w-full overflow-hidden leading-none -mt-10 z-10">
-          <svg
-            viewBox="0 0 500 150"
-            preserveAspectRatio="none"
-            className="w-full h-[100px] rotate-360 fill-gray-900 animate-wave"
-          >
-            <path d="M0.00,49.98 C150.00,150.00 349.28,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" />
-          </svg>
-        </div>
+        {/* SECTION: MARQUEE */}
+<div className="relative w-full overflow-hidden p-12 z-10 bg-white">
+  <div className="absolute inset-0 bg-[url('/wave.svg')] bg-repeat-x bg-top opacity-20 pointer-events-none" />
+  <h1 className="text-3xl font-bold text-center text-gray-600 my-4">
+    Work With
+  </h1>
+
+  <motion.div
+    className="whitespace-nowrap animate-marquee flex gap-16 px-4"
+    initial={{ x: -1000 }}
+    animate={{ x: 0 }}
+    transition={{ type: "tween", duration: 10, repeat: Infinity }}
+  >
+    {[
+      "/logos/crescentree.png",
+      "/logos/shift.png",
+      "/logos/crescentree.png",
+      "/logos/shift.png",
+      "/logos/crescentree.png",
+      "/logos/shift.png",
+      "/logos/crescentree.png",
+      "/logos/shift.png",
+    ].map((src, idx) => (
+      <motion.img
+        key={idx}
+        src={src}
+        alt={`client-${idx}`}
+        className="h-10 grayscale opacity-80 hover:opacity-100 transition duration-300"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ type: "tween", duration: 1, delay: idx * 0.1 }}
+      />
+    ))}
+    {[
+      "/logos/crescentree.png",
+      "/logos/shift.png",
+      "/logos/crescentree.png",
+      "/logos/shift.png",
+      "/logos/crescentree.png",
+      "/logos/shift.png",
+      "/logos/crescentree.png",
+      "/logos/shift.png",
+    ].map((src, idx) => (
+      <motion.img
+        key={`dup-${idx}`}
+        src={src}
+        alt={`client-${idx}`}
+        className="h-10 grayscale opacity-80 hover:opacity-100 transition duration-300"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ type: "tween", duration: 1, delay: idx * 0.1 }}
+      />
+    ))}
+  </motion.div>
+</div>
+
+
+
+
 
         <motion.section
           id="about"
@@ -486,27 +535,60 @@ function App() {
             </h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-9 gap-6">
               {[
-                FaHtml5,
-                FaCss3Alt,
-                IoLogoJavascript,
-                FaReact,
-                RiTailwindCssFill,
-                FaBootstrap,
-                FaPhp,
-                SiMysql,
-                FaWordpress,
-              ].map((Icon, idx) => (
+                {
+                  icon: FaHtml5,
+                  text: "HTML5",
+                },
+                {
+                  icon: FaCss3Alt,
+                  text: "CSS3",
+                },
+                {
+                  icon: IoLogoJavascript,
+                  text: "JavaScript",
+                },
+                {
+                  icon: FaReact,
+                  text: "React",
+                },
+                {
+                  icon: RiTailwindCssFill,
+                  text: "Tailwind CSS",
+                },
+                {
+                  icon: FaBootstrap,
+                  text: "Bootstrap",
+                },
+                {
+                  icon: FaPhp,
+                  text: "PHP",
+                },
+                {
+                  icon: SiMysql,
+                  text: "MySQL",
+                },
+                {
+                  icon: FaWordpress,
+                  text: "WordPress",
+                },
+              ].map(({ icon: Icon, text }, idx) => (
                 <motion.div
                   key={idx}
                   variants={fadeIn}
-                  className="hover:scale-110 transition-transform"
+                  className="hover:scale-110 transition-transform relative"
                 >
                   <Icon className="text-4xl sm:text-5xl text-gray-300 hover:text-green-400" />
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-sm sm:text-base text-white bg-black/50 px-2 py-1 rounded-lg"
+                  >
+                    {text}
+                  </motion.span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-
           {/* TOOLS */}
           <motion.div
             variants={fadeIn}
@@ -517,52 +599,108 @@ function App() {
             </h3>
             <div className="flex flex-wrap justify-center gap-6">
               {[
-                PiFigmaLogoDuotone,
-                VscVscode,
-                SiAdobephotoshop,
-                FaGithub,
-                SiXampp,
-              ].map((Icon, idx) => (
+                {
+                  icon: PiFigmaLogoDuotone,
+                  text: "Figma",
+                },
+                {
+                  icon: VscVscode,
+                  text: "VS Code",
+                },
+                {
+                  icon: SiAdobephotoshop,
+                  text: "Photoshop",
+                },
+                {
+                  icon: FaGithub,
+                  text: "GitHub",
+                },
+                {
+                  icon: SiXampp,
+                  text: "XAMPP",
+                },
+              ].map(({ icon: Icon, text }, idx) => (
                 <motion.div
                   key={idx}
                   variants={fadeIn}
-                  className="hover:scale-110 transition-transform"
+                  className="hover:scale-110 transition-transform relative"
                 >
                   <Icon className="text-4xl sm:text-5xl text-gray-300 hover:text-green-400" />
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-sm sm:text-base text-white bg-black/50 px-2 py-1 rounded-lg"
+                  >
+                    {text}
+                  </motion.span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* HOBBIES */}
-          <motion.div
-            variants={fadeIn}
-            className="w-full max-w-5xl rounded-3xl bg-white/5 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
-          >
-            <h3 className="text-2xl sm:text-3xl font-semibold text-white">
-              Hobbies
-            </h3>
-            <div className="flex flex-col gap-4 w-full">
-              {[
-                "Designing UI using Figma",
-                "Building React side projects",
-                "Gaming (FPS, MOBA)",
-                "Learning new tech and tools",
-                "Coding while listening to Laufey",
-              ].map((hobby, idx) => (
-                <div
-                  key={idx}
-                  className={`px-6 py-3 rounded-xl w-fit max-w-full text-gray-300 text-lg shadow-inner hover:scale-105 transition-transform hover:text-green-400 ${
-                    idx % 2 === 0
-                      ? "bg-white/10 self-start"
-                      : "bg-white/10 self-end"
-                  }`}
-                >
-                  {hobby}
-                </div>
-              ))}
-            </div>
-          </motion.div>
+         {/* SERVICES */}
+<motion.div
+  variants={fadeIn}
+  className="w-full max-w-6xl mx-auto rounded-3xl bg-white/5 backdrop-blur-md shadow-2xl px-6 py-10 flex flex-col gap-10 items-center"
+>
+  <h3 className="text-3xl sm:text-4xl font-bold text-white flex items-center justify-center drop-shadow">
+    My Services
+  </h3>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+    {[
+      {
+        title: "Web Development",
+        description:
+          "Custom websites from simple landing pages to complex web apps tailored to your needs.",
+        icon: "🌐",
+      },
+      {
+        title: "UI/UX Design",
+        description:
+          "Clean, modern, and intuitive designs that enhance user experience and delight users.",
+        icon: "🎨",
+      },
+      {
+        title: "Responsive Design",
+        description:
+          "Fully responsive layouts that look great and function seamlessly on all devices.",
+        icon: "📱",
+      },
+      {
+        title: "Frontend Development",
+        description:
+          "Fast, scalable, and maintainable frontends using React, Tailwind, and best practices.",
+        icon: "⚡",
+      },
+      {
+        title: "Graphic Design",
+        description:
+          "Logos, icons, and brand visuals that elevate your identity and engage your audience.",
+        icon: "🖌️",
+      },
+      {
+        title: "Web Design",
+        description:
+          "Web design services from simple landing pages to complex web apps using React, Tailwind, and best practices.",
+        icon: "🚀",
+      },
+    ].map((service, idx) => (
+      <motion.div
+        key={idx}
+        variants={fadeIn}
+        className="group bg-white/10 hover:bg-white/20 transition duration-300 rounded-2xl p-6 w-full flex flex-col gap-4 shadow-md"
+      >
+        <div className="text-4xl">{service.icon}</div>
+        <h4 className="text-xl font-semibold text-gray-100 group-hover:text-green-400 transition">
+          {service.title}
+        </h4>
+        <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
+
         </motion.section>
 
         <div
@@ -578,7 +716,7 @@ function App() {
             on and contributed to.
           </p>
           {/* Behance Link */}
-          <div className="flex flex-col items-center justify-center w-full max-w-3xl mb-12 sm:mb-16">
+          <div className="bg-white/10 rounded-2xl shadow-md p-4 sm:p-6 flex flex-col gap-4 items-center justify-center w-full max-w-3xl mb-12 sm:mb-16">
             <p className="text-lg sm:text-xl text-gray-400 text-center mb-4 sm:mb-6">
               I also do graphic design and UI/UX design that you can check out on{" "}
               <span className="font-bold">Behance</span>
@@ -587,9 +725,9 @@ function App() {
               href="https://www.behance.net/gallery/226837617/My-Designs"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center px-6 py-3 bg-blue-500 hover:bg-green-500 text-white rounded-md shadow-sm sm:w-fit transition-all duration-300"
+              className="flex items-center justify-center px-6 py-3 bg-blue-500 hover:bg-green-500 text-white rounded-md transition-all duration-300"
             >
-              <FaBehanceSquare className="mr-2" /> Check out my designs on Behance
+              <FaBehanceSquare className="mr-2 text-2xl" /> Check out my designs on Behance
             </a>
           </div>
           

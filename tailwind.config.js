@@ -8,5 +8,12 @@ export default {
     extend: {},
   },
   plugins: [],
+
+  extend: {
+  animation: {
+    marquee: 'scrollMarquee 20s linear infinite',
+  },
+}
+
 }
 
