@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import { MdOutlineDesignServices } from "react-icons/md";
 
 import { FaFigma, FaGithub, FaInstagram, FaRProject } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -10,7 +11,7 @@ import { MdDarkMode } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { FaWordpress } from "react-icons/fa";
 import { FaBehanceSquare } from "react-icons/fa";
-
+import { IoBriefcaseOutline } from "react-icons/io5";
 import { FaHtml5 } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { SiAdobephotoshop } from "react-icons/si";
@@ -501,238 +502,195 @@ function App() {
         </div>
 
             <div></div>
+<motion.section
+  id="about"
+  className="relative w-full min-h-full px-4 py-12 sm:px-8 sm:py-16 flex flex-col gap-12"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={stagger}
+>
+  {/* ABOUT ME */}
+  <motion.div
+    variants={fadeIn}
+    className="w-full max-w-6xl rounded-xl bg-white/5 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-4 items-center mx-auto"
+  >
+    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
+      <PiHandWavingThin className="mr-2 animate-bounce" /> About Me
+    </h2>
+    <p className="text-gray-500 text-lg leading-relaxed text-justify">
+      I'm <strong className="text-black">Andrei John V. Poma</strong>, a freelance web designer and IT graduate based in Bulacan. I build modern, clean, and responsive websites. I'm passionate about creating engaging and user-friendly digital experiences.
+    </p>
+  </motion.div>
 
-              {/* Wavy SVG Separator */}
-        <div className="relative w-full overflow-hidden leading-none -mt-10 z-10 bg-transparent ">
-          <svg
-            viewBox="0 0 500 150"
-            preserveAspectRatio="none"
-            className="w-full h-[100px] rotate-30 fill-gray-900 animate-wave"
-          >
-            <path d="M0.00,49.98 C150.00,150.00 349.28,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" />
-          </svg>
+  {/* EXPERIENCE & TECHNOLOGIES/TOOLS */}
+  <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
+    {/* EXPERIENCE LEFT */}
+    <motion.div
+      variants={fadeIn}
+      className="flex-1 rounded-xl bg-white/10 backdrop-blur-md shadow-2xl p-6 sm:p-10 flex flex-col gap-4"
+    >
+      <h1 className="text-2xl sm:text-3xl font-bold text-black mb-4 flex items-center">
+        <IoBriefcaseOutline className="mr-2"/>Experience
+      </h1>
+      <div className="flex flex-col gap-2 items-start">
+        <p className="text-lg text-black font-bold">Shift101 IT Solutions</p>
+        <p className="text-base text-green-500 italic ">WordPress Developer and Web Developer</p>
+        <p className="text-sm text-gray-500">Feb 2025 - May 2025</p>
+      </div>
+      <p className="text-gray-600 mt-4 leading-relaxed text-justify">
+        My tasks during the internship included creating websites using WordPress, HTML, Tailwind CSS, PHP, and MySQL.
+      </p>
+      <p className="text-sm text-gray-600 mt-2 text-start">
+        <span className="font-bold">Projects:</span> Crescentree E-commerce Website
+      </p>
+      <hr className="my-6 border-gray-500" />
+      <div className="flex flex-col gap-2 text-start">
+        <p className="text-lg text-black font-bold">Freelance</p>
+        <p className="text-base text-green-500 italic">UI/UX Designer and Web Developer</p>
+        <p className="text-sm text-gray-500">2024 - Current</p>
+      </div>
+      <p className="text-gray-600 mt-4 leading-relaxed text-justify">
+        My freelance projects include creating websites using HTML, Tailwind CSS, JavaScript, and React. I also provide UI/UX design services for clients using Figma.
+      </p>
+      <p className="text-sm text-gray-600 mt-2 text-start">
+        <span className="font-bold">Projects:</span> Susihon ta Malaybalay, Aural Nexus
+      </p>
+    </motion.div>
+
+    {/* TECHNOLOGIES & TOOLS RIGHT */}
+    <div className="flex-1 flex flex-col gap-8">
+      {/* TECHNOLOGIES */}
+      <motion.div
+        variants={fadeIn}
+        className="rounded-3xl bg-white/10 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
+      >
+        <h3 className="text-2xl sm:text-3xl font-semibold text-black">Technologies I Use</h3>
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+          {[
+            { icon: FaHtml5, name: "HTML5" },
+            { icon: FaCss3Alt, name: "CSS3" },
+            { icon: IoLogoJavascript, name: "JavaScript" },
+            { icon: FaReact, name: "React" },
+            { icon: RiTailwindCssFill, name: "Tailwind CSS" },
+            { icon: FaBootstrap, name: "Bootstrap" },
+            { icon: FaPhp, name: "PHP" },
+            { icon: SiMysql, name: "MySQL" },
+            { icon: FaWordpress, name: "WordPress" },
+          ].map(({ icon: Icon, name }, idx) => (
+            <motion.div
+              key={idx}
+              variants={fadeIn}
+              className="hover:scale-110 transition-transform flex flex-col items-center"
+            >
+              <Icon className="text-3xl sm:text-4xl text-gray-700 hover:text-green-400" />
+              <span className="text-center text-sm text-gray-600 mt-2">{name}</span>
+            </motion.div>
+          ))}
         </div>
+      </motion.div>
 
-        <motion.section
-          id="about"
-          className="relative w-full min-h-screen px-4 sm:px-8 py-16 flex flex-col items-center gap-16 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-800 to-gray-900"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
+      {/* TOOLS */}
+      <motion.div
+        variants={fadeIn}
+        className="rounded-3xl bg-white/10 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
+      >
+        <h3 className="text-2xl sm:text-3xl font-semibold text-black">Tools I Use</h3>
+        <div className="flex flex-wrap justify-center gap-4">
+          {[
+            { icon: PiFigmaLogoDuotone, name: "Figma" },
+            { icon: VscVscode, name: "VS Code" },
+            { icon: SiAdobephotoshop, name: "Adobe Photoshop" },
+            { icon: FaGithub, name: "GitHub" },
+            { icon: SiXampp, name: "XAMPP" },
+          ].map(({ icon: Icon, name }, idx) => (
+            <motion.div
+              key={idx}
+              variants={fadeIn}
+              className="hover:scale-110 transition-transform flex flex-col items-center"
+            >
+              <Icon className="text-3xl sm:text-4xl text-gray-700 hover:text-green-400" />
+              <span className="text-center text-sm text-gray-600 mt-2">{name}</span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </div>
+
+  {/* SERVICES */}
+  <motion.div
+    variants={fadeIn}
+    className="w-full max-w-6xl mx-auto rounded-xl bg-white/10 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-8 items-center"
+  >
+    <h3 className="text-3xl sm:text-4xl font-bold text-black flex items-center gap-2"><MdOutlineDesignServices size={32} /> Services</h3>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      {[
+        {
+          icon: "💻",
+          title: "Web Development",
+          description: "Personal or business websites built with modern technologies — clean, fast, and scalable.",
+        },
+        {
+          icon: "🎨",
+          title: "UI/UX Designing",
+          description: "Crafting intuitive and engaging user interfaces tailored to your brand and users’ needs.",
+        },
+        {
+          icon: "📱",
+          title: "Responsive Design",
+          description: "Ensuring your website adapts flawlessly across all screen sizes — from mobile to desktop.",
+        },
+        {
+          icon: "🌐",
+          title: "Frontend Development",
+          description: "Building high-performance, interactive interfaces using modern frameworks like React and Vue.",
+        },
+        {
+          icon: "🖌️",
+          title: "Graphic Design",
+          description: "Designing custom visuals: logos, icons, banners, and branding assets for digital experiences.",
+        },
+        {
+          icon: "🌐",
+          title: "Web Designing",
+          description: "Web Designs using React and Tailwind CSS for a modern and responsive user interface.",
+        },
+      ].map((service, idx) => (
+        <motion.div
+          key={idx}
+          variants={fadeIn}
+          className="bg-white/10 border border-white/10 rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-transform hover:scale-105 hover:border-green-400 group"
         >
-          {/* ABOUT ME */}
-          <motion.div
-            variants={fadeIn}
-            className="w-full max-w-5xl rounded-3xl bg-white/5 backdrop-blur-md shadow-2xl p-6 sm:p-10 flex flex-col md:flex-row gap-8 items-start"
-          >
-            <div className="flex-1">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 flex items-center justify-center">
-                <PiHandWavingThin className="mr-2 animate-bounce" /> About Me
-              </h2>
-              <p className="text-gray-400 text-lg leading-relaxed text-justify">
-                I'm <strong className="text-white">Andrei John V. Poma</strong>,
-                a freelance web designer and IT graduate based in Bulacan. I
-                build modern, clean, and responsive websites. I'm passionate
-                about creating engaging and user-friendly digital experiences.
-              </p>
-              <p className="mt-4 text-gray-400 text-lg leading-relaxed text-justify">
-                Former Full-Stack Wordpress and Web Developer intern at{" "}
-                <strong className="text-white">shift101 IT Solutions</strong>.
-                Currently focused on freelance projects, self-learning, and
-                enhancing my design and dev skills.
-              </p>
-            </div>
-          </motion.div>
+          <div className="text-4xl mb-4">{service.icon}</div>
+          <h4 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h4>
+          <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
+        </motion.div>
+      ))}
+    </div>
+  </motion.div>
 
-          {/* TECHNOLOGIES */}
-          <motion.div
-            variants={fadeIn}
-            className="w-full max-w-5xl rounded-3xl bg-white/5 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
-          >
-            <h3 className="text-2xl sm:text-3xl font-semibold text-white flex items-center gap-2">
-              Technologies I Use
-            </h3>
-            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-9 gap-6">
-              {[
-                {
-                  icon: FaHtml5,
-                  name: "HTML5",
-                },
-                {
-                  icon: FaCss3Alt,
-                  name: "CSS3",
-                },
-                {
-                  icon: IoLogoJavascript,
-                  name: "JavaScript",
-                },
-                {
-                  icon: FaReact,
-                  name: "React",
-                },
-                {
-                  icon: RiTailwindCssFill,
-                  name: "Tailwind CSS",
-                },
-                {
-                  icon: FaBootstrap,
-                  name: "Bootstrap",
-                },
-                {
-                  icon: FaPhp,
-                  name: "PHP",
-                },
-                {
-                  icon: SiMysql,
-                  name: "MySQL",
-                },
-                {
-                  icon: FaWordpress,
-                  name: "WordPress",
-                },
-              ].map(({ icon: Icon, name }, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={fadeIn}
-                  className="hover:scale-110 transition-transform flex flex-col items-center"
-                >
-                  <Icon className="text-4xl sm:text-5xl text-gray-300 hover:text-green-400" />
-                  <span className="text-center text-sm text-white mt-2">
-                    {name}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+  {/* BEHANCE */}
+  <motion.div
+    variants={fadeIn}
+    className="w-full max-w-3xl mx-auto flex flex-col items-center gap-4 mt-8"
+  >
+    <p className="text-lg sm:text-xl text-gray-400 text-center">
+      I also do graphic design and UI/UX design that you can check out on <span className="font-bold">Behance</span>
+    </p>
+    <a
+      href="https://www.behance.net/gallery/226837617/My-Designs"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-400 text-white rounded-md shadow-sm transition-colors"
+    >
+      <FaBehanceSquare className="mr-2 text-2xl" />
+      <span className="text-lg">Check out my designs on Behance</span>
+    </a>
+  </motion.div>
+</motion.section>
 
-          {/* TOOLS */}
-          <motion.div
-            variants={fadeIn}
-            className="w-full max-w-5xl rounded-3xl bg-white/5 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
-          >
-            <h3 className="text-2xl sm:text-3xl font-semibold text-white flex items-center gap-2">
-              Tools I Use
-            </h3>
-            <div className="flex flex-wrap justify-center gap-6">
-              {[
-                {
-                  icon: PiFigmaLogoDuotone,
-                  name: "Figma",
-                },
-                {
-                  icon: VscVscode,
-                  name: "VS Code",
-                },
-                {
-                  icon: SiAdobephotoshop,
-                  name: "Adobe Photoshop",
-                },
-                {
-                  icon: FaGithub,
-                  name: "GitHub",
-                },
-                {
-                  icon: SiXampp,
-                  name: "XAMPP",
-                },
-              ].map(({ icon: Icon, name }, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={fadeIn}
-                  className="hover:scale-110 transition-transform flex flex-col items-center"
-                >
-                  <Icon className="text-4xl sm:text-5xl text-gray-300 hover:text-green-400" />
-                  <span className="text-center text-sm text-white mt-2">
-                    {name}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-          <motion.div
-            variants={fadeIn}
-            className="w-full max-w-6xl mx-auto rounded-3xl bg-white/5 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-8 items-center"
-          >
-            <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-              Services
-            </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-              {[
-                {
-                  icon: "💻",
-                  title: "Web Development",
-                  description:
-                    "Personal or business websites built with modern technologies — clean, fast, and scalable.",
-                },
-                {
-                  icon: "🎨",
-                  title: "UI/UX Designing",
-                  description:
-                    "Crafting intuitive and engaging user interfaces tailored to your brand and users’ needs.",
-                },
-                {
-                  icon: "📱",
-                  title: "Responsive Design",
-                  description:
-                    "Ensuring your website adapts flawlessly across all screen sizes — from mobile to desktop.",
-                },
-                {
-                  icon: "🌐",
-                  title: "Frontend Development",
-                  description:
-                    "Building high-performance, interactive interfaces using modern frameworks like React and Vue.",
-                },
-                {
-                  icon: "🖌️",
-                  title: "Graphic Design",
-                  description:
-                    "Designing custom visuals: logos, icons, banners, and branding assets for digital experiences.",
-                },
-                {
-                  icon: "🌐",
-                  title: "Web Designing",
-                  description:
-                    "Web Designs using React and Tailwind CSS for a modern and responsive user interface.",
-                },
-              ].map((service, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={fadeIn}
-                  className="bg-white/10 border border-white/10 rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:border-green-400 group"
-                >
-                  <div className="text-4xl mb-4 transition-transform group-hover:scale-110">
-                    {service.icon}
-                  </div>
-                  <h4 className="text-xl font-semibold text-white mb-2">
-                    {service.title}
-                  </h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Behance Link */}
-            <div className="flex flex-col items-center justify-center w-full max-w-3xl mb-12 sm:mb-16 sm:gap-6">
-              <p className="text-lg sm:text-xl text-gray-400 text-center mb-4 sm:mb-6">
-                I also do graphic design and UI/UX design that you can check out
-                on <span className="font-bold">Behance</span>
-              </p>
-              <a
-                href="https://www.behance.net/gallery/226837617/My-Designs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center px-6 py-3 bg-blue-500 hover:bg-green-500 text-white rounded-md shadow-sm sm:w-fit transition-all duration-300"
-              >
-                <FaBehanceSquare className="mr-2 text-2xl" />
-                <span className="text-lg">Check out my designs on Behance</span>
-              </a>
-            </div>
-          </motion.div>
-        </motion.section>
 
         <div
           className="flex flex-col items-center justify-center w-full min-h-screen gap-8 px-4 sm:px-8 py-16 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-800 to-gray-900"
