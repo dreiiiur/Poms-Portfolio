@@ -76,6 +76,16 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("About Me");
 
+   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -189,7 +199,11 @@ function App() {
             </button>
 
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-100 gap-2 text-sm font-bold items-center shadow-lg backdrop-blur-md justify-center pr-4 transition duration-500 py-3 px-6 rounded-xl mx-auto">
+            <ul  className={`hidden lg:flex space-x-8 text-gray-100 gap-2 text-sm font-bold items-center justify-center pr-4 transition duration-500 py-3 px-6 rounded-xl mx-auto shadow-lg ${
+    scrolled
+      ? "bg-violet-400/30 backdrop-blur-md"
+      : "bg-violet-700"
+  }`}>
               <li className="relative group">
                 <Link
                   to="home"
@@ -361,18 +375,12 @@ function App() {
 
             <h1
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-50 leading-tight mb-4"
-              style={{
-                textShadow:
-                  "0 0 4px rgba(34,197,94,0.5), 0 0 8px rgba(34,197,94,0.3)",
-              }}
+             
             >
               I’m{" "}
               <span
                 className="bg-gradient-to-r from-violet-400 via-violet-500 to-violet-600 px-4 py-1 rounded-lg"
-                style={{
-                  textShadow:
-                    "0 0 4px rgba(34,197,94,0.5), 0 0 8px rgba(34,197,94,0.3)",
-                }}
+               
               >
                 Andrei{" "}
                 <PiHandWavingThin className="animate-bounce inline-block ml-1" />
@@ -604,8 +612,8 @@ function App() {
                     </p>
                   </div>
 
-                  <p className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed text-justify">
-                    During my internship, I developed websites using{" "}
+                  <p className="text-gray-200 mt-4 leading-relaxed text-justify">
+                    Developed websites using{" "}
                     <span className="font-medium text-gray-900 dark:text-white">
                       WordPress
                     </span>
@@ -627,7 +635,7 @@ function App() {
                     </span>
                     .
                   </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  <p className="text-sm text-gray-200 dark:text-gray-200 mt-2">
                     <span className="font-bold text-gray-900 dark:text-white">
                       Project:
                     </span>{" "}
@@ -653,8 +661,8 @@ function App() {
                     </p>
                   </div>
 
-                  <p className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed text-justify">
-                    I work on freelance projects designing and building websites
+                  <p className="text-gray-200  mt-4 leading-relaxed text-justify">
+                    I offer designing services and website development
                     using{" "}
                     <span className="font-medium text-gray-900 dark:text-white">
                       HTML
@@ -677,8 +685,8 @@ function App() {
                     </span>
                     .
                   </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                    <span className="font-bold text-gray-900 dark:text-white">
+                  <p className="text-sm text-gray-200 dark:text-gray-200 mt-2">
+                    <span className="font-bold text-gray-300">
                       Projects:
                     </span>{" "}
                     Susihon ta Malaybalay, Aural Nexus
@@ -766,7 +774,7 @@ function App() {
             className="w-full max-w-6xl mx-auto rounded-xl bg-gray-800/60 border border-gray-700/60 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-8 items-center"
           >
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
               {[
                 {
                   icon: "💻",
@@ -787,22 +795,10 @@ function App() {
                     "Ensuring your website adapts flawlessly across all screen sizes — from mobile to desktop.",
                 },
                 {
-                  icon: "🌐",
-                  title: "Frontend Development",
+                  icon: "🎨",
+                  title: "Graphic Designing",
                   description:
-                    "Building high-performance, interactive interfaces using modern frameworks like React and Vue.",
-                },
-                {
-                  icon: "🖌️",
-                  title: "Graphic Design",
-                  description:
-                    "Designing custom visuals: logos, icons, banners, and branding assets for digital experiences.",
-                },
-                {
-                  icon: "🌐",
-                  title: "Web Designing",
-                  description:
-                    "Web Designs using React and Tailwind CSS for a modern and responsive user interface.",
+                    "Creating visually stunning and effective designs that leave a lasting impression on your audience.",
                 },
               ].map((service, idx) => (
                 <motion.div
@@ -865,7 +861,7 @@ function App() {
               {
                 image: "./natureNinjas1.jpg",
                 title: "Nature Ninjas",
-                description: "Contributed to the Frontend of this website",
+                description: "Climate awareness website that is made for kids.",
                 tech: "Django",
                 tech2: "TailwindCSS",
                 github: "https://github.com/ClydeMondero/nature-ninjas.git",
@@ -873,39 +869,29 @@ function App() {
               {
                 image: "./susihontamalaybalayhero.png",
                 title: "Susihon Ta Malaybalay",
-                description: "Handled the UI/UX Design.",
+                description: "Reservation Website for Susihon Ta Malaybalay.",
                 tech: "Figma",
                 link: "https://www.figma.com/proto/TWjRPaDvVcWr8126zL050R/Susihon-ta-Malaybalay?node-id=21-43&p=f&t=Do5kUWBLzHge4YXy-1&scaling=contain&content-scaling=fixed&page-id=0%3A1",
               },
               {
                 image: "./Matcha-Madness.png",
                 title: "Task-Matcha",
-                description: "Delivered a task management website",
+                description: "Task Management website that is made to manage tasks and projects.",
                 tech: "React.js",
                 tech2: "TailwindCSS",
                 github: "https://github.com/dreiiiur/Task-Matcha",
               },
               {
-                image: "./industry-system.jpg",
-                title: "Industry System",
-                description:
-                  "Handled the UI/UX Design of this website and Front-End Development",
-                tech: "PHP",
-                tech2: "TailwindCSS",
-                tech3: "MySQL",
-                github: "https://github.com/dreiiiur/Industry-System",
-              },
-              {
                 image: "./Aural-Nexus.png",
                 title: "Aural Nexus",
-                description: "Handled the UI/UX Design of this website",
+                description: "Web-based game that is made for gr9 students to practice their hearing ability.",
                 tech: "Figma",
                 link: "https://www.figma.com/proto/J4ejpBHqCimF0xXvvfdZX3/Aural-Nexus--Copy-?page-id=0%3A1&node-id=2105-23",
               },
               {
                 image: "./busybee1.png",
                 title: "BusyBee",
-                description: "Handled the UI/UX Design of this website",
+                description: "Task Management website that is made to help busybee employees to manage their tasks.",
                 tech: "Figma",
                 link: "https://www.figma.com/design/qieyz5wEJilByp7ZQ0TRzW/UI-Design-Exam?node-id=0-1&t=SGNyQzBvUCuT53mV-1",
               },
@@ -913,7 +899,7 @@ function App() {
                 image: "./crescentree.png",
                 title: "Crescentree",
                 description:
-                  "Handled the Full-Stack Development of this website",
+                  "An AI chatbot powered E-commerce website that is made to help people buy and sell products.",
                 tech: "WordPress",
                 tech2: "Astra",
                 tech3: "TydioAI",
@@ -932,7 +918,7 @@ function App() {
                   <h3 className="text-xl font-semibold text-white">
                     {project.title}
                   </h3>
-                  <p className="text-gray-500">{project.description}</p>
+                  <p className="text-gray-300">{project.description}</p>
                   <div className="mt-2">
                     <p className="text-sm text-violet-400 flex items-center gap-2">
                       {project.tech}
@@ -944,7 +930,7 @@ function App() {
                     {project.github && (
                       <a
                         href={project.github}
-                        className="text-sm text-gray-400 hover:text-violet-400 flex items-center gap-2 mt-2"
+                        className="text-sm text-gray-300 hover:text-violet-400 flex items-center gap-2 mt-2"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -954,7 +940,7 @@ function App() {
                     {project.link && (
                       <a
                         href={project.link}
-                        className="text-sm text-gray-400 hover:text-violet-400 flex items-center gap-2 mt-2"
+                        className="text-sm text-gray-300 hover:text-violet-400 flex items-center gap-2 mt-2"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -980,7 +966,7 @@ function App() {
 
       
 
-        <section className="py-20 px-6 bg-gradient-to-t from-[#1d1d1d] via-[#1d1d1d] to-violet-900">
+        <section className="py-20 px-6 bg-gradient-to-t from-[#1d1d1d] via-[#1d1d1d] to-violet-900" id="testimonials">
           <div className="max-w-6xl mx-auto text-center">
             {/* Header */}
             <p className="text-sm font-medium bg-violet-100 text-violet-700 px-4 py-1 inline-block rounded-full mb-4">
@@ -1098,7 +1084,7 @@ function App() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold hover:bg-gradient-to-r hover:from-violet-500 hover:to-violet-600 transition hover:scale-105 duration-300 ease-in-out"
+                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-violet-600 text-white font-semibold hover:bg-gradient-to-r hover:from-violet-500 hover:to-violet-600 transition hover:scale-105 duration-300 ease-in-out"
                 >
                   Send Message
                 </button>
