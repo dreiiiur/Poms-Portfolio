@@ -44,6 +44,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { FaEye } from "react-icons/fa";
 
+import { TbUserQuestion } from "react-icons/tb";
+
 import { AiFillProject } from "react-icons/ai";
 import { MdRateReview } from "react-icons/md";
 
@@ -61,8 +63,18 @@ import { Link } from "react-scroll";
 
 import "./App.css";
 
+const tabs = [
+  "About Me",
+  "Experience",
+  "Technologies",
+  "Tools",
+  "Services",
+  "Behance",
+];
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("About Me");
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -91,7 +103,6 @@ function App() {
     autoplaySpeed: 5000,
     arrows: false,
   };
-
 
   const testimonials = [
     {
@@ -139,14 +150,12 @@ function App() {
       >
         <header className="gap-4 sticky top-0 z-50 rounded-3xl ">
           <nav className="flex justify-between items-center gap-4 rounded-lg max-w-screen bg-transparent p-2">
-            <div className="text-5xl text-gray-500 tracking-wide hidden md:block lg:block">
-              <img src="/pomsicles.png" alt="Logo" className="w-12 h-12" />
-            </div>
+           
 
             {/* Toggle Menu Button */}
             <button
               onClick={toggleMenu}
-              className="lg:hidden flex items-center justify-center w-10 h-10 text-gray-400  hover:text-green-500 rounded-full transition duration-300 ease-in-out"
+              className="lg:hidden flex items-center justify-center w-10 h-10 text-gray-400  hover:text-violet-500 rounded-full transition duration-300 ease-in-out"
               aria-label="Toggle menu"
             >
               <svg
@@ -180,20 +189,20 @@ function App() {
             </button>
 
             {/* Desktop Navigation */}
-            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-500 gap-2 text-sm font-bold items-center shadow-lg backdrop-blur-md justify-center pr-4 transition duration-500 py-3 px-6 rounded-xl mx-auto">
+            <ul className="hidden lg:flex space-x-8 lg:space-x-8 text-gray-100 gap-2 text-sm font-bold items-center shadow-lg backdrop-blur-md justify-center pr-4 transition duration-500 py-3 px-6 rounded-xl mx-auto">
               <li className="relative group">
                 <Link
                   to="home"
                   smooth={true}
                   duration={500}
-                  className="hover:text-green-500 cursor-pointer"
+                  className="hover:text-violet-500 cursor-pointer"
                 >
                   <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 hidden group-hover:block">
                     <p className="bg-white text-black text-xs px-2 py-1 rounded-lg shadow-lg">
                       Home
                     </p>
                   </div>
-                  <GoHomeFill className="hover:text-green-500 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
+                  <GoHomeFill className="hover:text-violet-300 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
                 </Link>
               </li>
               <li className="relative group">
@@ -208,7 +217,7 @@ function App() {
                       About
                     </p>
                   </div>
-                  <FaUserCircle className="hover:text-green-500 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
+                  <FaUserCircle className="hover:text-violet-300 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
                 </Link>
               </li>
               <li className="relative group">
@@ -223,7 +232,7 @@ function App() {
                       Projects
                     </p>
                   </div>
-                  <AiFillProject className="hover:text-green-500 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
+                  <AiFillProject className="hover:text-violet-300 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
                 </Link>
               </li>
 
@@ -239,7 +248,7 @@ function App() {
                       Testimonials
                     </p>
                   </div>
-                  <MdRateReview className="hover:text-green-500 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
+                  <MdRateReview className="hover:text-violet-300 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
                 </Link>
               </li>
 
@@ -255,7 +264,7 @@ function App() {
                       Contacts
                     </p>
                   </div>
-                  <IoMail className="hover:text-green-500 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
+                  <IoMail className="hover:text-violet-300 cursor-pointer text-xl md:text-2xl hover:scale-125 transition duration-500 ease-out" />
                 </Link>
               </li>
             </ul>
@@ -265,46 +274,33 @@ function App() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="fixed font-regular inset-0 flex flex-col items-center transform translate-x-0 transition duration-500 ease-in-out justify-center z-50 gap-8">
-            <div className="fixed top-0 left-0 h-full w-72 backdrop-blur  bg-white/70 shadow-xl  p-6 flex flex-col justify-between">
+            <div className="fixed top-0 left-0 h-full w-72 backdrop-blur  bg-violet-900 shadow-xl  p-6 flex flex-col justify-between">
               {/* User Info */}
               <div>
                 {/* Close Button */}
                 <button
                   onClick={toggleMenu}
-                  className="absolute top-4 right-4 text-gray-800 hover:text-green-500 cursor-pointer"
+                  className="absolute top-4 right-4 text-gray-100 hover:text-violet-500 cursor-pointer"
                   aria-label="Close menu"
                 >
                   <span className="text-2xl">&times;</span>
                 </button>
 
-                <div className="flex items-center gap-4 mb-8">
-                  <img
-                    src="/gradpic123.png"
-                    alt="User Avatar"
-                    className="w-12 h-12 rounded-full"
-                  />
-                  <div>
-                    <h4 className="text-gray-600 font-bold text-lg">
-                      Andrei Poma
-                    </h4>
-                  </div>
-                </div>
-
                 {/* Menu Items */}
-                <ul className="space-y-5 text-gray-800">
-                  <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
-                    <GoHomeFill className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                <ul className="space-y-5 text-gray-100">
+                  <li className="flex items-center gap-3 text-lg hover:text-violet-500 cursor-pointer">
+                    
                     <Link
                       to="home"
                       smooth={true}
                       duration={500}
-                      className="hover:text-green-500 cursor-pointer"
+                      className="hover:text-violet-500 cursor-pointer"
                     >
                       Home
                     </Link>
                   </li>
-                  <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
-                    <FaUserCircle className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                  <li className="flex items-center gap-3 text-lg hover:text-violet-500 cursor-pointer">
+                    
                     <Link
                       to="about"
                       smooth={true}
@@ -315,7 +311,7 @@ function App() {
                     </Link>
                   </li>
                   <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
-                    <AiFillProject className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                    
                     <Link
                       to="projects"
                       smooth={true}
@@ -326,7 +322,7 @@ function App() {
                     </Link>
                   </li>
                   <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
-                    <MdRateReview className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                    
                     <Link
                       to="testimonials"
                       smooth={true}
@@ -337,7 +333,7 @@ function App() {
                     </Link>
                   </li>
                   <li className="flex items-center gap-3 text-lg hover:text-green-500 cursor-pointer">
-                    <IoMail className="hover:text-green-500 cursor-pointer text-xl md:text-2xl" />
+                    
                     <Link
                       to="contacts"
                       smooth={true}
@@ -354,103 +350,91 @@ function App() {
         )}
 
         <motion.div
-          className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-12 rounded-lg bg-noise bg-[url('./new.jpg')] bg-cover bg-center"
+          className="w-full min-h-screen flex flex-col items-center justify-center text-center px-6 py-12 bg-gradient-to-b from-[#1d1d1d] via-[#1d1d1d] to-violet-900"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           {/* Text Content */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl mt-12 lg:mt-0">
-            <p className="text-gray-600 text-lg mb-2">— Hello There!</p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-600 leading-tight mb-4 drop-shadow-lg">
+          <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
+            <p className="text-gray-50 text-lg mb-2">Hello There!</p>
+
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-50 leading-tight mb-4"
+              style={{
+                textShadow:
+                  "0 0 4px rgba(34,197,94,0.5), 0 0 8px rgba(34,197,94,0.3)",
+              }}
+            >
               I’m{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-500 font-sans ">
+              <span
+                className="bg-gradient-to-r from-violet-400 via-violet-500 to-violet-600 px-4 py-1 rounded-lg"
+                style={{
+                  textShadow:
+                    "0 0 4px rgba(34,197,94,0.5), 0 0 8px rgba(34,197,94,0.3)",
+                }}
+              >
                 Andrei{" "}
+                <PiHandWavingThin className="animate-bounce inline-block ml-1" />
               </span>
-              <PiHandWavingThin className="animate-bounce transition duration-500 ease-in-out inline-block" />
               ,
               <br />
-              Freelance <span className="text-green-500">Web Designer</span>
-              <br />
-              and <span className="text-green-500">Front-End Developer</span>
+               Freelance Web Designer and Front-End Developer
               <br />
               based in Bulacan.
             </h1>
-            <p className="text-gray-500 mt-4 text-base sm:text-lg s">
+
+            <p className="text-gray-200 mt-4 text-base sm:text-lg text-shadow-lg">
               I’m a Freelance Web Designer and Front-End Developer based in the
               Bulacan, Philippines. I have a passion for creating visually
               stunning and user-friendly websites and apps.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start mt-6">
-              <button className="bg-gray-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition hover:scale-105 duration-300 ease-in-out flex items-center gap-2">
+            <div className="flex flex-wrap gap-4 justify-center mt-6">
+              <button className="bg-violet-500 text-white py-3 px-4 rounded-full font-semibold hover:bg-violet-700 hover:scale-105 transition duration-300 flex items-center gap-2">
                 <Link
                   to="projects"
                   smooth={true}
                   duration={500}
                   className="cursor-pointer"
                 >
-                  View my Projects
+                  View Projects
                 </Link>
-                <FaEye className="animate-bounce transition duration-500 ease-in-out text-xl" />
+                <FaEye className="animate-bounce text-xl" />
               </button>
-              <button className="border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white py-2 px-6 rounded-lg font-semibold hover:scale-105 transition duration-300 ease-in-out flex items-center gap-2">
+
+              <button className="bg-white text-violet-500  py-3 px-4 rounded-full font-semibold hover:scale-105 transition duration-300 flex items-center gap-2">
                 <a
                   href="./Poma-Andrei-John.V.CV2025.pdf"
                   target="_blank"
-                  className="hover:text-white cursor-pointer transition-opacity duration-500 ease-in-out"
                   download
+                  className=" cursor-pointer transition-opacity duration-500"
                 >
                   Download CV
                 </a>
-                <PiReadCvLogoBold className="animate-bounce transition duration-500 ease-in-out text-xl" />
+                <PiReadCvLogoBold className="animate-bounce text-xl" />
               </button>
             </div>
           </div>
-
-          {/* Profile Image Section with Animated Background */}
-          <motion.div
-            className="relative mt-12 lg:mt-0"
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0, scale: 1.05 }}
-            transition={{ duration: 1 }}
-          >
-            {/* Animated Background Circle */}
-            <motion.div
-              className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-gray-200 to-gray-500 circle"
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1.2 }}
-              transition={{
-                repeat: Infinity,
-                duration: 2,
-                repeatType: "reverse",
-              }}
-            />
-            <img
-              src="/gradpic123.png"
-              alt="Profile"
-              className="relative w-[250px] sm:w-[350px] lg:w-[460px] h-auto object-cover rounded-full filter drop-shadow-lg picture"
-            />
-          </motion.div>
-          
         </motion.div>
-        <div className="relative"
+
+        <div
+          className="relative"
           style={{
             boxShadow: `
               0px 20px 40px rgba(0, 0, 0, 0.15),
               0px 20px 40px rgba(0, 0, 0, 0.15)
             `,
           }}
-        >
-            
-          </div>
-        {/* SECTION: MARQUEE */}
-    <div className="relative w-full overflow-hidden p-12 z-10 bg-[url('./new.jpg')] bg-cover bg-center" >
+        ></div>
 
-          <div className="absolute inset-0 bg-[url('/wave.svg')] bg-repeat-x bg-top opacity-20 pointer-events-none" />
+      
+        {/* SECTION: MARQUEE
+        <div className="relative w-full overflow-hidden p-12 z-10">
+          <div className="absolute inset-0  pointer-events-none" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-300 opacity-50 blur-md" />
+          <div className="absolute inset-0 opacity-50 blur-md" />
 
           <motion.div
             className="whitespace-nowrap animate-marquee flex gap-16 px-4"
@@ -461,18 +445,20 @@ function App() {
             {[
               "/logos/crescentree.png",
               "/logos/shift.png",
+              "/logos/aural-nexus.png",
+              "/logos/susihon.png",
+              "/logos/match-madness.png",
               "/logos/crescentree.png",
               "/logos/shift.png",
-              "/logos/crescentree.png",
-              "/logos/shift.png",
-              "/logos/crescentree.png",
-              "/logos/shift.png",
+              "/logos/aural-nexus.png",
+              "/logos/susihon.png",
+              "/logos/match-madness.png",
             ].map((src, idx) => (
               <motion.img
                 key={idx}
                 src={src}
                 alt={`client-${idx}`}
-                className="h-10 grayscale opacity-80 hover:opacity-100 transition duration-300"
+                className="h-10 grayscale opacity-10 hover:opacity-100 transition duration-300"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ type: "tween", duration: 1, delay: idx * 0.1 }}
@@ -481,12 +467,14 @@ function App() {
             {[
               "/logos/crescentree.png",
               "/logos/shift.png",
+              "/logos/aural-nexus.png",
+              "/logos/susihon.png",
+              "/logos/match-madness.png",
               "/logos/crescentree.png",
               "/logos/shift.png",
-              "/logos/crescentree.png",
-              "/logos/shift.png",
-              "/logos/crescentree.png",
-              "/logos/shift.png",
+              "/logos/aural-nexus.png",
+              "/logos/susihon.png",
+              "/logos/match-madness.png",
             ].map((src, idx) => (
               <motion.img
                 key={`dup-${idx}`}
@@ -500,207 +488,373 @@ function App() {
             ))}
           </motion.div>
         </div>
+        */}
 
-            <div></div>
-<motion.section
-  id="about"
-  className="relative w-full min-h-full px-4 py-12 sm:px-8 sm:py-16 flex flex-col gap-12"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
-  variants={stagger}
->
-  {/* ABOUT ME */}
-  <motion.div
-    variants={fadeIn}
-    className="w-full max-w-6xl rounded-xl bg-white/5 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-4 items-center mx-auto"
-  >
-    <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-      <PiHandWavingThin className="mr-2 animate-bounce" /> About Me
-    </h2>
-    <p className="text-gray-500 text-lg leading-relaxed text-justify">
-      I'm <strong className="text-black">Andrei John V. Poma</strong>, a freelance web designer and IT graduate based in Bulacan. I build modern, clean, and responsive websites. I'm passionate about creating engaging and user-friendly digital experiences.
-    </p>
-  </motion.div>
+        <div id="about"></div>
+        <section className="relative w-full px-4 py-12 sm:px-8 sm:py-16 flex flex-col gap-12  h-full sm:h-screen bg-gradient-to-t from-[#1d1d1d] via-[#1d1d1d] to-violet-900">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col gap-4 items-center"
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-100 mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] letter-spacing-2">
+              Know more about me
+            </h2>
+          </motion.div>
+          {/* Tab Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-colors duration-300 ${
+                  activeTab === tab
+                    ? "bg-violet-500 text-white shadow-md"
+                    : "bg-white/10 text-gray-300 hover:bg-violet-400 hover:text-white"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
 
-  {/* EXPERIENCE & TECHNOLOGIES/TOOLS */}
-  <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
-    {/* EXPERIENCE LEFT */}
-    <motion.div
-      variants={fadeIn}
-      className="flex-1 rounded-xl bg-white/10 backdrop-blur-md shadow-2xl p-6 sm:p-10 flex flex-col gap-4"
-    >
-      <h1 className="text-2xl sm:text-3xl font-bold text-black mb-4 flex items-center">
-        <IoBriefcaseOutline className="mr-2"/>Experience
-      </h1>
-      <div className="flex flex-col gap-2 items-start">
-        <p className="text-lg text-black font-bold">Shift101 IT Solutions</p>
-        <p className="text-base text-green-500 italic ">WordPress Developer and Web Developer</p>
-        <p className="text-sm text-gray-500">Feb 2025 - May 2025</p>
-      </div>
-      <p className="text-gray-600 mt-4 leading-relaxed text-justify">
-        My tasks during the internship included creating websites using WordPress, HTML, Tailwind CSS, PHP, and MySQL.
-      </p>
-      <p className="text-sm text-gray-600 mt-2 text-start">
-        <span className="font-bold">Projects:</span> Crescentree E-commerce Website
-      </p>
-      <hr className="my-6 border-gray-500" />
-      <div className="flex flex-col gap-2 text-start">
-        <p className="text-lg text-black font-bold">Freelance</p>
-        <p className="text-base text-green-500 italic">UI/UX Designer and Web Developer</p>
-        <p className="text-sm text-gray-500">2024 - Current</p>
-      </div>
-      <p className="text-gray-600 mt-4 leading-relaxed text-justify">
-        My freelance projects include creating websites using HTML, Tailwind CSS, JavaScript, and React. I also provide UI/UX design services for clients using Figma.
-      </p>
-      <p className="text-sm text-gray-600 mt-2 text-start">
-        <span className="font-bold">Projects:</span> Susihon ta Malaybalay, Aural Nexus
-      </p>
-    </motion.div>
-
-    {/* TECHNOLOGIES & TOOLS RIGHT */}
-    <div className="flex-1 flex flex-col gap-8">
-      {/* TECHNOLOGIES */}
-      <motion.div
-        variants={fadeIn}
-        className="rounded-3xl bg-white/10 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
-      >
-        <h3 className="text-2xl sm:text-3xl font-semibold text-black">Technologies I Use</h3>
-        <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
-          {[
-            { icon: FaHtml5, name: "HTML5" },
-            { icon: FaCss3Alt, name: "CSS3" },
-            { icon: IoLogoJavascript, name: "JavaScript" },
-            { icon: FaReact, name: "React" },
-            { icon: RiTailwindCssFill, name: "Tailwind CSS" },
-            { icon: FaBootstrap, name: "Bootstrap" },
-            { icon: FaPhp, name: "PHP" },
-            { icon: SiMysql, name: "MySQL" },
-            { icon: FaWordpress, name: "WordPress" },
-          ].map(({ icon: Icon, name }, idx) => (
+          {/* Tab Content */}
+          {activeTab === "About Me" && (
             <motion.div
-              key={idx}
               variants={fadeIn}
-              className="hover:scale-110 transition-transform flex flex-col items-center"
+              className="w-full max-w-6xl rounded-xl border border-violet-600 shadow-xl p-6 sm:p-10 flex flex-col gap-4 items-center mx-auto"
             >
-              <Icon className="text-3xl sm:text-4xl text-gray-700 hover:text-green-400" />
-              <span className="text-center text-sm text-gray-600 mt-2">{name}</span>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+              <section className="relative py-16 px-4 sm:px-8 max-w-6xl mx-auto">
+                {/* Description */}
+                <p className="text-gray-300 text-lg leading-relaxed text-justify max-w-3xl mx-auto mb-10">
+                  I'm a{" "}
+                  <span className="text-white font-semibold">
+                    freelance web designer
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-white font-semibold">IT graduate</span>{" "}
+                  based in Bulacan. I build modern, clean, and responsive
+                  websites. I'm passionate about crafting engaging and
+                  user-friendly digital experiences through thoughtful design
+                  and clean code.
+                </p>
 
-      {/* TOOLS */}
-      <motion.div
-        variants={fadeIn}
-        className="rounded-3xl bg-white/10 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
-      >
-        <h3 className="text-2xl sm:text-3xl font-semibold text-black">Tools I Use</h3>
-        <div className="flex flex-wrap justify-center gap-4">
-          {[
-            { icon: PiFigmaLogoDuotone, name: "Figma" },
-            { icon: VscVscode, name: "VS Code" },
-            { icon: SiAdobephotoshop, name: "Adobe Photoshop" },
-            { icon: FaGithub, name: "GitHub" },
-            { icon: SiXampp, name: "XAMPP" },
-          ].map(({ icon: Icon, name }, idx) => (
+                {/* Activities Section */}
+                <div className="bg-gray-800/60 border border-gray-700/60 rounded-2xl shadow-xl p-8 backdrop-blur-md transition-all duration-300 hover:shadow-2xl">
+                  <h3 className="text-2xl font-bold text-white mb-6 text-center underline decoration-violet-400 underline-offset-4">
+                    Activities I Usually Do
+                  </h3>
+
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-300 text-lg">
+                    <li className="flex items-center gap-3">
+                      <span className="w-3 h-3 rounded-full bg-violet-400 animate-pulse"></span>
+                     Kdrama
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-3 h-3 rounded-full bg-violet-400 animate-pulse"></span>
+                     Anime
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-3 h-3 rounded-full bg-violet-400 animate-pulse"></span>
+                      Gym
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-3 h-3 rounded-full bg-violet-400 animate-pulse"></span>
+                      Run
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-3 h-3 rounded-full bg-violet-400 animate-pulse"></span>
+                      Coding
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-3 h-3 rounded-full bg-violet-400 animate-pulse"></span>
+                      Listens to Music
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-3 h-3 rounded-full bg-violet-400 animate-pulse"></span>
+                      Self Blame
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </motion.div>
+          )}
+
+          {activeTab === "Experience" && (
             <motion.div
-              key={idx}
               variants={fadeIn}
-              className="hover:scale-110 transition-transform flex flex-col items-center"
+              className="w-full max-w-6xl mx-auto rounded-xl border-violet-600 border backdrop-blur-md shadow-2xl p-6 sm:p-10 flex flex-col gap-6"
             >
-              <Icon className="text-3xl sm:text-4xl text-gray-700 hover:text-green-400" />
-              <span className="text-center text-sm text-gray-600 mt-2">{name}</span>
+              <section className="relative py-16 text-left px-4 sm:px-8 max-w-6xl mx-auto bg-gray-800/60 border border-gray-700/60 rounded-xl p-6 sm:p-8 shadow-lg  border-green-200 dark:border-gray-700 transition-all">
+                {/* Experience Item 1 */}
+                <div className="mb-10 text-left">
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:text-left sm:justify-between text-left">
+                    <div className="items-start text-left">
+                      <p className="text-xl font-semibold text-gray-900 dark:text-white text-left">
+                        Shift101 IT Solutions
+                      </p>
+                      <p className="text-violet-500 text-base">
+                        WordPress Developer & Web Developer
+                      </p>
+                    </div>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      Feb 2025 - May 2025
+                    </p>
+                  </div>
+
+                  <p className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed text-justify">
+                    During my internship, I developed websites using{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      WordPress
+                    </span>
+                    ,{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      HTML
+                    </span>
+                    ,{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      Tailwind CSS
+                    </span>
+                    ,{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      PHP
+                    </span>
+                    , and{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      MySQL
+                    </span>
+                    .
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                    <span className="font-bold text-gray-900 dark:text-white">
+                      Project:
+                    </span>{" "}
+                    Crescentree E-commerce Website
+                  </p>
+                </div>
+
+                <hr className="my-6 border-gray-300 dark:border-gray-700" />
+
+                {/* Experience Item 2 */}
+                <div>
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="items-start text-left">
+                      <p className="text-xl font-semibold text-gray-900 dark:text-white text-left">
+                        Freelance
+                      </p>
+                      <p className="text-violet-500  text-base">
+                        UI/UX Designer & Web Developer
+                      </p>
+                    </div>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                      2024 - Present
+                    </p>
+                  </div>
+
+                  <p className="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed text-justify">
+                    I work on freelance projects designing and building websites
+                    using{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      HTML
+                    </span>
+                    ,{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      Tailwind CSS
+                    </span>
+                    ,{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      JavaScript
+                    </span>
+                    , and{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      React
+                    </span>
+                    . I also create user interfaces with{" "}
+                    <span className="font-medium text-gray-900 dark:text-white">
+                      Figma
+                    </span>
+                    .
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                    <span className="font-bold text-gray-900 dark:text-white">
+                      Projects:
+                    </span>{" "}
+                    Susihon ta Malaybalay, Aural Nexus
+                  </p>
+                </div>
+              </section>
             </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </div>
-  </div>
+          )}
 
-  {/* SERVICES */}
-  <motion.div
-    variants={fadeIn}
-    className="w-full max-w-6xl mx-auto rounded-xl bg-white/10 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-8 items-center"
-  >
-    <h3 className="text-3xl sm:text-4xl font-bold text-black flex items-center gap-2"><MdOutlineDesignServices size={32} /> Services</h3>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-      {[
-        {
-          icon: "💻",
-          title: "Web Development",
-          description: "Personal or business websites built with modern technologies — clean, fast, and scalable.",
-        },
-        {
-          icon: "🎨",
-          title: "UI/UX Designing",
-          description: "Crafting intuitive and engaging user interfaces tailored to your brand and users’ needs.",
-        },
-        {
-          icon: "📱",
-          title: "Responsive Design",
-          description: "Ensuring your website adapts flawlessly across all screen sizes — from mobile to desktop.",
-        },
-        {
-          icon: "🌐",
-          title: "Frontend Development",
-          description: "Building high-performance, interactive interfaces using modern frameworks like React and Vue.",
-        },
-        {
-          icon: "🖌️",
-          title: "Graphic Design",
-          description: "Designing custom visuals: logos, icons, banners, and branding assets for digital experiences.",
-        },
-        {
-          icon: "🌐",
-          title: "Web Designing",
-          description: "Web Designs using React and Tailwind CSS for a modern and responsive user interface.",
-        },
-      ].map((service, idx) => (
-        <motion.div
-          key={idx}
-          variants={fadeIn}
-          className="bg-white/10 border border-white/10 rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-transform hover:scale-105 hover:border-green-400 group"
-        >
-          <div className="text-4xl mb-4">{service.icon}</div>
-          <h4 className="text-xl font-semibold text-gray-800 mb-2">{service.title}</h4>
-          <p className="text-gray-500 text-sm leading-relaxed">{service.description}</p>
-        </motion.div>
-      ))}
-    </div>
-  </motion.div>
+          {activeTab === "Technologies" && (
+            <motion.div
+              variants={fadeIn}
+              className="rounded-3xl border-violet-600 border backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center mx-auto max-w-6xl"
+            >
+              <motion.div
+                variants={fadeIn}
+                className="rounded-3xl bg-gray-800/60 border border-gray-700/60 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
+              >
+               
+                <div className="grid grid-cols-3 sm:grid-cols-7 gap-5">
+                  {[
+                    { icon: FaHtml5, name: "HTML5" },
+                    { icon: FaCss3Alt, name: "CSS3" },
+                    { icon: IoLogoJavascript, name: "JavaScript" },
+                    { icon: FaReact, name: "React" },
+                    { icon: RiTailwindCssFill, name: "Tailwind CSS" },
+                    { icon: FaBootstrap, name: "Bootstrap" },
+                    { icon: FaPhp, name: "PHP" },
+                    { icon: SiMysql, name: "MySQL" },
+                    { icon: FaWordpress, name: "WordPress" },
+                  ].map(({ icon: Icon, name }, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={fadeIn}
+                      className="hover:scale-110 transition-transform flex flex-col items-center"
+                    >
+                      <Icon className="text-3xl sm:text-4xl text-gray-100 hover:text-violet-400 duration-300" />
+                      <span className="text-center text-sm text-gray-400 mt-2">
+                        {name}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
 
-  {/* BEHANCE */}
-  <motion.div
-    variants={fadeIn}
-    className="w-full max-w-3xl mx-auto flex flex-col items-center gap-4 mt-8"
-  >
-    <p className="text-lg sm:text-xl text-gray-400 text-center">
-      I also do graphic design and UI/UX design that you can check out on <span className="font-bold">Behance</span>
-    </p>
-    <a
-      href="https://www.behance.net/gallery/226837617/My-Designs"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center px-6 py-3 bg-green-500 hover:bg-green-400 text-white rounded-md shadow-sm transition-colors"
-    >
-      <FaBehanceSquare className="mr-2 text-2xl" />
-      <span className="text-lg">Check out my designs on Behance</span>
-    </a>
-  </motion.div>
-</motion.section>
+          {activeTab === "Tools" && (
+            <motion.div
+              variants={fadeIn}
+              className="rounded-3xl border border-violet-600 p-6 sm:p-10 flex flex-col gap-6 items-center mx-auto max-w-6xl"
+            >
+                 <motion.div
+                variants={fadeIn}
+                className="rounded-3xl bg-gray-800/60 border border-gray-700/60 shadow-xl p-6 sm:p-10 flex flex-col gap-6 items-center"
+              >
+               
+                <div className="flex flex-wrap justify-center gap-4">
+                  {[
+                    { icon: PiFigmaLogoDuotone, name: "Figma" },
+                    { icon: VscVscode, name: "VS Code" },
+                    { icon: SiAdobephotoshop, name: "Adobe Photoshop" },
+                    { icon: FaGithub, name: "GitHub" },
+                    { icon: SiXampp, name: "XAMPP" },
+                  ].map(({ icon: Icon, name }, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={fadeIn}
+                      className="hover:scale-110 transition-transform flex flex-col items-center"
+                    >
+                      <Icon className="text-3xl sm:text-4xl text-gray-100 hover:text-violet-400" />
+                      <span className="text-center text-sm text-gray-400 mt-2">
+                        {name}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
 
+          {activeTab === "Services" && (
+                <motion.div
+            variants={fadeIn}
+            className="w-full max-w-6xl mx-auto rounded-xl bg-gray-800/60 border border-gray-700/60 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-8 items-center"
+          >
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+              {[
+                {
+                  icon: "💻",
+                  title: "Web Development",
+                  description:
+                    "Personal or business websites built with modern technologies — clean, fast, and scalable.",
+                },
+                {
+                  icon: "🎨",
+                  title: "UI/UX Designing",
+                  description:
+                    "Crafting intuitive and engaging user interfaces tailored to your brand and users’ needs.",
+                },
+                {
+                  icon: "📱",
+                  title: "Responsive Design",
+                  description:
+                    "Ensuring your website adapts flawlessly across all screen sizes — from mobile to desktop.",
+                },
+                {
+                  icon: "🌐",
+                  title: "Frontend Development",
+                  description:
+                    "Building high-performance, interactive interfaces using modern frameworks like React and Vue.",
+                },
+                {
+                  icon: "🖌️",
+                  title: "Graphic Design",
+                  description:
+                    "Designing custom visuals: logos, icons, banners, and branding assets for digital experiences.",
+                },
+                {
+                  icon: "🌐",
+                  title: "Web Designing",
+                  description:
+                    "Web Designs using React and Tailwind CSS for a modern and responsive user interface.",
+                },
+              ].map((service, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={fadeIn}
+                  className="bg-white/10 border border-white/10 rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-transform hover:scale-105 hover:border-violet-400 group"
+                >
+                  <div className="text-4xl mb-4">{service.icon}</div>
+                  <h4 className="text-xl font-semibold text-white mb-2">
+                    {service.title}
+                  </h4>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          )}
 
+          {activeTab === "Behance" && (
+            <motion.div
+              variants={fadeIn}
+              className="w-full max-w-3xl mx-auto flex flex-col items-center gap-4 mt-8"
+            >
+              <p className="text-lg sm:text-xl text-gray-300 text-center">
+                I also do graphic design and UI/UX design that you can check out
+                on <span className="font-bold">Behance</span>
+              </p>
+              <a
+                href="https://www.behance.net/gallery/226837617/My-Designs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center px-4 py-3 sm:py-3 sm:px-2 sm:text-md bg-violet-500 hover:bg-violet-400 text-white rounded-md shadow-sm transition-colors"
+              >
+                <FaBehanceSquare className="mr-2 text-2xl" />
+                <span className="text-lg">Check out my designs on Behance</span>
+              </a>
+            </motion.div>
+          )}
+        </section>
 
         <div
-          className="flex flex-col items-center justify-center w-full min-h-screen gap-8 px-4 sm:px-8 py-16 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-800 to-gray-900"
+          className="flex flex-col items-center justify-center w-full min-h-screen gap-8 px-4 sm:px-8 py-16 bg-gradient-to-b from-[#1d1d1d] via-[#1d1d1d] to-violet-900"
           id="projects"
         >
           {/* Section Title */}
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-white mb-4">
-            PROJECTS
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-400 text-center max-w-3xl mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-violet-400 mb-4 drop-shadow-[0_0_10px_#8b5cf6]">
+  Projects
+</h2>
+
+          <p className="text-lg sm:text-xl text-gray-300 text-center max-w-3xl mb-12">
             Here are some personal, freelance, and school projects I've worked
             on and contributed to.
           </p>
@@ -749,7 +903,7 @@ function App() {
                 link: "https://www.figma.com/proto/J4ejpBHqCimF0xXvvfdZX3/Aural-Nexus--Copy-?page-id=0%3A1&node-id=2105-23",
               },
               {
-                image: "./busybee.png",
+                image: "./busybee1.png",
                 title: "BusyBee",
                 description: "Handled the UI/UX Design of this website",
                 tech: "Figma",
@@ -780,7 +934,7 @@ function App() {
                   </h3>
                   <p className="text-gray-500">{project.description}</p>
                   <div className="mt-2">
-                    <p className="text-sm text-green-400 flex items-center gap-2">
+                    <p className="text-sm text-violet-400 flex items-center gap-2">
                       {project.tech}
                       <p> </p>
                       {project.tech2} <p> </p>
@@ -823,79 +977,65 @@ function App() {
             ))}
           </div>
         </div>
-        {/* Wavy SVG Separator */}
-        <div className="relative w-full overflow-hidden leading-none -mt-10 z-10 bg-transparent">
-          <svg
-            viewBox="0 0 500 150"
-            preserveAspectRatio="none"
-            className="w-full h-[100px] rotate-180 fill-gray-900 animate-wave"
-          >
-            <path d="M0.00,49.98 C150.00,150.00 349.28,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" />
-          </svg>
-        </div>
 
-        <section className="py-20 px-6">
-  <div className="max-w-6xl mx-auto text-center">
-    {/* Header */}
-    <p className="text-sm font-medium bg-green-100 text-green-700 px-4 py-1 inline-block rounded-full mb-4">
-      Testimonials from clients and colleagues
-    </p>
-    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-      Real Stories. Real People. Real You.
-    </h2>
+      
 
-    {/* Grid of Testimonials */}
-    <div className="grid gap-6 md:grid-cols-3 mt-12">
-      {testimonials.map((item, i) => (
-        <div
-          key={i}
-          className={`p-6 rounded-3xl text-left relative shadow-md transition-all`}
-          style={{
-            backgroundColor: item.bg || "#f5f5f5",
-            transform: `rotate(${i === 0 ? '-2deg' : i === 2 ? '2deg' : '0deg'})`
-          }}
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-12 h-12 rounded-full object-cover"
-            />
-            <div>
-              <p className="font-semibold text-gray-900">{item.name}</p>
+        <section className="py-20 px-6 bg-gradient-to-t from-[#1d1d1d] via-[#1d1d1d] to-violet-900">
+          <div className="max-w-6xl mx-auto text-center">
+            {/* Header */}
+            <p className="text-sm font-medium bg-violet-100 text-violet-700 px-4 py-1 inline-block rounded-full mb-4">
+              Testimonials from clients and colleagues
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4">
+              Real Stories. Real People. Real You.
+            </h2>
+
+            {/* Grid of Testimonials */}
+            <div className="grid gap-6 md:grid-cols-3 mt-12">
+              {testimonials.map((item, i) => (
+                <div
+                  key={i}
+                  className={`p-6 rounded-3xl text-left relative shadow-md transition-all`}
+                  style={{
+                    backgroundColor: item.bg || "#f5f5f5",
+                    transform: `rotate(${
+                      i === 0 ? "-2deg" : i === 2 ? "2deg" : "0deg"
+                    })`,
+                  }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                    <div>
+                      <p className="font-semibold text-gray-900">{item.name}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-800 leading-relaxed">{item.text}</p>
+                  <div className="text-2xl text-right mt-4 text-gray-500">
+                    ”
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          <p className="text-gray-800 leading-relaxed">{item.text}</p>
-          <div className="text-2xl text-right mt-4 text-gray-500">”</div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+        </section>
 
-        {/* Wavy SVG Separator */}
-        <div className="relative w-full overflow-hidden leading-none -mt-10 z-10">
-          <svg
-            viewBox="0 0 500 150"
-            preserveAspectRatio="none"
-            className="w-full h-[100px] rotate-360 fill-gray-900 animate-wave"
-          >
-            <path d="M0.00,49.98 C150.00,150.00 349.28,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" />
-          </svg>
-        </div>
 
         {/* Contact Section */}
         <div
-          className="flex items-center justify-center w-full min-h-screen bg-transparent px-4 py-16 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-800 to-gray-900"
+          className="flex items-center justify-center w-full min-h-screen bg-transparent px-4 py-16  bg-gradient-to-b from-[#1d1d1d] via-[#1d1d1d] to-violet-900"
           id="contacts"
         >
           <div className="w-full max-w-2xl bg-white/5 backdrop-blur-md rounded-2xl shadow-xl px-8 py-12">
             {/* Title */}
             <div className="text-center mb-8">
-              <h2 className="text-3xl sm:text-4xl font-bold bg-clip-text text-white">
+              <h2 className="text-3xl sm:text-4xl font-bold bg-clip-text text-violet-400">
                 Get in Touch
               </h2>
-              <p className="text-gray-400 mt-2 text-base sm:text-lg">
+              <p className="text-gray-100 mt-2 text-base sm:text-lg">
                 Feel free to send me a message using the form below.
               </p>
             </div>
@@ -912,7 +1052,7 @@ function App() {
                   type="text"
                   name="name"
                   required
-                  className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
                   placeholder="Your name"
                 />
               </div>
@@ -925,7 +1065,7 @@ function App() {
                   type="email"
                   name="email"
                   required
-                  className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
                   placeholder="Your email"
                 />
               </div>
@@ -937,7 +1077,7 @@ function App() {
                 <input
                   type="text"
                   name="subject"
-                  className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
                   placeholder="Subject"
                 />
               </div>
@@ -950,7 +1090,7 @@ function App() {
                   name="message"
                   rows="5"
                   required
-                  className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-400"
                   placeholder="Your message"
                 ></textarea>
               </div>
@@ -958,7 +1098,7 @@ function App() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold hover:bg-gradient-to-r hover:from-green-500 hover:to-green-600 transition hover:scale-105 duration-300 ease-in-out"
+                  className="px-6 py-3 rounded-lg bg-gradient-to-r from-gray-500 to-gray-600 text-white font-semibold hover:bg-gradient-to-r hover:from-violet-500 hover:to-violet-600 transition hover:scale-105 duration-300 ease-in-out"
                 >
                   Send Message
                 </button>
@@ -967,14 +1107,14 @@ function App() {
           </div>
         </div>
 
-        <footer className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-900 via-gray-800 to-gray-900 px-6 py-12 shadow-lg">
+        <footer className=" bg-gradient-to-t from-[#1d1d1d] via-[#1d1d1d] to-violet-900 px-6 py-12 shadow-lg">
           <div className="max-w-7xl mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between">
             {/* Branding Section */}
             <div className="flex flex-col gap-3">
               <h1 className="font-bold text-start text-4xl sm:text-5xl bg-clip-text text-white">
                 About
               </h1>
-              <p className="text-gray-400 text-start sm:text-lg max-w-2xl">
+              <p className="text-gray-300 text-start sm:text-lg max-w-2xl">
                 I'm Andrei John V. Poma, a freelance web designer and IT
                 graduate based in Bulacan. I build modern, clean, and responsive
                 websites. I'm passionate about creating engaging and
@@ -991,31 +1131,31 @@ function App() {
                 </p>
                 <Link
                   to="home"
-                  className="text-gray-400 hover:text-green-400 cursor-pointer transition"
+                  className="text-gray-400 hover:text-violet-400 cursor-pointer transition"
                 >
                   Home
                 </Link>
                 <Link
                   to="about"
-                  className="text-gray-400 hover:text-green-400 cursor-pointer transition"
+                  className="text-gray-400 hover:text-violet-400 cursor-pointer transition"
                 >
                   About
                 </Link>
                 <Link
                   to="projects"
-                  className="text-gray-400 hover:text-green-400 cursor-pointer transition"
+                  className="text-gray-400 hover:text-violet-400 cursor-pointer transition"
                 >
                   Projects
                 </Link>
                 <Link
                   to="testimonials"
-                  className="text-gray-400 hover:text-green-400 cursor-pointer transition"
+                  className="text-gray-400 hover:text-violet-400 cursor-pointer transition"
                 >
                   Testimonials
                 </Link>
                 <Link
                   to="contacts"
-                  className="text-gray-400 hover:text-green-400 cursor-pointer transition"
+                  className="text-gray-400 hover:text-violet-400 cursor-pointer transition"
                 >
                   Contact
                 </Link>
@@ -1030,7 +1170,7 @@ function App() {
                   href="https://www.facebook.com/dreiur/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 cursor-pointer transition flex items-center"
+                  className="text-gray-400 hover:text-violet-400 cursor-pointer transition flex items-center"
                 >
                   <FaFacebookMessenger className="mr-2" />
                   Andrei Poma
@@ -1039,7 +1179,7 @@ function App() {
                   href="https://www.linkedin.com/in/andreipoma/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400  cursor-pointer transition flex items-center"
+                  className="text-gray-400 hover:text-violet-400  cursor-pointer transition flex items-center"
                 >
                   <FaLinkedin className="mr-2" />
                   Andrei Poma
@@ -1048,7 +1188,7 @@ function App() {
                   href="https://github.com/dreiiiur"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-400 cursor-pointer transition flex items-center"
+                  className="text-gray-400 hover:text-violet-400 cursor-pointer transition flex items-center"
                 >
                   <FaGithub className="mr-2" />
                   dreiiiur
