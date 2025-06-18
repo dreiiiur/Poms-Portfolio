@@ -748,7 +748,7 @@ function App() {
                   {[
                     { icon: PiFigmaLogoDuotone, name: "Figma" },
                     { icon: VscVscode, name: "VS Code" },
-                    { icon: SiAdobephotoshop, name: "Adobe Photoshop" },
+                    { icon: SiAdobephotoshop, name: "Photoshop" },
                     { icon: FaGithub, name: "GitHub" },
                     { icon: SiXampp, name: "XAMPP" },
                   ].map(({ icon: Icon, name }, idx) => (
@@ -771,7 +771,7 @@ function App() {
           {activeTab === "Services" && (
                 <motion.div
             variants={fadeIn}
-            className="w-full max-w-6xl mx-auto rounded-xl bg-gray-800/60 border border-gray-700/60 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-8 items-center"
+            className="w-full max-w-6xl mx-auto rounded-xl border border-violet-600 backdrop-blur-md shadow-xl p-6 sm:p-10 flex flex-col gap-8 items-center"
           >
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
@@ -804,7 +804,7 @@ function App() {
                 <motion.div
                   key={idx}
                   variants={fadeIn}
-                  className="bg-white/10 border border-white/10 rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-transform hover:scale-105 hover:border-violet-400 group"
+                  className="bg-voilet-700 border border-white/10 rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-transform hover:scale-105 hover:border-violet-400 group"
                 >
                   <div className="text-4xl mb-4">{service.icon}</div>
                   <h4 className="text-xl font-semibold text-white mb-2">
@@ -846,8 +846,13 @@ function App() {
           id="projects"
         >
           {/* Section Title */}
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-violet-400 mb-4 drop-shadow-[0_0_10px_#8b5cf6]">
-  Projects
+          <motion.div variants={fadeIn} className="flex flex-col items-center">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-pink-500 mb-4 drop-shadow-[0_0_10px_#8b5cf6]">
+              PROJECTS
+            </h1>
+          </motion.div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-100  mb-4 drop-shadow-[0_0_10px_#8b5cf6]">
+  Design, Code, and Creativity
 </h2>
 
           <p className="text-lg sm:text-xl text-gray-300 text-center max-w-3xl mb-12">
