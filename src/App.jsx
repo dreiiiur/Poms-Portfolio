@@ -847,7 +847,7 @@ function App() {
         >
           {/* Section Title */}
           <motion.div variants={fadeIn} className="flex flex-col items-center">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-pink-500 mb-4 drop-shadow-[0_0_10px_#8b5cf6]">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-b from-violet-500 to-blue-300 mb-4 drop-shadow-[0_0_10px_#8b5cf6]">
               PROJECTS
             </h1>
           </motion.div>
